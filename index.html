@@ -2,12 +2,790 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Parmeet Virdi</title>
+    <title>Parmeet Singh Virdi | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Basic SEO -->
+    <meta
+      name="description"
+      content="Parmeet Singh Virdi — Computer Science student at the University of Calgary. Projects in distributed systems, full-stack, ML, and optimization."
+    />
+    <meta name="theme-color" content="#0b0f19" />
+
+    <!-- Open Graph (nice link previews) -->
+    <meta property="og:title" content="Parmeet Singh Virdi | Portfolio" />
+    <meta
+      property="og:description"
+      content="Projects in distributed systems, full-stack, ML, and optimization."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      :root {
+        --bg: #0b0f19;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-strong: rgba(255, 255, 255, 0.1);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --faint: rgba(255, 255, 255, 0.5);
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --accent: #7c3aed; /* purple */
+        --accent2: #22c55e; /* green */
+        --radius: 18px;
+        --max: 1080px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(
+            1200px 700px at 20% 10%,
+            rgba(124, 58, 237, 0.25),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 650px at 90% 30%,
+            rgba(34, 197, 94, 0.18),
+            transparent 55%
+          ),
+          linear-gradient(180deg, #060812, #0b0f19 35%, #070a12);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 28px 18px 60px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 14px 14px;
+        border: 1px solid var(--border);
+        background: rgba(10, 14, 26, 0.55);
+        backdrop-filter: blur(10px);
+        border-radius: calc(var(--radius) + 10px);
+        position: sticky;
+        top: 14px;
+        z-index: 20;
+      }
+
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.12);
+      }
+      .brand strong {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .brand span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .pill:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .hero {
+        margin-top: 22px;
+        border: 1px solid var(--border);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.03)
+        );
+        border-radius: calc(var(--radius) + 14px);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .hero-inner {
+        padding: 28px 22px;
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 18px;
+      }
+      @media (max-width: 860px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 3.6vw, 3.2rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+      }
+      .subhead {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .chip {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.92rem;
+      }
+
+      .cta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+      .btn.primary {
+        border-color: rgba(124, 58, 237, 0.45);
+        background: linear-gradient(
+          135deg,
+          rgba(124, 58, 237, 0.35),
+          rgba(34, 197, 94, 0.18)
+        );
+      }
+
+      .side {
+        border-left: 1px solid var(--border);
+        padding-left: 18px;
+      }
+      @media (max-width: 860px) {
+        .side {
+          border-left: none;
+          padding-left: 0;
+          border-top: 1px solid var(--border);
+          padding-top: 18px;
+        }
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      section {
+        margin-top: 26px;
+      }
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 0 12px;
+      }
+      .section-title h2 {
+        margin: 0;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+      }
+      .section-title .hint {
+        color: var(--faint);
+        font-size: 0.95rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 12px;
+      }
+
+      .project {
+        grid-column: span 6;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: var(--radius);
+        padding: 16px;
+        transition: transform 160ms ease, background 160ms ease,
+          border-color 160ms ease;
+      }
+      .project:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.055);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      @media (max-width: 900px) {
+        .project {
+          grid-column: span 12;
+        }
+      }
+
+      .proj-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .project h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+      .meta {
+        color: var(--faint);
+        font-size: 0.92rem;
+        margin-top: 6px;
+      }
+      .project p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .tag {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 5px 9px;
+        border-radius: 999px;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 860px) {
+        .cols {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer {
+        margin-top: 34px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--faint);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.9rem;
+        padding: 2px 8px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.8);
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Parmeet Virdi</h1>
-    <p>Computer Science at The University Of Calgary</p>
-    <p>Portfolio coming soon.</p>
+    <div class="wrap">
+      <header class="nav">
+        <div class="brand">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <strong>Parmeet Singh Virdi</strong>
+            <div><span>Computer Science • University of Calgary</span></div>
+          </div>
+        </div>
+
+        <nav class="links" aria-label="Primary">
+          <a class="pill" href="#projects">Projects</a>
+          <a class="pill" href="#about">About</a>
+          <a class="pill" href="#skills">Skills</a>
+          <a class="pill" href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-label="Hero">
+          <div class="hero-inner">
+            <div>
+              <h1>
+                Building reliable systems and practical AI — from distributed
+                services to full-stack apps.
+              </h1>
+              <p class="subhead">
+                I’m a Computer Science student at the University of Calgary. I
+                like projects where performance, correctness, and real-world
+                constraints matter (distributed systems, optimization, backend,
+                and ML).
+              </p>
+
+              <div class="chips" aria-label="Highlights">
+                <span class="chip">Distributed Systems</span>
+                <span class="chip">Full-Stack (JS + SQL)</span>
+                <span class="chip">ML + Computer Vision</span>
+                <span class="chip">Optimization (GA / Search)</span>
+              </div>
+
+              <div class="cta">
+                <a class="btn primary" href="#projects">View Projects</a>
+                <!-- Replace these hrefs with your real links -->
+                <a class="btn" href="#" aria-label="GitHub (add your link)"
+                  >GitHub</a
+                >
+                <a class="btn" href="#" aria-label="LinkedIn (add your link)"
+                  >LinkedIn</a
+                >
+                <a class="btn" href="#contact">Contact</a>
+              </div>
+
+              <p class="meta" style="margin-top: 14px">
+                Tip: press <span class="kbd">Ctrl</span> +
+                <span class="kbd">F</span> and search “distributed” or “ML” to
+                jump around.
+              </p>
+            </div>
+
+            <div class="side">
+              <div class="card">
+                <h3>Currently focusing on</h3>
+                <p>
+                  Shipping projects with clean architecture, strong testing, and
+                  clear documentation. I also enjoy building optimization
+                  systems that handle hard constraints.
+                </p>
+              </div>
+
+              <div style="height: 12px"></div>
+
+              <div class="card">
+                <h3>Looking for</h3>
+                <p>
+                  Internships / co-op in software engineering (backend,
+                  distributed systems, full-stack), and applied ML.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" aria-label="Projects">
+          <div class="section-title">
+            <h2>Projects</h2>
+            <div class="hint">
+              Best work first • add links as you publish repos/demos
+            </div>
+          </div>
+
+          <div class="grid">
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Distributed Fault-Tolerant Chat System</h3>
+                  <div class="meta">
+                    Docker • Load balancing • Server + client • Team of 5
+                  </div>
+                </div>
+              </div>
+              <p>
+                Built a distributed chat system designed to be resilient and
+                portable. Ran inside Docker so it can execute consistently on
+                any machine. Worked heavily on core features across the server,
+                load-balancer, and client behavior.
+              </p>
+              <div class="tags">
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Fault Tolerance</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Networking</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Full-Stack Restaurant App</h3>
+                  <div class="meta">
+                    JavaScript • Custom API calls • SQL database • Auth via
+                    cookies
+                  </div>
+                </div>
+              </div>
+              <p>
+                Implemented a restaurant system end-to-end: frontend, backend,
+                and a SQL database for users and menu data. Built authentication
+                flow and persisted sessions securely with cookies.
+              </p>
+              <div class="tags">
+                <span class="tag">Full-Stack</span>
+                <span class="tag">REST / APIs</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Auth</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Genetic Algorithm Parameter Search for ML</h3>
+                  <div class="meta">
+                    Optimization • Faster than grid search (time savings)
+                  </div>
+                </div>
+              </div>
+              <p>
+                Designed a parameter-finding algorithm using a genetic approach.
+                Achieved performance comparable to grid search while
+                significantly reducing compute time by exploring the search
+                space efficiently.
+              </p>
+              <div class="tags">
+                <span class="tag">Genetic Algorithms</span>
+                <span class="tag">Hyperparameter Search</span>
+                <span class="tag">ML</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Occluded Pet Detection (Computer Vision)</h3>
+                  <div class="meta">
+                    Trained multiple models • Evaluated approaches
+                  </div>
+                </div>
+              </div>
+              <p>
+                Explored computer vision strategies for detecting pets under
+                occlusion. Trained and compared multiple model variants and
+                analyzed tradeoffs between accuracy and robustness.
+              </p>
+              <div class="tags">
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Model Training</span>
+                <span class="tag">Evaluation</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>AI Scheduling with Hard Constraints</h3>
+                  <div class="meta">
+                    AND/OR trees • Genetic algorithm • Constraint handling
+                  </div>
+                </div>
+              </div>
+              <p>
+                Built an AI scheduler that respects hard constraints using a
+                hybrid approach: AND/OR tree reasoning combined with a genetic
+                algorithm to search feasible schedules efficiently.
+              </p>
+              <div class="tags">
+                <span class="tag">Search</span>
+                <span class="tag">Constraints</span>
+                <span class="tag">Genetic Algorithms</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>League of Legends Match Outcome Prediction</h3>
+                  <div class="meta">
+                    ~20-page report • &lt;400 lines of modeling code
+                  </div>
+                </div>
+              </div>
+              <p>
+                Predicted match outcomes using engineered features and model
+                comparisons. Produced a detailed write-up describing methods,
+                assumptions, evaluation metrics, and results.
+              </p>
+              <div class="tags">
+                <span class="tag">Applied ML</span>
+                <span class="tag">Feature Engineering</span>
+                <span class="tag">Technical Writing</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Self Checkout Simulation (Team of 20)</h3>
+                  <div class="meta">
+                    Large team • Systems simulation • Contributed as a top
+                    member
+                  </div>
+                </div>
+              </div>
+              <p>
+                Collaborated in a large team to simulate a self-checkout system.
+                Contributed key components and helped keep the project moving
+                through coordination and solid implementation.
+              </p>
+              <div class="tags">
+                <span class="tag">Collaboration</span>
+                <span class="tag">Simulation</span>
+                <span class="tag">Systems</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Greenhouse Simulation (Java + UI)</h3>
+                  <div class="meta">Java • Frontend UI • Simulation logic</div>
+                </div>
+              </div>
+              <p>
+                Built a greenhouse simulation with a Java UI. Modeled system
+                behaviors over time and surfaced controls and outputs through an
+                interactive interface.
+              </p>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">UI</span>
+                <span class="tag">Simulation</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Networking Projects (Java)</h3>
+                  <div class="meta">
+                    Client/server • Testing • Protocol basics
+                  </div>
+                </div>
+              </div>
+              <p>
+                Implemented Java client/server programs and practiced writing
+                testable networking code. Focused on correctness, communication
+                flow, and predictable behavior under edge cases.
+              </p>
+              <div class="tags">
+                <span class="tag">Networking</span>
+                <span class="tag">Java</span>
+                <span class="tag">Testing</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Raspberry Pi Bare-Metal Projects</h3>
+                  <div class="meta">
+                    No OS • Traffic lights simulation • SNES controller input
+                  </div>
+                </div>
+              </div>
+              <p>
+                Programmed bare-metal Raspberry Pi projects including a traffic
+                light simulation and SNES controller input handling. Focused on
+                low-level control and reliable I/O behavior.
+              </p>
+              <div class="tags">
+                <span class="tag">Embedded</span>
+                <span class="tag">Bare-Metal</span>
+                <span class="tag">I/O</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>Small Python Game</h3>
+                  <div class="meta">Python • Pygame</div>
+                </div>
+              </div>
+              <p>
+                A lightweight game built with Python and Pygame — a fun project
+                that reinforced fundamentals like game loops, input handling,
+                and basic physics/collisions.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pygame</span>
+                <span class="tag">Game Dev</span>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="proj-top">
+                <div>
+                  <h3>HCI UI/UX Prototype</h3>
+                  <div class="meta">
+                    JavaScript • UI prototyping • Team of 5 (major code
+                    contributor)
+                  </div>
+                </div>
+              </div>
+              <p>
+                Designed and implemented a UI/UX prototype with a small team.
+                Wrote most of the JavaScript and focused on interaction flow,
+                clarity, and usable layout.
+              </p>
+              <div class="tags">
+                <span class="tag">HCI</span>
+                <span class="tag">Frontend</span>
+                <span class="tag">UX</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="about" aria-label="About">
+          <div class="section-title">
+            <h2>About</h2>
+            <div class="hint">Short + specific beats long + generic</div>
+          </div>
+
+          <div class="cols">
+            <div class="card">
+              <h3>What I’m about</h3>
+              <p>
+                I like building things that have real constraints: latency,
+                reliability, correctness, and “this needs to work on another
+                machine.” That’s why I enjoy distributed systems, backend work,
+                and optimization.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>How I work</h3>
+              <p>
+                I prioritize clear architecture, testing where it matters, and
+                documentation that makes a project easy to understand and run.
+                I’ve shipped projects in both small teams and large groups.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" aria-label="Skills">
+          <div class="section-title">
+            <h2>Skills</h2>
+            <div class="hint">Edit these as you specialize</div>
+          </div>
+
+          <div class="cols">
+            <div class="card">
+              <h3>Languages</h3>
+              <p>
+                Java • JavaScript • Python • SQL • (C/C++ if relevant to your Pi
+                work)
+              </p>
+            </div>
+            <div class="card">
+              <h3>Areas</h3>
+              <p>
+                Distributed systems • Networking • Full-stack • ML/CV • Search +
+                Optimization • Testing
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" aria-label="Contact">
+          <div class="section-title">
+            <h2>Contact</h2>
+            <div class="hint">Replace placeholders with your real links</div>
+          </div>
+
+          <div class="card">
+            <p style="margin: 0; color: var(--muted)">
+              Best way to reach me:
+              <a href="mailto:youremail@example.com">youremail@example.com</a>
+              <br />
+              GitHub: <a href="#">github.com/your-handle</a> • LinkedIn:
+              <a href="#">linkedin.com/in/your-handle</a>
+            </p>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© <span id="year"></span> Parmeet Singh Virdi</div>
+          <div style="color: var(--faint)">
+            Built with plain HTML/CSS • Hosted on Vercel
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      // Tiny enhancement: current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
