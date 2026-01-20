@@ -20,7 +20,7 @@ export default function Home() {
                         Backend / Distributed Systems / Applied ML / Full Stack
                     </p>
                     <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-                        Building reliable backend systems with fault tolerance, distributed consensus, and pragmatic ML applications..</p>
+                        Building reliable backend systems with fault tolerance, distributed consensus, and pragmatic ML applications.</p>
                     <div className="flex flex-wrap gap-4 mb-10">
                         <Button href="/projects" variant="secondary">
                             Projects
