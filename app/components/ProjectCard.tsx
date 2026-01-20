@@ -4,12 +4,13 @@ import type { Project } from '@/data/projects'
 interface ProjectCardProps {
     project: Project
     featured?: boolean
+    highlighted?: boolean
 }
 
-export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
+export default function ProjectCard({ project, featured = false, highlighted = false }: ProjectCardProps) {
     return (
         <Link href={`/projects/${project.slug}`}>
-            <article className="border border-border bg-border/60 p-6 rounded-lg hover:border-accent transition-all group">
+            <article className={`border ${highlighted ? 'border-border' : 'border-border/80'} ${highlighted ? 'bg-border/70' : 'bg-border/60'} p-6 rounded-lg hover:border-accent transition-all group`}>
                 <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
                     {project.title}
                 </h3>

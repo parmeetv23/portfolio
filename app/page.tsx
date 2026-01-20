@@ -11,18 +11,18 @@ export default function Home() {
             <Nav />
 
             {/* Hero Section */}
-            <section className="max-w-6xl mx-auto px-6 pt-20 pb-12">
+            <section className="max-w-6xl mx-auto px-6 pt-20 pb-8">
                 <div>
-                    <h1 className="text-5xl font-bold mb-4 text-foreground">
+                    <h1 className="text-5xl font-bold mb-2 text-foreground">
                         Parmeet Virdi
                     </h1>
-                    <p className="text-2xl text-muted-foreground mb-6">
+                    <p className="text-2xl text-muted-foreground mb-3">
                         Backend / Distributed Systems / Applied ML
                     </p>
-                    <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+                    <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
                         Building reliable backend systems with fault tolerance, distributed consensus, and pragmatic ML applications.
                     </p>
-                    <div className="flex flex-wrap gap-4 mb-12">
+                    <div className="flex flex-wrap gap-4 mb-10">
                         <Button href="/projects" variant="secondary">
                             Projects
                         </Button>
@@ -38,18 +38,18 @@ export default function Home() {
                     </div>
 
                     {/* About Section */}
-                    <div className="border border-border bg-border/60 rounded-lg p-6 md:p-8">
-                        <h2 className="text-3xl font-semibold mb-6 text-foreground">About</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="border border-border/50 bg-border/40 rounded-lg p-5 md:p-6">
+                        <h2 className="text-3xl font-semibold mb-5 text-foreground">About</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <p className="text-muted-foreground mb-4 leading-relaxed">
+                                <p className="text-muted-foreground mb-0 leading-relaxed">
                                     I build backend systems that handle scale, failures, and constraints. My focus is on distributed systems
                                     architecture, fault tolerance mechanisms, and applying machine learning to solve real problems with
                                     hard constraints.
                                 </p>
                             </div>
                             <div>
-                                <ul className="space-y-2 text-muted-foreground">
+                                <ul className="space-y-1.5 text-muted-foreground">
                                     <li className="flex items-start">
                                         <span className="mr-2 text-accent">•</span>
                                         <span>Distributed systems with consensus algorithms and fault tolerance</span>
@@ -74,19 +74,19 @@ export default function Home() {
             </section>
 
             {/* Featured Projects */}
-            <section className="max-w-6xl mx-auto px-6 py-12">
-                <h2 className="text-3xl font-semibold mb-8 text-foreground">Featured Projects</h2>
+            <section className="max-w-6xl mx-auto px-6 py-10">
+                <h2 className="text-3xl font-semibold mb-6 text-foreground">Featured Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {featuredProjects.map((project) => (
-                        <ProjectCard key={project.slug} project={project} featured />
+                    {featuredProjects.map((project, index) => (
+                        <ProjectCard key={project.slug} project={project} featured highlighted={index === 0} />
                     ))}
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="max-w-6xl mx-auto px-6 py-12">
-                <div className="border border-border bg-border/60 rounded-lg p-6 md:p-8">
-                    <h2 className="text-3xl font-semibold mb-6 text-foreground">Contact</h2>
+            <section id="contact" className="max-w-6xl mx-auto px-6 py-8">
+                <div className="border border-border/50 bg-border/40 rounded-lg p-5 md:p-6">
+                    <h2 className="text-3xl font-semibold mb-4 text-foreground">Contact</h2>
                     <div className="flex flex-wrap gap-4">
                         <Button href="mailto:parmeetv1@gmail.com" variant="secondary" external>
                             Email
@@ -102,7 +102,7 @@ export default function Home() {
             </section>
 
             {/* Footer */}
-            <footer className="max-w-6xl mx-auto px-6 py-8 border-t border-border mt-12">
+            <footer className="max-w-6xl mx-auto px-6 py-6 border-t border-border mt-8">
                 <p className="text-muted text-sm text-center">
                     © {new Date().getFullYear()} Parmeet Virdi
                 </p>
