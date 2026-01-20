@@ -23,9 +23,13 @@ export default function ProjectCard({
           'hover:border-accent',
           'transition-all',
           'group',
+          'h-full',
+          'flex',
+          'flex-col',
           highlighted ? 'border-accent/80' : 'border-border/80',
         ].join(' ')}
       >
+
         <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
           {project.title}
         </h3>

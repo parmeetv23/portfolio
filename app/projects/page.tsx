@@ -1,15 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Nav from '@/app/components/Nav'
 import ProjectCard from '@/app/components/ProjectCard'
 import { projects, type ProjectCategory } from '@/data/projects'
 
-const categories: ProjectCategory[] = ['Distributed', 'ML', 'Embedded']
+// const categories: ProjectCategory[] = ['Distributed', 'ML', 'Embedded', 'Full-Stack']
+
+
 const allCategory: ProjectCategory | 'All' = 'All'
 
 export default function ProjectsPage() {
     const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | 'All'>(allCategory)
+
+    const categories = useMemo(
+        () => Array.from(new Set(projects.map(p => p.category))) as ProjectCategory[],
+        []
+)
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
