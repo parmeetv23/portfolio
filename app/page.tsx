@@ -20,7 +20,8 @@ export default function Home() {
                         Backend / Distributed Systems / Applied ML / Full Stack
                     </p>
                     <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-                        Building reliable backend systems with fault tolerance, distributed consensus, and pragmatic ML applications.</p>
+                        Building reliable backend systems with fault tolerance, distributed consensus, and pragmatic ML applications.
+                    </p>
                     <div className="flex flex-wrap gap-4 mb-10">
                         <Button href="/projects" variant="secondary">
                             Projects
@@ -42,40 +43,41 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <p className="text-muted-foreground leading-relaxed mb-2">
-                                I build backend systems with a focus on reliability, performance, and maintainability. I’m interested in service design, data flow, and how systems evolve as complexity grows.
-                                </p>                                
+                                    I build backend systems with a focus on reliability, performance, and maintainability. I’m interested in service design, data flow, and how systems evolve as complexity grows.
+                                </p>
                                 <p className="text-muted-foreground leading-relaxed">
-                                I enjoy working across APIs, scaling, and failure handling, and thinking through practical tradeoffs. I also explore how machine learning can be applied to problems with real constraints, where practicality matters more than theory.
-                            </p>
+                                    I enjoy working across APIs, scaling, and failure handling, and thinking through practical tradeoffs. I also explore how machine learning can be applied to problems with real constraints, where practicality matters more than theory.
+                                </p>
                             </div>
-                                <div>
+
+                            <div>
                                 <h3 className="text-sm font-medium text-foreground mb-3">
                                     Areas of Focus
                                 </h3>
 
                                 <ul className="space-y-2 text-muted-foreground">
                                     <li className="flex items-start">
-                                    <span className="mr-2 text-accent">•</span>
-                                    <span>Backend system design, reliability, and failure handling</span>
+                                        <span className="mr-2 text-accent">•</span>
+                                        <span>Backend system design, reliability, and failure handling</span>
                                     </li>
                                     <li className="flex items-start">
-                                    <span className="mr-2 text-accent">•</span>
-                                    <span>APIs, data flow, and service-to-service communication</span>
+                                        <span className="mr-2 text-accent">•</span>
+                                        <span>APIs, data flow, and service-to-service communication</span>
                                     </li>
                                     <li className="flex items-start">
-                                    <span className="mr-2 text-accent">•</span>
-                                    <span>Scalability, tradeoffs, and operational considerations</span>
+                                        <span className="mr-2 text-accent">•</span>
+                                        <span>Scalability, tradeoffs, and operational considerations</span>
                                     </li>
                                     <li className="flex items-start">
-                                    <span className="mr-2 text-accent">•</span>
-                                    <span>Applied machine learning under practical constraints</span>
+                                        <span className="mr-2 text-accent">•</span>
+                                        <span>Applied machine learning under practical constraints</span>
                                     </li>
                                     <li className="flex items-start">
-                                    <span className="mr-2 text-accent">•</span>
-                                    <span>Clear system design and long-term maintainability</span>
+                                        <span className="mr-2 text-accent">•</span>
+                                        <span>Clear system design and long-term maintainability</span>
                                     </li>
                                 </ul>
-                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -89,6 +91,49 @@ export default function Home() {
                     {featuredProjects.map((project, index) => (
                         <ProjectCard key={project.slug} project={project} featured highlighted={index === 0} />
                     ))}
+                </div>
+            </section>
+
+            {/* Skills / Implementation Stack */}
+            <section className="max-w-6xl mx-auto px-6 py-8">
+                <h2 className="text-3xl font-semibold mb-6 text-foreground">Implementation Stack</h2>
+
+                <div className="border border-border/50 bg-border/40 rounded-lg p-5 md:p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-muted-foreground">
+
+                        <div>
+                            <h3 className="text-sm font-medium text-foreground mb-3">Languages</h3>
+                            <ul className="space-y-1 text-sm">
+                                <li>Java · Python · TypeScript · C</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-sm font-medium text-foreground mb-3">Backend & Distributed Systems</h3>
+                            <ul className="space-y-1 text-sm">
+                                <li>Java NIO · non-blocking I/O · concurrency</li>
+                                <li>REST APIs · JSON-based services · service-to-service communication</li>
+                                <li>Replication · fault detection · event-driven architectures</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-sm font-medium text-foreground mb-3">Applied Machine Learning</h3>
+                            <ul className="space-y-1 text-sm">
+                                <li>PyTorch · scikit-learn · NumPy · Pandas</li>
+                                <li>Experimentation · evaluation under practical constraints</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-sm font-medium text-foreground mb-3">Tooling & Infrastructure</h3>
+                            <ul className="space-y-1 text-sm">
+                                <li>Docker · Git · Linux</li>
+                                <li>Gradle/Maven · JUnit/Pytest · CI-friendly workflows</li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </section>
 
@@ -119,4 +164,3 @@ export default function Home() {
         </div>
     )
 }
-
