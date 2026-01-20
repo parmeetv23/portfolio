@@ -1,16 +1,20 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import Nav from '../../components/Nav'
-import { getProjectBySlug, projects } from '@/data/projects'
+import Nav from '@/app/components/Nav'
+import { projects, getProjectBySlug, getProjectNavigation } from '@/data/projects'
 
-export async function generateStaticParams() {
+export const dynamic = "force-static"
+export const revalidate = false
+
+export function generateStaticParams() {
     return projects.map((project) => ({
         slug: project.slug,
     }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const project = getProjectBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const project = getProjectBySlug(slug)
 
     if (!project) {
         return {
@@ -21,29 +25,55 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: `${project.title} | Parmeet Singh Virdi`,
         description: project.summary,
+        openGraph: {
+            title: project.title,
+            description: project.summary,
+            type: 'website',
+        },
     }
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-    const project = getProjectBySlug(params.slug)
+function SectionHeader({ children }: { children: React.ReactNode }) {
+    return (
+        <h2 className="text-2xl font-semibold mb-4 text-foreground">{children}</h2>
+    )
+}
+
+function SubSectionHeader({ children }: { children: React.ReactNode }) {
+    return (
+        <h3 className="text-lg font-medium mb-2 text-foreground">{children}</h3>
+    )
+}
+
+function BulletList({ items }: { items: string[] }) {
+    return (
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
+            {items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+            ))}
+        </ul>
+    )
+}
+
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const project = getProjectBySlug(slug)
 
     if (!project) {
         notFound()
     }
 
-    // TypeScript now knows project is defined after notFound() check
-    // But we need to assert it for TypeScript
-    const safeProject = project!
+    const { prev, next } = getProjectNavigation(slug)
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a]">
+        <div className="min-h-screen bg-background">
             <Nav />
 
             <div className="max-w-4xl mx-auto px-6 py-12">
                 {/* Back Link */}
                 <Link
                     href="/projects"
-                    className="inline-flex items-center text-[#3b82f6] hover:text-[#2563eb] mb-8 transition-colors"
+                    className="inline-flex items-center text-accent hover:text-accent-hover mb-8 transition-colors"
                 >
                     ← Back to Projects
                 </Link>
@@ -51,89 +81,114 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 {/* Header */}
                 <header className="mb-12">
                     <div className="flex flex-wrap gap-2 mb-4">
-                        {safeProject.tags.map((tag) => (
+                        {project.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="px-3 py-1 text-sm bg-[#262626] text-[#a3a3a3] rounded border border-[#262626]"
+                                className="px-3 py-1 text-sm bg-border text-muted-foreground rounded border border-border"
                             >
                                 {tag}
                             </span>
                         ))}
                     </div>
-                    <h1 className="text-4xl font-bold mb-4 text-[#e5e5e5]">{safeProject.title}</h1>
-                    <p className="text-xl text-[#a3a3a3]">{safeProject.summary}</p>
+                    <h1 className="text-4xl font-bold mb-4 text-foreground">{project.title}</h1>
+                    <p className="text-xl text-muted-foreground">{project.summary}</p>
                 </header>
+
+                {/* Links */}
+                {project.links && (project.links.repo || project.links.demo || project.links.paper || project.links.report) && (
+                    <section className="mb-12">
+                        <SectionHeader>Links</SectionHeader>
+                        <div className="flex flex-wrap gap-4">
+                            {project.links.repo && (
+                                <a
+                                    href={project.links.repo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    Repository →
+                                </a>
+                            )}
+                            {project.links.demo && (
+                                <a
+                                    href={project.links.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    Demo →
+                                </a>
+                            )}
+                            {project.links.paper && (
+                                <a
+                                    href={project.links.paper}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    Paper →
+                                </a>
+                            )}
+                            {project.links.report && (
+                                <a
+                                    href={project.links.report}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    Report →
+                                </a>
+                            )}
+                        </div>
+                    </section>
+                )}
 
                 {/* Overview */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4 text-[#e5e5e5]">Overview</h2>
-                    <div className="space-y-4 text-[#a3a3a3] leading-relaxed">
-                        <p>{safeProject.overview.description}</p>
-                        <p>{safeProject.overview.purpose}</p>
+                    <SectionHeader>Overview</SectionHeader>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                        <p>{project.overview.description}</p>
+                        <p>{project.overview.purpose}</p>
                     </div>
                 </section>
 
                 {/* Your Role */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4 text-[#e5e5e5]">Your Role</h2>
+                    <SectionHeader>Your Role</SectionHeader>
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">What I Built</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.role.built.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>What I Built</SubSectionHeader>
+                            <BulletList items={project.role.built} />
                         </div>
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">What I Owned End-to-End</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.role.owned.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>What I Owned End-to-End</SubSectionHeader>
+                            <BulletList items={project.role.owned} />
                         </div>
                     </div>
                 </section>
 
                 {/* Technical Highlights */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4 text-[#e5e5e5]">Technical Highlights</h2>
+                    <SectionHeader>Technical Highlights</SectionHeader>
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">Architecture Decisions</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.technicalHighlights.architecture.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>Architecture Decisions</SubSectionHeader>
+                            <BulletList items={project.technicalHighlights.architecture} />
                         </div>
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">Algorithms / Protocols / Constraints</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.technicalHighlights.algorithms.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>Algorithms / Protocols / Constraints</SubSectionHeader>
+                            <BulletList items={project.technicalHighlights.algorithms} />
                         </div>
-                        {safeProject.technicalHighlights.failureHandling && (
+                        {project.technicalHighlights.failureHandling && (
                             <div>
-                                <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">Failure Handling</h3>
-                                <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                    {safeProject.technicalHighlights.failureHandling.map((item, idx) => (
-                                        <li key={idx}>{item}</li>
-                                    ))}
-                                </ul>
+                                <SubSectionHeader>Failure Handling</SubSectionHeader>
+                                <BulletList items={project.technicalHighlights.failureHandling} />
                             </div>
                         )}
-                        {safeProject.technicalHighlights.optimization && (
+                        {project.technicalHighlights.optimization && (
                             <div>
-                                <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">Optimization Strategies</h3>
-                                <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                    {safeProject.technicalHighlights.optimization.map((item, idx) => (
-                                        <li key={idx}>{item}</li>
-                                    ))}
-                                </ul>
+                                <SubSectionHeader>Optimization Strategies</SubSectionHeader>
+                                <BulletList items={project.technicalHighlights.optimization} />
                             </div>
                         )}
                     </div>
@@ -141,12 +196,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
                 {/* Tech Stack */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4 text-[#e5e5e5]">Tech Stack</h2>
+                    <SectionHeader>Tech Stack</SectionHeader>
                     <div className="flex flex-wrap gap-2">
-                        {safeProject.techStack.map((tech) => (
+                        {project.techStack.map((tech) => (
                             <span
                                 key={tech}
-                                className="px-3 py-1.5 bg-[#171717] border border-[#262626] text-[#a3a3a3] rounded text-sm"
+                                className="px-3 py-1.5 bg-border/60 border border-border text-muted-foreground rounded text-sm"
                             >
                                 {tech}
                             </span>
@@ -156,46 +211,53 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
                 {/* Results / Learnings */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-semibold mb-4 text-[#e5e5e5]">Results / Learnings</h2>
+                    <SectionHeader>Results / Learnings</SectionHeader>
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">What Worked</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.results.achievements.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>What Worked</SubSectionHeader>
+                            <BulletList items={project.results.achievements} />
                         </div>
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">What I Learned</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.results.learnings.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>What I Learned</SubSectionHeader>
+                            <BulletList items={project.results.learnings} />
                         </div>
                         <div>
-                            <h3 className="text-lg font-medium mb-2 text-[#e5e5e5]">Tradeoffs Considered</h3>
-                            <ul className="list-disc list-inside space-y-2 text-[#a3a3a3] ml-4">
-                                {safeProject.results.tradeoffs.map((item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                ))}
-                            </ul>
+                            <SubSectionHeader>Tradeoffs Considered</SubSectionHeader>
+                            <BulletList items={project.results.tradeoffs} />
                         </div>
                     </div>
                 </section>
 
                 {/* Navigation */}
-                <div className="pt-8 border-t border-[#262626]">
-                    <Link
-                        href="/projects"
-                        className="text-[#3b82f6] hover:text-[#2563eb] transition-colors"
-                    >
-                        ← View All Projects
-                    </Link>
+                <div className="pt-8 border-t border-border">
+                    <div className="flex items-center justify-between">
+                        <Link
+                            href="/projects"
+                            className="text-accent hover:text-accent-hover transition-colors"
+                        >
+                            ← View All Projects
+                        </Link>
+                        <div className="flex gap-4">
+                            {prev && (
+                                <Link
+                                    href={`/projects/${prev.slug}`}
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    ← {prev.title}
+                                </Link>
+                            )}
+                            {next && (
+                                <Link
+                                    href={`/projects/${next.slug}`}
+                                    className="text-accent hover:text-accent-hover transition-colors"
+                                >
+                                    {next.title} →
+                                </Link>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
-

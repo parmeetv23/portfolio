@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Nav from '../components/Nav'
-import ProjectCard from '../components/ProjectCard'
+import Nav from '@/app/components/Nav'
+import ProjectCard from '@/app/components/ProjectCard'
 import { projects, type ProjectCategory } from '@/data/projects'
 
 const categories: ProjectCategory[] = ['Distributed', 'ML', 'Embedded']
@@ -16,12 +16,12 @@ export default function ProjectsPage() {
         : projects.filter(p => p.category === selectedCategory)
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a]">
+        <div className="min-h-screen bg-background">
             <Nav />
 
             <div className="max-w-6xl mx-auto px-6 py-12">
-                <h1 className="text-4xl font-bold mb-4 text-[#e5e5e5]">Projects</h1>
-                <p className="text-[#a3a3a3] mb-8">
+                <h1 className="text-4xl font-bold mb-4 text-foreground">Projects</h1>
+                <p className="text-muted-foreground mb-8">
                     A collection of systems and applications I've built, focusing on distributed systems,
                     machine learning, and low-level programming.
                 </p>
@@ -31,8 +31,8 @@ export default function ProjectsPage() {
                     <button
                         onClick={() => setSelectedCategory('All')}
                         className={`px-4 py-2 rounded border transition-colors ${selectedCategory === 'All'
-                            ? 'bg-[#3b82f6] text-white border-[#3b82f6]'
-                            : 'border-[#262626] text-[#a3a3a3] hover:border-[#3b82f6] hover:text-[#3b82f6]'
+                            ? 'bg-accent text-white border-accent'
+                            : 'border-border text-muted-foreground hover:border-accent hover:text-accent'
                             }`}
                     >
                         All
@@ -42,8 +42,8 @@ export default function ProjectsPage() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`px-4 py-2 rounded border transition-colors ${selectedCategory === category
-                                ? 'bg-[#3b82f6] text-white border-[#3b82f6]'
-                                : 'border-[#262626] text-[#a3a3a3] hover:border-[#3b82f6] hover:text-[#3b82f6]'
+                                ? 'bg-accent text-white border-accent'
+                                : 'border-border text-muted-foreground hover:border-accent hover:text-accent'
                                 }`}
                         >
                             {category}
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
                 </div>
 
                 {filteredProjects.length === 0 && (
-                    <p className="text-[#a3a3a3] text-center py-12">
+                    <p className="text-muted-foreground text-center py-12">
                         No projects found in this category.
                     </p>
                 )}

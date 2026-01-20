@@ -1,5 +1,12 @@
 export type ProjectCategory = 'Distributed' | 'ML' | 'Embedded';
 
+export interface ProjectLinks {
+    repo?: string;
+    demo?: string;
+    paper?: string;
+    report?: string;
+}
+
 export interface Project {
     slug: string;
     title: string;
@@ -7,6 +14,7 @@ export interface Project {
     tags: string[];
     category: ProjectCategory;
     featured: boolean;
+    links?: ProjectLinks;
     overview: {
         description: string;
         purpose: string;
@@ -368,5 +376,16 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export function getProjectsByCategory(category: ProjectCategory): Project[] {
     return projects.filter(p => p.category === category);
+}
+
+export function getProjectNavigation(slug: string): { prev: Project | null; next: Project | null } {
+    const index = projects.findIndex(p => p.slug === slug)
+    if (index === -1) {
+        return { prev: null, next: null }
+    }
+    return {
+        prev: index > 0 ? projects[index - 1] : null,
+        next: index < projects.length - 1 ? projects[index + 1] : null,
+    }
 }
 

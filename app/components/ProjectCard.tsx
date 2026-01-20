@@ -9,25 +9,25 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
     return (
         <Link href={`/projects/${project.slug}`}>
-            <article className="border border-[#262626] bg-[#171717] p-6 rounded-lg hover:border-[#3b82f6] transition-all group">
-                <h3 className="text-xl font-semibold mb-2 text-[#e5e5e5] group-hover:text-[#3b82f6] transition-colors">
+            <article className="border border-border bg-border/60 p-6 rounded-lg hover:border-accent transition-all group">
+                <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
                     {project.title}
                 </h3>
-                <p className="text-[#a3a3a3] mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                     {project.summary}
                 </p>
                 <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 4).map((tag) => (
                         <span
                             key={tag}
-                            className="px-2.5 py-1 text-xs bg-[#262626] text-[#a3a3a3] rounded border border-[#262626]"
+                            className="px-2.5 py-1 text-xs bg-border text-muted-foreground rounded border border-border"
                         >
                             {tag}
                         </span>
                     ))}
                 </div>
                 {featured && (
-                    <div className="mt-4 text-xs text-[#3b82f6] font-medium">
+                    <div className="mt-4 text-xs text-accent font-medium">
                         Featured Project →
                     </div>
                 )}
