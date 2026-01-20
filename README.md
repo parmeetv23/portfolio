@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Personal portfolio website for Parmeet Singh Virdi, showcasing backend engineering, distributed systems, and applied machine learning projects.
+Personal portfolio website for Parmeet Virdi, showcasing backend engineering, distributed systems, and applied machine learning projects.
 
 ## Tech Stack
 

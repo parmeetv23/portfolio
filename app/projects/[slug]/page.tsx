@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: `${project.title} | Parmeet Singh Virdi`,
+        title: `${project.title} | Parmeet Virdi`,
         description: project.summary,
         openGraph: {
             title: project.title,

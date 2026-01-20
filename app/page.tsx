@@ -14,7 +14,7 @@ export default function Home() {
             <section className="max-w-6xl mx-auto px-6 pt-20 pb-12">
                 <div>
                     <h1 className="text-5xl font-bold mb-4 text-foreground">
-                        Parmeet Singh Virdi
+                        Parmeet Virdi
                     </h1>
                     <p className="text-2xl text-muted-foreground mb-6">
                         Backend / Distributed Systems / Applied ML
@@ -104,7 +104,7 @@ export default function Home() {
             {/* Footer */}
             <footer className="max-w-6xl mx-auto px-6 py-8 border-t border-border mt-12">
                 <p className="text-muted text-sm text-center">
-                    © {new Date().getFullYear()} Parmeet Singh Virdi
+                    © {new Date().getFullYear()} Parmeet Virdi
                 </p>
             </footer>
         </div>

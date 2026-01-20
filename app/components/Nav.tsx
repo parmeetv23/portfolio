@@ -6,7 +6,7 @@ export default function Nav() {
             <div className="max-w-6xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     <Link href="/" className="text-xl font-semibold text-foreground hover:text-accent transition-colors">
-                        Parmeet Singh Virdi
+                        Parmeet Virdi
                     </Link>
                     <div className="flex gap-6">
                         <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
