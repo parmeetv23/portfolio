@@ -1,10 +1,11 @@
 import Nav from '@/app/components/Nav'
+import Button from '@/app/components/Button'
 
 export default function ResumePage() {
     return (
         <div className="min-h-screen bg-background">
             <Nav />
-            
+
             <div className="max-w-6xl mx-auto px-6 py-12">
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-4xl font-bold text-foreground">Resume</h1>
@@ -16,7 +17,7 @@ export default function ResumePage() {
                         Download PDF
                     </a>
                 </div>
-                
+
                 <div className="border border-border rounded-lg overflow-hidden bg-background">
                     <iframe
                         src="/Parmeet_Virdi_Resume.pdf"
