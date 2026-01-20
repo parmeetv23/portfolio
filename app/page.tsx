@@ -29,21 +29,12 @@ export default function Home() {
                         >
                             View Projects
                         </Link>
-                        <a
-                            href="/Parmeet_Virdi_Resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/resume"
                             className="px-6 py-3 border border-[#262626] text-[#e5e5e5] rounded hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors font-medium"
                         >
                             View Resume
-                        </a>
-                        <a
-                            href="/Parmeet_Virdi_Resume.pdf"
-                            download="Parmeet_Virdi_Resume.pdf"
-                            className="px-6 py-3 border border-[#262626] text-[#e5e5e5] rounded hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors font-medium"
-                        >
-                            Download Resume
-                        </a>
+                        </Link>
                         <a
                             href="https://github.com"
                             target="_blank"
@@ -120,21 +111,12 @@ export default function Home() {
                     </a>
                 </div>
                 <div className="flex flex-wrap gap-4 mt-4">
-                    <a
-                        href="/Parmeet_Virdi_Resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/resume"
                         className="px-6 py-2 border border-[#262626] text-[#e5e5e5] rounded hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors"
                     >
                         View Resume
-                    </a>
-                    <a
-                        href="/Parmeet_Virdi_Resume.pdf"
-                        download="Parmeet_Virdi_Resume.pdf"
-                        className="px-6 py-2 border border-[#262626] text-[#e5e5e5] rounded hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors"
-                    >
-                        Download Resume
-                    </a>
+                    </Link>
                 </div>
             </section>
 

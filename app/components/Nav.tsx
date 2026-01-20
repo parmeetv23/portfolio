@@ -15,6 +15,9 @@ export default function Nav() {
                         <Link href="/projects" className="text-[#a3a3a3] hover:text-[#e5e5e5] transition-colors">
                             Projects
                         </Link>
+                        <Link href="/resume" className="text-[#a3a3a3] hover:text-[#e5e5e5] transition-colors">
+                            Resume
+                        </Link>
                         <Link href="/#contact" className="text-[#a3a3a3] hover:text-[#e5e5e5] transition-colors">
                             Contact
                         </Link>
