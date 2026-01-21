@@ -219,6 +219,10 @@ export default function Home() {
           <h2 className="text-3xl font-semibold mb-4 text-foreground">
             Contact
           </h2>
+          <p className="text-sm text-muted-foreground mb-5">
+            Open to backend, distributed systems, and ML opportunities. Feel
+            free to reach out for roles, questions, or collaboration.
+          </p>
           <div className="flex flex-wrap gap-4">
             <Button
               href="mailto:parmeetv1@gmail.com"
