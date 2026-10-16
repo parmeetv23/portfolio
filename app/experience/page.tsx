@@ -27,7 +27,7 @@ export default function ExperiencePage() {
                             className="border border-border/80 bg-border/60 p-6 rounded-lg"
                         >
                             <header className="mb-4">
-                                <h2 id={experience.id} className="text-2xl font-semibold mb-2 text-foreground">
+                                <h2 id={experience.id} className="text-2xl font-semibold mb-2 text-foreground scroll-mt-40 sm:scroll-mt-28">
                                     {experience.company}
                                 </h2>
                                 {(experience.location || experience.employmentType) && (

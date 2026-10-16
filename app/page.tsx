@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Nav from "@/app/components/Nav";
 import ProjectCard from "@/app/components/ProjectCard";
 import Button from "@/app/components/Button";
 import { getFeaturedProjects } from "@/data/projects";
+import { experiences } from "@/data/experiences";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -26,6 +28,9 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 mb-10">
             <Button href="/projects" variant="secondary">
               Projects
+            </Button>
+            <Button href="/experience" variant="secondary">
+              Experience
             </Button>
             <Button href="/resume" variant="secondary">
               Resume
@@ -106,6 +111,52 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section aria-labelledby="experience-heading" className="max-w-6xl mx-auto px-6 py-8">
+        <h2 id="experience-heading" className="text-3xl font-semibold mb-6 text-foreground">
+          Experience
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {experiences.map((experience) => (
+            <Link key={experience.id} href={`/experience#${experience.id}`} className="group">
+              <article className="border border-border/80 bg-border/60 p-6 rounded-lg hover:border-accent transition-all h-full flex flex-col">
+                <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
+                  {experience.company}
+                </h3>
+                {(experience.location || experience.employmentType) && (
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {[experience.location, experience.employmentType].filter(Boolean).join(" · ")}
+                  </p>
+                )}
+                <div className="space-y-2 mb-4">
+                  {experience.roles.map((role) => (
+                    <div key={role.title}>
+                      <p className="text-sm font-medium text-foreground">{role.title}</p>
+                      <p className="text-xs text-muted-foreground">{role.dates}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {experience.summary}
+                </p>
+                <ul aria-label="Technologies" className="flex flex-wrap gap-2 mt-auto">
+                  {experience.technologies.slice(0, 4).map((technology) => (
+                    <li key={technology} className="px-2.5 py-1 text-xs bg-border text-muted-foreground rounded border border-border">
+                      {technology}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </Link>
+          ))}
+        </div>
+        <div className="flex mt-6">
+          <Button href="/experience" variant="secondary">
+            View All Experience →
+          </Button>
         </div>
       </section>
 
