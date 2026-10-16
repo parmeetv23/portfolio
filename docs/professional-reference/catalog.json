@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "transferred_on": "2026-10-15",
+  "source_repository": "Resume_Builder",
+  "source_revision": "0793f96beae0a8db7b3890dc70c9383d4c87b2cf",
+  "purpose": "Documentation-only reference collection; no runtime imports or automatic publication.",
+  "source_priority": [
+    "Canonical records with their original provenance and explicit owner corrections",
+    "Supporting technical analyses within documented scope",
+    "Generated/base resumes and job postings are not career-fact authority"
+  ],
+  "profile": {
+    "contact": "profile/contact.md",
+    "education": "profile/education.md",
+    "skills": "profile/skills.md",
+    "certifications": "profile/certifications.md"
+  },
+  "experiences": [
+    {
+      "id": "snap-remedy",
+      "name": "Snap Remedy",
+      "path": "experience/snap-remedy.md",
+      "roles": [
+        {
+          "title": "Software Developer Intern",
+          "start": "2026-04",
+          "end": "2026-07"
+        },
+        {
+          "title": "Software Developer",
+          "start": "2026-07",
+          "end": "Present",
+          "status_confirmed_as_of": "2026-10-09"
+        }
+      ],
+      "attribution": "Contributions span the shared engagement; do not allocate to individual roles without confirmation."
+    },
+    {
+      "id": "pro-formance-intermodal",
+      "name": "PRO-Formance Intermodal",
+      "path": "experience/pro-formance-intermodal.md",
+      "roles": [
+        {
+          "title": "Software Intern",
+          "start": "2026-01",
+          "end": "2026-04"
+        }
+      ],
+      "attribution": "Sole developer of one system is owner-confirmed; outcomes are resume-seeded with measurement gaps."
+    },
+    {
+      "id": "phillys",
+      "name": "Phillys",
+      "path": "experience/phillys.md",
+      "roles": [
+        {
+          "title": "Web Developer",
+          "start": "2025-09",
+          "end": "2025-11"
+        }
+      ],
+      "attribution": "Contract work and PHP/JavaScript owner-confirmed; 40% load-time result is resume-seeded."
+    },
+    {
+      "id": "best_buy_canada_2025_2026",
+      "name": "Best Buy Canada",
+      "path": "experience/Best_Buy_Experience.md",
+      "roles": [
+        {
+          "title": "Seasonal Sales Associate – Computing Department",
+          "start": "2025-09",
+          "end": "2026-01"
+        }
+      ],
+      "attribution": "Owner-described full-time seasonal computing sales; no customer-device diagnostics or audited sales metrics."
+    },
+    {
+      "id": "activate_games_2023_2024",
+      "name": "Activate Games",
+      "path": "experience/Activate_Games_Experience.md",
+      "roles": [
+        {
+          "title": "Game Facilitator",
+          "start": "2023-08",
+          "end": "2024-03"
+        },
+        {
+          "title": "Team Lead",
+          "start": "2024-03",
+          "end": "2024-09"
+        }
+      ],
+      "attribution": "Owner-described progression; earlier unofficial keyholder/acting-lead work has no confirmed start date."
+    }
+  ],
+  "projects": [
+    {
+      "id": "bare-metal-raspberry-pi-controller",
+      "name": "Bare-Metal Raspberry Pi 4 SNES Controller / Slide Puzzle Integration",
+      "path": "projects/bare-metal-raspberry-pi-controller.md",
+      "dates": "Jan. 2024 - Apr. 2024",
+      "date_provenance": "resume-seeded",
+      "evidence": "evidence/bare-metal-raspberry-pi-controller/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    },
+    {
+      "id": "custom-compiler",
+      "name": "J-- to MIPS Compiler",
+      "path": "projects/custom-compiler.md",
+      "dates": "Jan. 2026 -- Apr. 2026",
+      "date_provenance": "owner-confirmed 2026-10-09",
+      "evidence": "evidence/custom-compiler/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    },
+    {
+      "id": "distributed-chat-system",
+      "name": "IRC-HAT — Distributed IRC-Style Chat System",
+      "path": "projects/distributed-chat-system.md",
+      "dates": "Jan. 2025 -- Apr. 2025",
+      "date_provenance": "resume-seeded",
+      "evidence": "evidence/distributed-chat-system/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    },
+    {
+      "id": "genetic-hyperparameter-tuning",
+      "name": "Genetic-Algorithm Hyperparameter Tuning and Classification Experiments",
+      "path": "projects/genetic-hyperparameter-tuning.md",
+      "dates": "Jan. 2025 -- Apr. 2025",
+      "date_provenance": "owner-confirmed 2026-10-09",
+      "evidence": "evidence/genetic-hyperparameter-tuning/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    },
+    {
+      "id": "occluded-pet-detector",
+      "name": "Occluded Pet Detector",
+      "path": "projects/occluded-pet-detector.md",
+      "dates": "Aug. 2025 -- Apr. 2026",
+      "date_provenance": "owner-confirmed 2026-10-09",
+      "evidence": "evidence/occluded-pet-detector/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    },
+    {
+      "id": "restaurant-management-system",
+      "name": "Full-Stack Restaurant Management System",
+      "path": "projects/restaurant-management-system.md",
+      "dates": "Sep. 2024 - Dec. 2024",
+      "date_provenance": "resume-seeded",
+      "evidence": "evidence/restaurant-management-system/PROJECT_ANALYSIS.md",
+      "status": "canonical-record"
+    }
+  ],
+  "evidence_only_projects": [
+    {
+      "id": "greenhouse-control-simulation",
+      "name": "Climate Control Simulation",
+      "dates": null,
+      "path": "evidence/greenhouse-control-simulation/PROJECT_ANALYSIS.md",
+      "status": "evidence-only",
+      "scope": "Java Swing desktop simulation of temperature, humidity and soil moisture; three controller loops, four actuator classes, live results and local history files. No physical greenhouse integration."
+    },
+    {
+      "id": "parental-control-streaming-ui",
+      "name": "KiddoFlix",
+      "dates": null,
+      "path": "evidence/parental-control-streaming-ui/PROJECT_ANALYSIS.md",
+      "status": "evidence-only",
+      "scope": "React/MUI interface prototype with parent/child browsing, favorites, restrictions, localStorage, and custom media controls. Account and time-enforcement flows are simulated/incomplete; sample video absent."
+    },
+    {
+      "id": "soccer-scheduler",
+      "name": "Gengar — Soccer Game and Practice Scheduler",
+      "dates": null,
+      "path": "evidence/soccer-scheduler/PROJECT_ANALYSIS.md",
+      "status": "evidence-only",
+      "scope": "Python CLI course prototype combining OR-tree construction and genetic population search over a fabricated weekly field-booking domain. Objective/constraint and mutation gaps prevent claims of validated full scheduling."
+    }
+  ],
+  "files": [
+    {
+      "source": "Resume_Builder/evidence/bare-metal-raspberry-pi-controller/PROJECT_ANALYSIS.md",
+      "destination": "evidence/bare-metal-raspberry-pi-controller/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "4be0dfbfacdbc63326c22f44197190b1842be3702aea38d96d215ba532cfd6b0",
+      "destination_sha256": "ccad79fed23c2a409fc6ff805fe66ffd5d6bd3db0d150e7f088f8cf60794f485",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/evidence/custom-compiler/PROJECT_ANALYSIS.md",
+      "destination": "evidence/custom-compiler/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "c32fe51395e6997d95333af6c3e9d8ad606fa70ee6f41ce9f4e6fed24f182856",
+      "destination_sha256": "b389b582660f6b5182a47ac16f777f412477aa9f539738034f5df80918570dd6",
+      "privacy_edits": [
+        {
+          "category": "absolute machine/course filesystem paths",
+          "replacements": 3
+        }
+      ]
+    },
+    {
+      "source": "Resume_Builder/evidence/distributed-chat-system/PROJECT_ANALYSIS.md",
+      "destination": "evidence/distributed-chat-system/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "1dca3fe3b554e7327b8c4c13ae473fcfec82f098938e73b783238054e7aeea7f",
+      "destination_sha256": "04bd6dfb99ef47d1c954dcf0346ad2e79030d3a13cc5597f72dd01898c2b5552",
+      "privacy_edits": [
+        {
+          "category": "private network addresses",
+          "replacements": 2
+        }
+      ],
+      "reference_edits": {
+        "unavailable_project_links_converted_to_path_references": 71,
+        "reason": "Original project code is outside both supplied repositories; retain provenance without broken navigation."
+      }
+    },
+    {
+      "source": "Resume_Builder/evidence/genetic-hyperparameter-tuning/PROJECT_ANALYSIS.md",
+      "destination": "evidence/genetic-hyperparameter-tuning/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "5fd0175b4c1a744deea80364a099c5f26dfa94f7d5ff5312c6d2c4490e0d08fe",
+      "destination_sha256": "32ca848d793815e323a91ac1ba71fa0debc4c9bf97e602a2e2ce1b3dbccb631b",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/evidence/greenhouse-control-simulation/PROJECT_ANALYSIS.md",
+      "destination": "evidence/greenhouse-control-simulation/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "354a61605a1f182f7de1671725a002e2988cbe5a005105e36aacc1f7a06c08ad",
+      "destination_sha256": "a5bc208bbc1a602b5b30ed9bb966307a8fb6ec7cae5e54660950251b77994655",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/evidence/occluded-pet-detector/PROJECT_ANALYSIS.md",
+      "destination": "evidence/occluded-pet-detector/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "ee358abdb5a445c941cf8ebc122692b0347bf89ae7d5d42bf9c2df6d5831b6a6",
+      "destination_sha256": "d6acd09d583e3a916dbcc186339df1ab047d96062f6976b24921d63537370524",
+      "privacy_edits": [
+        {
+          "category": "absolute machine/course filesystem paths",
+          "replacements": 2
+        }
+      ]
+    },
+    {
+      "source": "Resume_Builder/evidence/parental-control-streaming-ui/PROJECT_ANALYSIS.md",
+      "destination": "evidence/parental-control-streaming-ui/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "499807c83d395a6fa569fe5e49f618264a13602c1e0a592dc147b27696000fec",
+      "destination_sha256": "1ce586366e6997284cae7d183b8094ac278a97005a3b9a6686b49318c2d38cb1",
+      "privacy_edits": [
+        {
+          "category": "email addresses",
+          "replacements": 1
+        },
+        {
+          "category": "demo credential literal",
+          "replacements": 1
+        },
+        {
+          "category": "demo credential literal",
+          "replacements": 2
+        }
+      ]
+    },
+    {
+      "source": "Resume_Builder/evidence/restaurant-management-system/PROJECT_ANALYSIS.md",
+      "destination": "evidence/restaurant-management-system/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "ccb874fe63d924f15f6927fa36665a6aa128a05f55ebd62e69bfd70e12a7722f",
+      "destination_sha256": "a28649e14c0a6545bc458227e85ff06cf3ab840e47c2e448b7bbae634e981250",
+      "privacy_edits": [
+        {
+          "category": "private network addresses",
+          "replacements": 2
+        },
+        {
+          "category": "local database username",
+          "replacements": 1
+        }
+      ],
+      "reference_edits": {
+        "unavailable_project_links_converted_to_path_references": 1,
+        "reason": "Original project code is outside both supplied repositories; retain provenance without broken navigation."
+      }
+    },
+    {
+      "source": "Resume_Builder/evidence/snap-remedy/PROJECT_ANALYSIS.md",
+      "destination": "evidence/snap-remedy/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "cbbc6acf618717e74d9e374e6a48bb07bedbb2da040cd4ef545c707d5ba6859c",
+      "destination_sha256": "f4a70f273277f79c24a1d6847c562797c885d4214fb151ad44d9200419664896",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/evidence/soccer-scheduler/PROJECT_ANALYSIS.md",
+      "destination": "evidence/soccer-scheduler/PROJECT_ANALYSIS.md",
+      "source_class": "supporting-analysis",
+      "source_sha256": "7a42658caa123a0c7b340a9a1972bf0ce957df02dde95036cc3e50559383212e",
+      "destination_sha256": "98094ed3c8199530c2f4956fd3a56b547afd03c63b51b10717e0bfe6f88a824d",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/experience/Activate_Games_Experience.md",
+      "destination": "experience/Activate_Games_Experience.md",
+      "source_class": "canonical-record",
+      "source_sha256": "4194fda2852fa7d778453db3eb716e1f4f2fd79fd8da56d71df22c4140f56beb",
+      "destination_sha256": "4e3683ec62c0afd783cf26a5a61b66171d1be0373e5d94886b645f47774ce0c0",
+      "privacy_edits": [
+        {
+          "category": "sensitive third-party customer circumstances",
+          "replacements": 1
+        }
+      ]
+    },
+    {
+      "source": "Resume_Builder/experience/Best_Buy_Experience.md",
+      "destination": "experience/Best_Buy_Experience.md",
+      "source_class": "canonical-record",
+      "source_sha256": "fd2737ae6dc2de412752bb10e9195f76d1d3c1f6b7e18c6b0ece15b2596baef5",
+      "destination_sha256": "2ee1f284eb61067d0814f9403649f13ecc95eee7cfff5981868d5485d3ebdca7",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/experience/phillys.md",
+      "destination": "experience/phillys.md",
+      "source_class": "canonical-record",
+      "source_sha256": "7b97d755f1ed5ccb362546302a072e83848027a2cd5260312ed58e20a0b8099b",
+      "destination_sha256": "275eb3fc7f431cd47329000b53218e10348a498e2def1d5c63e957bb229b42cc",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/experience/pro-formance-intermodal.md",
+      "destination": "experience/pro-formance-intermodal.md",
+      "source_class": "canonical-record",
+      "source_sha256": "51bb42994e1fc464bfa8ce9180ccd7fc1586eb5164fa85204e87b90a4e76b4ff",
+      "destination_sha256": "72919bc832481499a9fbeee3d73f476f752dd4eb1cb53ec4df90161c6c4b5110",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/experience/snap-remedy.md",
+      "destination": "experience/snap-remedy.md",
+      "source_class": "canonical-record",
+      "source_sha256": "fb6d386bc43ea0e200a5b1c6db518bbc25b9601a3ce65522826519849064b14a",
+      "destination_sha256": "114770fc58b8b21dcaea028c535d030b7e54bbe029340ea162b73c5a47e9e937",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/profile/certifications.md",
+      "destination": "profile/certifications.md",
+      "source_class": "canonical-record",
+      "source_sha256": "4a5543319acb523bc3ed6c5e84e7b34d2b5571adb60f569852ca77c4deba0200",
+      "destination_sha256": "ffdcf804253961c5d1a92217e431de43392376e7f74e6d1e8875d697f92a140c",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/profile/contact.md",
+      "destination": "profile/contact.md",
+      "source_class": "canonical-record",
+      "source_sha256": "f2bacd0f9f97c22eab94e742e607bbb9078c804a17b9beaa4afe33b06cfb660b",
+      "destination_sha256": "02cf6f79a61ccc6be1b9359212c436f215bfc5ad105ce7acd3a826c7a4e9090f",
+      "privacy_edits": [
+        {
+          "category": "email addresses",
+          "replacements": 1
+        },
+        {
+          "category": "telephone numbers",
+          "replacements": 1
+        }
+      ]
+    },
+    {
+      "source": "Resume_Builder/profile/education.md",
+      "destination": "profile/education.md",
+      "source_class": "canonical-record",
+      "source_sha256": "f79f3c72ccf56a81f46ff1d15d5130b1f77b408edc52eca802ac1d1b6e7e8e82",
+      "destination_sha256": "d1879ed152cb6937e8d9d747d1937695f37217278fed7faf7c251c13e0a7f837",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/profile/skills.md",
+      "destination": "profile/skills.md",
+      "source_class": "canonical-record",
+      "source_sha256": "28dc1611c58b7d300767fcf60b10d537e7defdd5eff123c83714d205f4ade631",
+      "destination_sha256": "f717485caf8c191070a50fb48922c7e4a0b291cec4bd55cdb11d1caa1c634ee0",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/bare-metal-raspberry-pi-controller.md",
+      "destination": "projects/bare-metal-raspberry-pi-controller.md",
+      "source_class": "canonical-record",
+      "source_sha256": "328a8644f60e88b97058696c987fd168d18be3ff6a53db1949f558479c009ec0",
+      "destination_sha256": "a5969bb9dfc32553706596c016c88db624d6eca7d40ca9e47bab02d9dbbd59e0",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/custom-compiler.md",
+      "destination": "projects/custom-compiler.md",
+      "source_class": "canonical-record",
+      "source_sha256": "c0c8110c4a3f178b5f6112a02cc24a908103fec8ff7cea76ce3af49fb4cd28cf",
+      "destination_sha256": "3830d3b2b12de43b40b3de1affba431309d7721df9ccc1a99e5775b41af06a02",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/distributed-chat-system.md",
+      "destination": "projects/distributed-chat-system.md",
+      "source_class": "canonical-record",
+      "source_sha256": "4409e4d9ade975fc88237f9f3510d082596523dc17eea468c35db1c5e013bad4",
+      "destination_sha256": "49aa1a9dece0f88dda2591b0f0ec0e1bb05cf77a441eb093455a3eea38e82670",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/genetic-hyperparameter-tuning.md",
+      "destination": "projects/genetic-hyperparameter-tuning.md",
+      "source_class": "canonical-record",
+      "source_sha256": "6ebfd2c4ac3b41a1d596dea9f5c6c44bd5913a910ee7e99d426ddd85501723af",
+      "destination_sha256": "96f6a564a9ad4265c64501f4c623e35aa78aae3c93264e0bda61524f41069c25",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/occluded-pet-detector.md",
+      "destination": "projects/occluded-pet-detector.md",
+      "source_class": "canonical-record",
+      "source_sha256": "dde4f74c410fb7a4a4e17949c5719b8461ef92cbb78e4c1033201e9786c043b5",
+      "destination_sha256": "bf5941acccf9919b171ba314cdbb93fcb949f69249c142e6b4bef2260a89bb89",
+      "privacy_edits": []
+    },
+    {
+      "source": "Resume_Builder/projects/restaurant-management-system.md",
+      "destination": "projects/restaurant-management-system.md",
+      "source_class": "canonical-record",
+      "source_sha256": "9d2aab1f3d8b125a15e384bf9b38d05621f4d52f7ff45363ca772eab233668d5",
+      "destination_sha256": "d35e963b01dfb7fc1508aef96492c60783cf79029b0825c5d8f6a92cbb79b646",
+      "privacy_edits": []
+    }
+  ],
+  "excluded_sources": [
+    {
+      "source": "Resume_Builder/.codex/config.toml",
+      "reason": "Local agent configuration or repository housekeeping; no professional history."
+    },
+    {
+      "source": "Resume_Builder/.gitignore",
+      "reason": "Local agent configuration or repository housekeeping; no professional history."
+    },
+    {
+      "source": "Resume_Builder/AGENTS.md",
+      "reason": "Read for provenance/source hierarchy and repository coverage; resume workflow instructions are not portfolio career content."
+    },
+    {
+      "source": "Resume_Builder/README.md",
+      "reason": "Read for provenance/source hierarchy and repository coverage; resume workflow instructions are not portfolio career content."
+    },
+    {
+      "source": "Resume_Builder/applications/.gitkeep",
+      "reason": "Application directory housekeeping."
+    },
+    {
+      "source": "Resume_Builder/applications/general-customer-service/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/general-customer-service/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/general-customer-service/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/general-customer-service/generation-timing.md",
+      "reason": "Resume-generation workflow timing, not professional project performance."
+    },
+    {
+      "source": "Resume_Builder/applications/general-customer-service/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/applications/general-software-engineering/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/general-software-engineering/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/general-software-engineering/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/general-software-engineering/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/applications/hexagon-product-system-tester/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/hexagon-product-system-tester/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/hexagon-product-system-tester/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/hexagon-product-system-tester/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/applications/mphasis-applied-ai-scientist/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/mphasis-applied-ai-scientist/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/mphasis-applied-ai-scientist/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/mphasis-applied-ai-scientist/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/applications/smart-technologies-system-test-developer/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/smart-technologies-system-test-developer/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/smart-technologies-system-test-developer/Screenshot 2026-10-15 at 12.31.46 PM.png",
+      "reason": "Application directory housekeeping."
+    },
+    {
+      "source": "Resume_Builder/applications/smart-technologies-system-test-developer/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/smart-technologies-system-test-developer/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/applications/synechron-senior-java-developer/Parmeet_Virdi_Resume.pdf",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/synechron-senior-java-developer/Parmeet_Virdi_Resume.tex",
+      "reason": "Generated resume output; duplicates selected career records and may contain private contact data."
+    },
+    {
+      "source": "Resume_Builder/applications/synechron-senior-java-developer/analysis.md",
+      "reason": "Generated role matching/selection; checked for discrepancies, not imported as career facts."
+    },
+    {
+      "source": "Resume_Builder/applications/synechron-senior-java-developer/job-description.md",
+      "reason": "Target employer requirements or resume-purpose brief; not candidate career evidence."
+    },
+    {
+      "source": "Resume_Builder/base-resumes/software-base.tex",
+      "reason": "Historical seed/layout reference; later canonical corrections take precedence; private contact data excluded."
+    },
+    {
+      "source": "Resume_Builder/evidence/INDEX.md",
+      "reason": "Navigation only; replaced by the linked collection README and structured catalog."
+    },
+    {
+      "source": "Resume_Builder/templates/software-resume.tex",
+      "reason": "Formatting placeholders and LaTeX layout, not career facts."
+    },
+    {
+      "source": "Resume_Builder/tests/resume_fixtures.py",
+      "reason": "Resume tooling tests and explicitly synthetic fixtures; not candidate career history."
+    },
+    {
+      "source": "Resume_Builder/tests/test_optimize_resume.py",
+      "reason": "Resume tooling tests and explicitly synthetic fixtures; not candidate career history."
+    },
+    {
+      "source": "Resume_Builder/tests/test_resume_layout_integration.py",
+      "reason": "Resume tooling tests and explicitly synthetic fixtures; not candidate career history."
+    },
+    {
+      "source": "Resume_Builder/tools/optimize_resume.py",
+      "reason": "Resume-generation/PDF tooling; not evidence of a separate professional project or accomplishment."
+    },
+    {
+      "source": "Resume_Builder/tools/pdf_layout.js",
+      "reason": "Resume-generation/PDF tooling; not evidence of a separate professional project or accomplishment."
+    }
+  ],
+  "privacy_policy": "Omit telephone/email, machine-specific filesystem paths, private network addresses, database usernames, demo credential literals, and sensitive third-party customer circumstances. No secrets, binaries, environment files, or application outputs imported.",
+  "link_policy": "Retained public professional URLs are source-provided and were not checked online. Relative source-code paths inside analyses are investigation anchors, not supplied artifacts."
+}
