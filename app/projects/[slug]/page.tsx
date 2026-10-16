@@ -230,14 +230,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                 {/* Navigation */}
                 <div className="pt-8 border-t border-border">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                         <Link
                             href="/projects"
                             className="text-accent hover:text-accent-hover transition-colors"
                         >
                             ← View All Projects
                         </Link>
-                        <div className="flex gap-4">
+                        <div className="flex flex-col gap-4 sm:max-w-[70%] sm:flex-row sm:justify-end">
                             {prev && (
                                 <Link
                                     href={`/projects/${prev.slug}`}

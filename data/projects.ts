@@ -1,4 +1,4 @@
-export type ProjectCategory = "Distributed" | "ML" | "Embedded" | "Full-Stack";
+export type ProjectCategory = "Distributed" | "ML" | "Embedded" | "Full-Stack" | "Systems" | "Frontend";
 
 export interface ProjectLinks {
   repo?: string;
@@ -37,128 +37,84 @@ export interface Project {
   };
 }
 
+// Sources, publication boundaries, and follow-up questions:
+// docs/PORTFOLIO-CONTENT-REVIEW.md.
 export const projects: Project[] = [
   {
     slug: "distributed-chat-system",
-    title: "Distributed Fault-Tolerant IRC-Style Chat System",
-    summary:
-      "Distributed IRC-style chat system with gossip-based replication, fault-tolerant client/server recovery, and load-aware routing via replicated Addressing Servers, built on an event-driven Java NIO architecture for scalable non-blocking concurrency.",
+    title: "IRC-HAT — Distributed IRC-Style Chat System",
+    summary: "Java NIO terminal chat system with capacity-aware server discovery, peer forwarding, file-backed message history, and addressing-replica coordination.",
     tags: [
       "Distributed Systems",
-      "Fault Tolerance",
-      "Event-Driven Architecture",
       "Java NIO",
-      "Non-Blocking I/O",
-      "Gossip Replication",
-      "Vector Timestamps",
-      "P-RAM Consistency",
-      "Deduplication",
-      "Recovery Protocols",
-      "Docker",
+      "TCP",
+      "Replication",
+      "File Persistence",
+      "Docker"
     ],
-
     category: "Distributed",
     featured: true,
-
     overview: {
-      description:
-        "A distributed IRC-style chat system designed around real distributed-systems concerns: membership/routing, replication, message ordering guarantees, and recovery under failure. Clients connect through an Addressing Server cluster to discover and register with Chat Servers. Chat Servers operate as peers (no central chat authority), persist chat logs to disk, and replicate new messages using configurable gossip fanout (forwarding to the N nearest peers). Servers recover state by requesting chat history from peers, ensuring missed messages are re-fetched after crashes/partitions. The networking layer is built with Java NIO (selectors/channels) to multiplex many client + peer connections without per-connection threads.",
-      purpose:
-        "Built to implement end-to-end distributed reliability: correct message propagation under reordering/duplication, robust reconnection flows for both clients and servers, and practical failure detection/recovery while staying scalable with an event-driven runtime.",
+      description: "Course-project chat application with client, chat-server, and addressing-server processes communicating through custom newline-delimited JSON over TCP. Clients discover a server, register a display name, exchange messages, and request recent history.",
+      purpose: "Explore non-blocking networking, replicated registries, concurrent message handling, and local persistence in a multi-process system."
     },
-
     role: {
       built: [
-        "Chat Server: peer-to-peer replication, disk-backed chat log, and non-blocking client + server networking",
-        "Client: registration, chat UX/commands, reconnect + resend, and history synchronization",
-        "Protocol foundation: message/data types and JSON schemas used across the system (including shared types used by the Addressing Server)",
-        "Registration + reconnection handshake flows between Client↔Addressing Server and Chat Server↔Addressing Server",
+        "Selector-based networking with per-connection framing and queued chat output that retains partially written buffers.",
+        "Typed chat/control messages, registration and discovery handlers, replica acknowledgment tracking, and retry watchdogs.",
+        "Shared-room broadcast, cyclic successor peer forwarding, duplicate-ID tracking, and indexed file-backed history."
       ],
-
       owned: [
-        "Chat Server runtime (Java NIO selector loop, connection state, parsing, routing, and write-queue behavior)",
-        "Client reliability: bootstrap/redirect, reconnect handshake, resend buffering, and history refresh after failover",
-        "Chat Server registration + re-registration handshake (initial join + recovery) with Addressing Servers",
-        "Core protocol/data model design (message envelopes, command/object types, payload shapes, and lifecycle semantics)",
-        "Replication behavior: gossip fanout (configurable N-nearest) + state transfer via peer chat-log requests",
-        "Deduplication strategy based on unique message IDs (ignore duplicates on retrieval/ingest)",
-        "Ordering guarantee: P-RAM consistency using vector timestamps for partial ordering and convergence",
-        "Heartbeat + zombie detection to avoid lingering dead peers and trigger recovery workflows",
-        "Integration code connecting Addressing Server coordination with client/server networking flows",
-      ],
+        "Application protocol and connection-state handling across the client, chat server, and addressing-server integration.",
+        "Message persistence, history lookup, reconnect/requeue paths, manual diagnostic harnesses, and technical documentation."
+      ]
     },
-
     technicalHighlights: {
       architecture: [
-        "Two-layer system: Addressing Server cluster for routing/membership + peer Chat Server network for replicated message plane",
-        "Event-driven, selector-based Java NIO architecture (non-blocking reads/writes; no per-connection threads)",
-        "Disk-backed chat history on Chat Servers (append + reload), with recovery by requesting peer logs to re-fill gaps",
-        "Explicit connection context/state machines for clients, peer servers, and addressing-server coordination",
-        "Dockerized deployment: separate images for client, chat server, and addressing server with env-driven configuration",
+        "Three process types and a shared library, organized as four included Gradle modules.",
+        "Chat-server selector loops cooperate with eight message workers; terminal clients use four workers.",
+        "Append-only JSON-line logs use byte-offset metadata, SHA-256 hashes, and timestamp indexes."
       ],
-
       algorithms: [
-        "Gossip-based replication with configurable fanout: forward each new message to the N nearest peers (tunable N)",
-        "State transfer: REQUEST_CHATLOG / RESPONSE_CHATLOG to synchronize logs on join/rejoin and fill missed messages",
-        "P-RAM consistency via vector timestamps (preserve per-sender order; allow concurrent interleavings)",
-        "Unique message IDs + deduplication on ingest to tolerate redundant propagation paths",
-        "Heartbeat PING/PONG between chat servers with missed-response thresholds for failure detection",
+        "Capacity-aware discovery selects an active non-full advertised server.",
+        "Live messages forward to one successor peer in cyclic PID order.",
+        "Addressing replicas implement tracked registration ACKs, periodic registry refresh, and Bully-style election logic."
       ],
-
       failureHandling: [
-        "Client failover: Addressing Server-assisted redirection to a healthy Chat Server after server failure",
-        "Client-side buffering + resend to avoid message loss across disconnects",
-        "Server recovery: re-register + request chat log from peers to reconstruct state after crash/partition",
-        "Zombie detection: periodic health checks so clients/servers don’t remain attached to dead peers",
-        "Peer isolation: stop sending to peers that miss heartbeats; reconnect workflows restore membership",
-      ],
-
-      optimization: [
-        "Non-blocking multiplexed I/O (selectors) to scale with concurrent clients + peer connections",
-        "Write-queue style non-blocking sends to avoid stalling the event loop on slow sockets",
-        "Tunable gossip fanout to trade bandwidth for faster convergence",
-        "Separation of protocol parsing/dispatch from low-level I/O readiness handling",
-      ],
+        "Queued partial writes, selected EOF cleanup/reconnect paths, and retry watchdogs handle specific transport failures.",
+        "Primary adoption and full-log transfer have documented defects; election and reconnect mechanisms do not establish complete or lossless failover."
+      ]
     },
-
     techStack: [
       "Java",
-      "Java NIO (Selectors, SocketChannel)",
-      "TCP + JSON Protocol",
-      "Event-Driven Concurrency",
-      "Vector Timestamps",
-      "Gossip Replication",
-      "Docker + Docker Compose",
-      "Bash Scripts + Env-based Configuration",
+      "Java NIO",
+      "TCP / JSON",
+      "Jackson",
+      "JLine",
+      "Gradle",
+      "Docker / Docker Compose"
     ],
-
     results: {
       achievements: [
-        "Implemented disk-backed message persistence and peer-based log recovery to restore missed messages after failures",
-        "Built robust registration + reconnection handshakes for both clients and chat servers via Addressing Server coordination",
-        "Deployed and exercised the system across multiple networks using Docker: ~50 clients, 10 chat servers, and 5 addressing servers",
-        "Maintained convergence under redundant propagation using unique IDs + deduplication and P-RAM ordering via vector timestamps",
+        "Implemented custom networking, protocol handling, peer forwarding, and indexed local message persistence.",
+        "Added client pending-send display, recent-history retrieval, and manual networking diagnostics."
       ],
-
       learnings: [
-        "Correct recovery paths (re-register, resync logs, resend buffered messages) dominate overall system complexity",
-        "Event-driven NIO scales well, but forces explicit state machines for partial reads/writes and connection lifecycle",
-        "Replication correctness needs redundancy (gossip) plus guardrails (dedupe, ordering guarantees, and retry/recovery)",
+        "Non-blocking I/O requires explicit handling of framing, partial writes, and connection lifecycle.",
+        "Registry acknowledgments and sender echoes provide different guarantees; neither proves recipient delivery."
       ],
-
       tradeoffs: [
-        "Chose P-RAM (per-sender ordering) over total ordering to avoid heavy coordination and improve availability",
-        "Accepted redundant gossip traffic to simplify convergence and improve fault tolerance",
-        "Optimized for recovery + correctness rather than minimal bandwidth or lowest-latency delivery",
-      ],
-    },
+        "History uses wall-clock timestamps and receipt order; vector-clock ordering is not implemented.",
+        "Current build, container execution, stress-test scale, and automated test passes are unverified."
+      ]
+    }
   },
 
   {
     slug: "occluded-pet-detection",
     title: "Occluded Pet Detection in Domestic Environments",
     summary:
-      "Studied whether occlusion-aware training improves indoor cat/dog detection under partial visibility using synthetic ADE20K indoor-object occlusions and a real occluded test set; evaluated YOLOv8, EfficientDet-D0, and DETR with COCO-style mAP.",
+      "Studied pet detection under partial visibility using synthetic ADE20K household-object occlusions; evaluated YOLOv8n and EfficientDet-D0 on clean and real-occlusion images, with partial DETR integration.",
 
     tags: [
       "Computer Vision",
@@ -179,7 +135,7 @@ export const projects: Project[] = [
       description:
         "Object detection study focused on domestic indoor settings where pets are frequently partially visible (occluded by furniture/household objects). Used Oxford-IIIT Pets (7,349 images, 37 breeds) with bounding boxes derived from segmentation masks, and compared clean training vs synthetic occlusion training. Training split: 3,312 images; validation: 368 images; clean test: 3,669 images. Evaluated transfer to a real occluded test set of 74 manually annotated images (personal + open-source), measuring COCO-style metrics.",
       purpose:
-        "Evaluate whether synthetic occlusion augmentation transfers to real-world indoor occlusions, and how different detector families behave under partial visibility when hyperparameters/architectures are held constant.",
+        "Evaluate whether synthetic occlusion augmentation transfers to real-world indoor occlusions, comparing retained detector results while documenting experiment and training-lineage limitations.",
     },
 
     role: {
@@ -190,9 +146,9 @@ export const projects: Project[] = [
         "Real occluded indoor test set: collection + manual annotation + evaluation scripts",
       ],
       owned: [
-        "Experiment design comparing clean vs occlusion-aware training under fixed training budgets",
-        "Occlusion augmentation realism controls (object-category filtering, minimum size thresholds, random placement with guaranteed overlap %)",
-        "Cross-model evaluation and analysis for YOLOv8, EfficientDet-D0, and DETR (including explaining failure modes)",
+        "Clean versus synthetic-augmentation experiment design and analysis of retained training/evaluation artifacts",
+        "Occlusion synthesis with object filtering, size/placement heuristics, and softened alpha compositing; requested occluder ratios are not measured coverage",
+        "Cross-model evaluation and analysis for YOLOv8n and EfficientDet-D0, alongside partial DETR dataset/training integration",
         "Reporting: quantitative mAP tables + qualitative examples on real occlusions",
       ],
     },
@@ -201,18 +157,18 @@ export const projects: Project[] = [
       architecture: [
         "YOLOv8 trained with pretrained weights (single-stage detector via Ultralytics)",
         "EfficientDet-D0 with pretrained initialization (EfficientNet backbone + BiFPN multi-scale fusion)",
-        "DETR explored (transformer-based set prediction); evaluated but excluded from further runs due to poor convergence under the project budget",
+        "Partial DETR integration with custom dataset/collation code; completed fine-tuning and evaluation provenance remain unestablished",
         "No architecture changes applied to isolate the effect of occlusion-aware training",
       ],
       algorithms: [
         "COCO-style evaluation on the real occluded set: mAP@0.50 and mAP@[0.50:0.95] (plus precision/recall where applicable)",
-        "Synthetic occlusion augmentation: segmented ADE20K objects overlaid at random locations; ensured a minimum overlap percentage",
+        "Synthetic occlusion augmentation: segmented ADE20K objects with heuristic scaling and placement; actual covered foreground was not measured",
         "Indoor-object filtering with some leakage due to large category volume (pragmatic filtering)",
         "Annotation consistency: boxes derived directly from Oxford-IIIT segmentation masks",
       ],
       optimization: [
         "Pretrained initialization to stabilize convergence under limited compute budgets",
-        "Kept hyperparameters fixed to focus conclusions on the augmentation effect, not tuning",
+        "Used clean and synthetic-augmented training comparisons to investigate transfer; full EfficientDet schedule provenance remains unresolved",
         "Selected checkpoints based on validation performance (clean validation set) to avoid test leakage",
       ],
     },
@@ -233,17 +189,16 @@ export const projects: Project[] = [
         "Created a real occluded indoor test set (74 images) to measure transfer under realistic household occlusions",
         "YOLOv8 on real occluded set: Clean Training mAP@0.50=0.471, mAP@[0.50:0.95]=0.229; Occlusion-Aware Training mAP@0.50=0.345, mAP@[0.50:0.95]=0.152",
         "EfficientDet-D0 on real occluded set: Clean Training mAP@0.50=0.098, mAP@[0.50:0.95]=0.036; Occlusion-Aware Training mAP@0.50=0.112, mAP@[0.50:0.95]=0.043",
-        "DETR on real occluded set: mAP@0.50=0.079, mAP@[0.50:0.95]=0.016 (poor convergence under the available training budget)",
       ],
       learnings: [
         "Synthetic occlusion augmentation can improve clean/validation metrics but may not transfer to real occlusion geometry/lighting",
         "YOLOv8 was more robust to partial cues (e.g., faces/ears) even without explicit occlusion-aware training",
         "EfficientDet improved slightly with occlusion-aware training on the real occluded set, but absolute localization quality remained low",
-        "Transformer-based detectors can be impractical without longer training schedules and/or larger datasets",
+        "Completed DETR results and full EfficientDet checkpoint training lineage remain unresolved",
       ],
       tradeoffs: [
-        "Prioritized isolating augmentation effects (fixed architectures/hyperparams) over maximizing peak performance",
-        "Used a small real occluded test set for realism, trading off statistical generalization",
+        "Focused on synthetic-augmentation transfer; repeated-seed studies, severity sweeps, and statistical significance are not established",
+        "Used a small real occluded test set for realism, trading off statistical generalization; recorded metrics were not rerun during the source investigation",
         "Synthetic occlusions provide controlled coverage but introduce a domain gap vs real household occlusion patterns",
       ],
     },
@@ -252,349 +207,477 @@ export const projects: Project[] = [
   {
     slug: "genetic-algorithm-hyperparameter-finder",
     title: "Genetic Algorithm Hyperparameter Tuning Framework",
-    summary:
-      "Reusable genetic algorithm framework for hyperparameter tuning across scikit-learn models using tournament selection, crossover/mutation, elitism, and constraint-aware handling of invalid configurations.",
-
+    summary: "Custom Python evolutionary optimizer for scikit-learn classifier hyperparameters, with cross-validation fitness, tournament selection, crossover, mutation, and logistic-regression compatibility checks.",
     tags: [
       "Genetic Algorithms",
       "Hyperparameter Tuning",
-      "Optimization",
       "scikit-learn",
-      "Cross-Validation",
       "Python",
+      "Cross-Validation"
     ],
-
     category: "ML",
     featured: true,
-
     overview: {
-      description:
-        "A general-purpose genetic algorithm (GA) hyperparameter tuning framework implemented in Python. Evolves a population of candidate hyperparameter dictionaries over generations using tournament selection, uniform crossover, mutation, and elitism. Fitness is computed via 5-fold cross-validation with configurable scoring and parallelism (n_jobs). Includes a constraint-aware subclass for Logistic Regression to enforce compatible solver/penalty combinations.",
-      purpose:
-        "Explore GA as a practical alternative when grid search is too expensive, while keeping the tuner reusable across model families and robust to incompatible hyperparameter dependencies.",
+      description: "Research prototype for classifier hyperparameter search, with notebook experiments comparing a custom genetic algorithm against scikit-learn grid, randomized, and halving-grid searches.",
+      purpose: "Explore reusable evolutionary search policies and dependent parameter constraints while examining accuracy and runtime tradeoffs."
     },
-
     role: {
       built: [
-        "GA engine: initialization, fitness scoring, tournament selection, crossover, mutation, elitism, and history tracking",
-        "Model-agnostic search spaces defined per estimator (tree / linear / kernel / ensemble)",
-        "Fitness evaluation via cross_val_score with configurable CV folds and scoring metric",
-        "Constraint-aware tuning for Logistic Regression (penalty→solver compatibility enforced during init/crossover/mutation)",
-        "Experiment harness to compare GA vs GridSearchCV vs RandomizedSearchCV under similar evaluation budgets",
+        "Dictionary-based candidate generation, cross-validation fitness, tournament selection, uniform crossover, single-parameter mutation, and global-best elitism.",
+        "Logistic-regression specialization that maintains compatible penalty/solver pairs.",
+        "Generation history, estimator refitting, timing orchestration, plots, and a technical comparison report."
       ],
       owned: [
-        "Core GA implementation + reusable API design (scikit-learn style class wrapper)",
-        "Constraint-handling strategy for dependent hyperparameters (Logistic Regression)",
-        "Fair-budget comparison methodology (iterations aligned across tuners)",
-        "Results synthesis: accuracy/runtime impact and failure cases (where grid search became infeasible)",
-      ],
+        "Evolutionary search policy, parameter-space handling, compatibility logic, and experiment orchestration.",
+        "Data preparation and result analysis using third-party estimators, cross-validation, and baseline search implementations."
+      ]
     },
-
     technicalHighlights: {
       architecture: [
-        "Reusable estimator-style GA tuner (parameter-space in, best_params_/best_estimator_ out)",
-        "Fitness computed with 5-fold CV; optional parallelism via n_jobs",
-        "History tracking per generation (best/avg fitness + best params) for analysis and debugging",
+        "In-memory data preparation feeds an estimator and parameter space into the GA or library baseline.",
+        "The reusable run(X, y) interface exposes best parameters, score, history, and a refitted model; it is not a complete sklearn search-CV implementation."
       ],
       algorithms: [
-        "Tournament selection for parent choice",
-        "Uniform crossover (per-parameter mixing)",
-        "Mutation by resampling from the original search space",
-        "Elitism to preserve the best individual across generations",
-        "Constraint-aware GA variant for Logistic Regression to avoid invalid solver/penalty combos",
+        "Tournament selection, uniform per-parameter crossover, one-field mutation, and preservation of the global-best elite.",
+        "Logistic solver/penalty constraints are maintained during candidate initialization, crossover, mutation, and evaluation."
       ],
-      optimization: [
-        "Comparable-budget evaluation (random search iterations aligned with pop_size × generations)",
-        "Parallel-capable fitness scoring (n_jobs) to reduce wall-clock time on multi-core machines",
-      ],
+      failureHandling: [
+        "Selected invalid configurations and caught logistic evaluation failures receive negative-infinity fitness.",
+        "Candidate generation rejects unsupported domains and mutation handles singleton domains."
+      ]
     },
-
-    techStack: ["Python", "scikit-learn", "NumPy", "pandas", "Jupyter"],
-
+    techStack: [
+      "Python",
+      "scikit-learn",
+      "NumPy",
+      "pandas",
+      "Jupyter",
+      "Matplotlib",
+      "seaborn"
+    ],
     results: {
       achievements: [
-        "Decision Tree: GA reached 0.9569 accuracy in 9.39s vs Grid Search 0.9692 in 1585.29s",
-        "SVM: GA reached 0.9789 accuracy in 1.78s vs Grid Search 0.9824 in 111.00s",
-        "Logistic Regression: GA matched Grid Search at 0.9780 accuracy (9.94s vs 212.77s)",
-        "Random Forest: GA achieved 0.9708 accuracy (grid search not completed after >2 days)",
+        "Implemented a configurable evolutionary optimizer and model-specific parameter spaces.",
+        "Recorded classifier comparisons, generation curves, and a technical report."
       ],
       learnings: [
-        "GA can be a strong tradeoff when grid search is prohibitively slow but you still want guided exploration",
-        "Small accuracy differences often cost orders of magnitude more runtime; the right tuner depends on constraints",
-        "Constraint handling is essential for reusable tuners (dependent hyperparameters otherwise waste most evaluations)",
+        "Dependent hyperparameters need explicit compatibility policies.",
+        "Search budgets, parallelism, preprocessing, and run provenance affect the validity of runtime and accuracy comparisons."
       ],
       tradeoffs: [
-        "GA runtime can exceed randomized search for similar accuracy, depending on population/generation settings",
-        "GA introduces its own hyperparameters (population size, mutation rate, crossover probability) that influence outcomes",
-        "Some model spaces remain expensive to evaluate because the fitness function is CV itself",
-      ],
-    },
+        "Saved notebook output and current code have mixed dataset provenance; no clean sequential reproduction is established.",
+        "Budgets and concurrency differ across methods, and preprocessing introduces leakage risk; no general GA speedup is claimed."
+      ]
+    }
   },
 
   {
     slug: "ai-scheduling-hard-constraints",
-    title: "AI Scheduling for City Soccer Field Allocation",
-    summary:
-      "Python scheduling system for city-wide soccer games/practices under dense constraints and weighted preferences using a hybrid Genetic Algorithm + AND/OR-tree search that minimizes penalty to reach feasible, high-quality schedules.",
-
+    title: "Gengar — Soccer Scheduling Search Prototype",
+    summary: "Python course-project scheduler combining recursive OR-tree search with genetic crossover and mutation for a simulated soccer field-time allocation problem.",
     tags: [
       "Constraint Satisfaction",
       "AI Search",
       "Scheduling",
       "Genetic Algorithms",
-      "AND/OR Trees",
-      "Optimization",
-      "Penalty Functions",
+      "OR-Tree Search",
+      "Python"
     ],
-
     category: "ML",
     featured: true,
-
     overview: {
-      description:
-        "AI scheduling system that assigns soccer games and practices across limited weekly field time slots. The problem includes capacity limits, incompatibilities, pre-assignments, multi-day linked slots, and division constraints, plus soft preferences like requested times, minimum slot usage, and paired-event requirements. The solver treats constraint violations as penalty and searches for schedules that minimize total cost (targeting 0 for feasibility) while improving preference satisfaction.",
-      purpose:
-        "Build a practical optimizer for a real-world scheduling CSP/optimization problem, combining evolutionary exploration with symbolic search to escape local minima and drive penalty toward feasible solutions.",
+      description: "Command-line research prototype for a fabricated Calgary soccer scheduling scenario. Sectioned text inputs describe recurring games, practices, field-time capacities, restrictions, and preferences.",
+      purpose: "Explore constructive backtracking and population-based search for constrained scheduling. The implementation is incomplete and is not an operational municipal scheduler."
     },
-
     role: {
       built: [
-        "Team-built parser and internal data structures to load structured scheduling inputs",
-        "Hybrid solver combining Genetic Algorithm search with AND/OR-tree expansion to refine solutions",
-        "Penalty function encoding hard constraints (as penalty terms) and weighted soft constraints",
-        "Search operators to mutate/repair schedules while reducing penalty and improving preference fit",
+        "Scheduling input parsing, half-hour time encoding, mutable capacity state, and assignment/unassignment operations.",
+        "Recursive OR-tree expansion, state copying, randomized ordering, and parent-guided schedule completion.",
+        "Genetic population selection, crossover, mutation, weighted objective wiring, and diagnostic output."
       ],
       owned: [
-        "Soft constraint modeling + weighting strategy (preference satisfaction, minimum slot use, paired events, etc.)",
-        "GA design (representation, mutation, selection pressure) and AND/OR-tree integration for schedule refinement",
-        "Scoring/optimization logic: penalty-driven objective and convergence behavior",
-        "Most of the solver logic end-to-end (everything except the parser and the hard-constraint definitions)",
-      ],
+        "Custom scheduling representation and search integration using Python standard-library primitives.",
+        "Constraint checks, active pair/minimum-fill scoring, and debugging scenarios."
+      ]
     },
-
     technicalHighlights: {
       architecture: [
-        "Schedule represented as an assignment over games/practices → time slots across a weekly horizon",
-        "Objective function built around penalty minimization (hard constraints drive feasibility; soft constraints improve quality)",
-        "Hybrid pipeline: GA generates candidate schedules; AND/OR-tree search expands/repairs candidates to reduce penalty",
+        "Single-process CLI with in-memory schedules and recursive search states.",
+        "Capacity rows track game and practice availability independently."
       ],
       algorithms: [
-        "Genetic Algorithm operating over full schedule assignments",
-        "AND/OR-tree search used to refine partial/poor assignments into lower-penalty schedules",
-        "Penalty-based evaluation combining capacity, incompatibility, preassignment, linked-slot constraints + soft preferences",
+        "Constructive OR-tree backtracking initializes candidates and completes crossover children.",
+        "Selection retains low-cost population members; mutation attempts penalty-proportional event reassignment.",
+        "Pair and minimum-fill objective routines are active; preference and section-difference routines remain zero-return placeholders."
       ],
       failureHandling: [
-        "Penalty-driven validity: infeasible schedules receive large costs and are pushed out by selection pressure",
-        "Repair-oriented mutations to recover from high-penalty local minima during GA evolution",
-      ],
-      optimization: [
-        "Weighted penalties to prioritize feasibility first, then preference optimization",
-        "Hybrid search to balance global exploration (GA) with structured refinement (AND/OR-tree)",
-      ],
+        "Assignment helpers check selected capacity, incompatibility, and placement restrictions.",
+        "Parser, mutation, and constraint-integration defects prevent a claim of complete feasibility or reliable full CLI solves."
+      ]
     },
-
-    techStack: ["Python"],
-
+    techStack: [
+      "Python",
+      "argparse",
+      "Standard-library collections / copying / random"
+    ],
     results: {
       achievements: [
-        "Generated schedules that minimize constraint penalties toward feasible solutions while optimizing preference quality",
-        "Handled dense real-world constraints (capacity, incompatibility, pre-assignments, multi-day links, division rules)",
-        "Demonstrated that combining GA exploration with symbolic refinement improves convergence vs GA-only search",
+        "Implemented a custom hybrid search prototype, scheduling representation, and diagnostic harnesses.",
+        "Integrated constructive search with population selection and parent-guided crossover."
       ],
       learnings: [
-        "Penalty design and weighting dominate solver behavior; small weight changes can reshape convergence",
-        "Pure evolutionary search can stall under dense constraints without a structured repair/refinement mechanism",
-        "Hybridizing search methods is often worth the complexity when feasibility is hard to reach",
+        "Representation consistency and complete objective functions are essential to meaningful schedule evaluation.",
+        "Proposal algorithms and supplied input scale do not establish successful execution or optimality."
       ],
       tradeoffs: [
-        "Penalty-based feasibility is flexible but requires careful tuning to avoid ‘almost-feasible’ plateaus",
-        "Hybrid GA + AND/OR increases implementation complexity and runtime cost",
-        "Optimization targets high-quality feasible schedules rather than provable global optimality",
-      ],
-    },
+        "No validated final schedule, successful large solve, measured convergence improvement, or optimality result is established.",
+        "AND-tree search appears in proposal context; the implementation uses OR-tree search."
+      ]
+    }
   },
 
   {
     slug: "raspberry-pi-bare-metal",
-    title: "Raspberry Pi Bare-Metal Systems Programming (AArch64)",
-    summary:
-      "Bare-metal Raspberry Pi programs in C and AArch64 assembly: boot/runtime init, GPIO control, interrupts, timers, and serial UART debugging without an operating system.",
-
+    title: "Bare-Metal Raspberry Pi SNES Controller Integration",
+    summary: "C firmware polls an SNES controller through Raspberry Pi 4 GPIO and sends changed button states over Mini UART to a Python/Pygame slide-puzzle integration.",
     tags: [
       "Embedded Systems",
       "Bare-Metal Programming",
-      "AArch64",
-      "ARM Assembly",
+      "C",
       "GPIO",
-      "Interrupts",
       "UART",
-      "Low-Level Systems",
+      "Python"
     ],
-
     category: "Embedded",
     featured: false,
-
     overview: {
-      description:
-        "A collection of bare-metal Raspberry Pi programs that boot directly on hardware with no OS. Implemented (and extended) startup/runtime code, controlled GPIO, handled interrupts via exception vectors, and built small demos (LED patterns, input handling, timer-driven behaviors) with UART-based debugging.",
-      purpose:
-        "Build practical intuition for hardware–software interaction by programming the Pi at the register level: initialization, exception vectors, device I/O, timing, and debugging without OS tooling.",
+      description: "Freestanding Raspberry Pi 4 firmware reads a physical SNES controller without an OS. Host-side Python decodes serial button messages and dispatches actions in an existing Pygame slide puzzle.",
+      purpose: "Connect register-level controller input with a desktop application through a small serial protocol."
     },
-
     role: {
       built: [
-        "Bare-metal boot and runtime initialization (provided starter + custom extensions)",
-        "GPIO control for LED output and input devices",
-        "Interrupt handling via exception vector setup and ISRs",
-        "Timer-driven and interrupt-driven demos (patterns, state changes, input response)",
-        "Serial UART output for debugging and observability",
+        "SNES latch/clock/data polling through volatile BCM2711 MMIO register access.",
+        "Sixteen active-low samples converted into an active-high bitmask, with UART output on state changes.",
+        "Python/pyserial message parsing, simultaneous-button decoding, and eight game-action mappings."
       ],
       owned: [
-        "AArch64 + C integration for low-level runtime behavior and device control",
-        "Memory-mapped I/O register configuration for GPIO/UART",
-        "Interrupt service routines (ISRs) and state-machine style control flow",
-        "UART-based debugging workflow for bare-metal development",
-      ],
+        "Project-specific controller polling and serial integration logic.",
+        "Host input dispatch integrated with an existing keyboard/mouse game loop."
+      ]
     },
-
     technicalHighlights: {
       architecture: [
-        "Bare-metal execution: no OS, minimal runtime, direct hardware control",
-        "Memory-mapped I/O for GPIO and UART",
-        "Interrupt-driven control flow using exception vectors (plus timer-based behaviors)",
-        "State-machine logic to coordinate LED/input behaviors deterministically",
+        "SNES controller → GPIO polling → hexadecimal Mini UART messages → Python parser → Pygame actions.",
+        "The supplied AArch64 environment provides startup, linker, UART, timer, and cross-compilation support; independent authorship of that scaffolding is unconfirmed."
       ],
       algorithms: [
-        "Interrupt-driven state transitions from input events",
-        "Timer-based scheduling for periodic behaviors",
-        "Deterministic sequencing for patterns and timing",
+        "Sixteen-bit controller sampling with latch and clock signaling.",
+        "Changed-state filtering suppresses redundant serial messages.",
+        "Controller and UART paths use polling and busy waits."
       ],
       failureHandling: [
-        "Interrupt masking/unmasking to avoid unsafe re-entrancy",
-        "Careful state transitions to avoid undefined hardware behavior",
-      ],
-      optimization: [
-        "Interrupt-driven design to avoid constant polling where appropriate",
-        "Small footprint and low overhead by staying bare-metal",
-      ],
+        "Host scripts catch serial-open errors and reject selected malformed hexadecimal messages.",
+        "Movement is checked before invoking existing puzzle behavior."
+      ]
     },
-
     techStack: [
       "C",
-      "AArch64 Assembly",
-      "Raspberry Pi",
-      "Cross-Compilation Toolchain",
+      "Raspberry Pi 4 / BCM2711",
+      "AArch64 assembly environment",
+      "GPIO",
+      "Mini UART",
+      "Python",
+      "pyserial",
+      "Pygame",
+      "Make"
     ],
-
     results: {
       achievements: [
-        "Booted and ran custom bare-metal code on Raspberry Pi hardware",
-        "Implemented GPIO control and interrupt-driven input handling without an OS",
-        "Used UART for practical debugging/visibility in a constrained bare-metal environment",
+        "Implemented project-specific SNES polling, button decoding, and serial-to-game action dispatch.",
+        "Integrated controller input with an existing 4×4 slide puzzle."
       ],
       learnings: [
-        "How exception vectors, ISRs, and device registers interact at the CPU level",
-        "Bare-metal timing/debugging requires building your own observability primitives",
-        "Low-level work demands strict discipline around state, timing, and side effects",
+        "Register-level I/O and serial integration require explicit timing and data-format decisions."
       ],
       tradeoffs: [
-        "Optimized for learning and control over portability",
-        "Accepted higher development overhead in exchange for full-stack hardware visibility",
-        "Kept demos small and deterministic rather than building complex drivers/abstractions",
-      ],
-    },
+        "Al Sweigart’s third-party puzzle provides board management, animations, reset, and solve behavior.",
+        "Successful hardware demonstrations, QEMU/JTAG use, and measured input latency are unverified; no interrupt implementation is claimed."
+      ]
+    }
   },
 
   {
     slug: "fullstack-restaurant-system",
     title: "Full-Stack Restaurant Management System",
-    summary:
-      "Full-stack restaurant operations platform with JWT auth (stored in cookies), 5-level role-based permissions, and a MySQL-backed backend. Dockerized deployment with React + Node/Express + Nginx.",
-
+    summary: "React, Express, and MySQL restaurant application with customer/account workflows, reservations, menu/location views, and special-event inquiry intake.",
     tags: [
       "Full-Stack Development",
-      "Backend APIs",
-      "Authentication",
-      "RBAC",
-      "MySQL",
-      "Docker",
       "React",
-      "Node.js",
       "Express",
-      "Nginx",
+      "MySQL",
+      "JWT Cookies",
+      "Docker"
     ],
-
     category: "Full-Stack",
     featured: false,
-
     overview: {
-      description:
-        "A full-stack restaurant management system supporting customer accounts and internal staff operations. Built with a React frontend, Node.js/Express REST API, and a real MySQL database. Implements secure authentication with JWT stored in cookies and role-based access control across five permission levels (customer, employee, admin, manager + one additional internal level). Includes full CRUD workflows across core entities and SQL usage beyond basics (joins/unions, inserts/updates/deletes).",
-      purpose:
-        "Practice end-to-end web engineering: API design, secure auth, database-backed state, permission boundaries, and reproducible deployment with Docker.",
+      description: "Restaurant-oriented web project integrating React screens, an Express API, and direct MySQL queries. Implemented areas include customer records, accounts, menu/location views, reservations, and special-event inquiries.",
+      purpose: "Practice relational modeling and application integration through account and booking workflows, adapting tutorial patterns alongside custom domain logic."
     },
-
     role: {
       built: [
-        "React frontend with routed views, forms, and role-aware UI behaviors",
-        "Express REST API with protected routes and permission checks",
-        "JWT authentication stored in cookies + password hashing (bcrypt)",
-        "MySQL-backed data layer with CRUD operations and more advanced SQL queries (joins/unions)",
-        "Dockerized deployment (frontend served by Nginx; backend + DB orchestrated via Compose)",
+        "React routes, account forms, shared Axios services, authentication context, and booking interfaces.",
+        "Express route/controller/query layers for customer CRUD, account lifecycle, reservations, and inquiries.",
+        "Password hashing, JWT cookie login/logout, and selected account-handler clearance checks.",
+        "Relational schema and Docker/Compose/Nginx configuration."
       ],
       owned: [
-        "End-to-end full stack integration (React ↔ API ↔ MySQL) including auth and role gating",
-        "RBAC implementation for 5 permission levels with route-level enforcement",
-        "SQL query implementation covering required operations (create/insert, update, delete, joins/unions)",
-        "Deployment workflow using Docker images + env-driven config",
-      ],
+        "Application adaptation, UI/API integration, direct SQL queries, and domain schema.",
+        "Reservation editing/deletion and customer/employee account orchestration."
+      ]
     },
-
     technicalHighlights: {
       architecture: [
-        "Client–server architecture: React frontend + Express REST API",
-        "MySQL database as system of record for restaurant entities and workflows",
-        "JWT stored in cookies for session persistence and protected API access",
-        "Docker Compose orchestration; Nginx serves production frontend build",
+        "React/Router and shared Axios services communicate with Express routers, controllers, and mysql2 query modules.",
+        "The schema uses account specialization, composite keys, and foreign-key cascades.",
+        "JWTs use an HTTP-only cookie; browser account metadata is separate from server authorization."
       ],
       algorithms: [
-        "RBAC checks enforced per route (permission-level gating)",
-        "Password hashing via bcrypt; token verification on protected endpoints",
+        "Selected account handlers allow self-access or employee clearance thresholds.",
+        "Six numeric clearance levels (0–5) are documented; authorization is partial across business APIs.",
+        "Reservations use customer/location/date values to locate composite keys."
       ],
-      optimization: [
-        "Clear separation of concerns: UI, API routing, and database access",
-        "Reusable endpoints and modular backend structure",
-        "Validation on both client and server to reduce invalid requests",
-      ],
+      failureHandling: [
+        "Selected callback errors and not-found states map to API responses and frontend feedback.",
+        "Multi-table writes lack transactions, and container wiring has unresolved defects."
+      ]
     },
-
     techStack: [
       "JavaScript",
       "React",
+      "React Router",
       "Node.js",
       "Express",
-      "MySQL",
-      "Docker",
-      "Nginx",
+      "MySQL / mysql2",
+      "Axios",
+      "bcryptjs",
+      "JWT",
+      "Docker / Docker Compose",
+      "Nginx"
     ],
-
     results: {
       achievements: [
-        "Implemented a complete restaurant management app with secure auth + role-based permissions",
-        "Connected to a real MySQL database and implemented full CRUD plus joins/unions as part of required operations",
-        "Containerized frontend/backend/DB for consistent local setup and deployment-style execution",
+        "Integrated customer/account, reservation, and inquiry workflows with a relational data layer.",
+        "Added setup and permission documentation and container configuration."
       ],
       learnings: [
-        "Auth correctness is mostly about edge cases: cookie handling, token expiry, and route protection consistency",
-        "RBAC becomes much easier to maintain when permissions are centralized and enforced at the API boundary",
-        "Schema/query choices directly shape feature velocity and complexity",
+        "Account-level permission checks must be distinguished from authorization across every business API.",
+        "Database date types, transactions, and deployment wiring directly affect workflow correctness."
       ],
       tradeoffs: [
-        "Used cookie-stored JWTs for straightforward session handling instead of OAuth or a full identity provider",
-        "Prioritized end-to-end correctness and feature completeness over advanced frontend performance optimization",
-        "Kept DB constraints pragmatic rather than exhaustively modeling every invariant at the schema layer",
-      ],
+        "Orders, rewards, waitlist, and availability are schema-only concepts; inventory and payment workflows are not established.",
+        "Tutorial sources include BezKoder, Lama Dev, and freeCodeCamp. Current runtime success, production deployment, and secure-session guarantees are unverified."
+      ]
+    }
+  },
+
+  {
+    slug: "j-minus-minus-mips-compiler",
+    title: "J-- to MIPS Compiler",
+    summary: "Python compiler for a small imperative language, with ANTLR4 grammars, AST shaping, four semantic passes, and MIPS code generation.",
+    tags: [
+      "Python",
+      "ANTLR4",
+      "Compilers",
+      "MIPS",
+      "Semantic Analysis"
+    ],
+    category: "Systems",
+    featured: false,
+    overview: {
+      description: "University of Calgary CPSC 411 term project developed from January to April 2026. A command-line driver reads J-- source, shapes an abstract syntax tree, performs semantic analysis, and emits MIPS assembly.",
+      purpose: "Implement the major stages of a compiler, from language grammar and name resolution to stack layout and target-code emission."
     },
+    role: {
+      built: [
+        "Custom lexer/parser grammars for declarations, functions, expressions, calls, control flow, and returns.",
+        "AST-shaping rules and unary-minus handling for signed integer literals.",
+        "Four semantic passes for declarations, scope/reference resolution, types, and structural validation.",
+        "MIPS layout and emission for globals, stack frames, calls/returns, short-circuit logic, and runtime-error paths."
+      ],
+      owned: [
+        "Language rules, semantic policies, target layout, code emission, and compiler integration.",
+        "Diagnostics, build selection/fallbacks, and usage documentation, using ANTLR and external course AST support."
+      ]
+    },
+    technicalHighlights: {
+      architecture: [
+        "Source → ANTLR recognizers → configured course AST shaper → four semantic traversals → target layout → buffered MIPS output.",
+        "Resolved declaration references connect semantic analysis to storage layout and code generation."
+      ],
+      algorithms: [
+        "Scope stacks and type checks validate references, arguments, conditions, returns, and break nesting.",
+        "A custom stack calling convention preserves frame/return registers and expression temporaries.",
+        "Label generation supports short-circuit operators, nested loops, and break targets."
+      ],
+      failureHandling: [
+        "Parser and semantic diagnostics stop selected invalid programs before output.",
+        "Generated paths handle zero divisors and non-void function fallthrough; execution correctness remains unverified."
+      ]
+    },
+    techStack: [
+      "Python",
+      "ANTLR4",
+      "MIPS assembly",
+      "Make",
+      "cpsc411 AST support"
+    ],
+    results: {
+      achievements: [
+        "Implemented compiler stages including four semantic passes and six generated runtime wrappers.",
+        "Connected semantic annotations to custom stack layout and recursive target emission."
+      ],
+      learnings: [
+        "Compiler stages need consistent symbol, type, and storage annotations."
+      ],
+      tradeoffs: [
+        "Missing external cpsc411 support blocked full pipeline execution during the source investigation; simulator and arithmetic execution are unverified.",
+        "ANTLR supplies generated recognizers and the course library supplies AST infrastructure; no optimizer or general register allocator is implemented."
+      ]
+    }
+  },
+
+  {
+    slug: "climate-control-simulation",
+    title: "Climate Control Simulation",
+    summary: "Java Swing desktop simulation of greenhouse temperature, humidity, and soil moisture, with independent controller loops, live status, and saved run histories.",
+    tags: [
+      "Java",
+      "Swing",
+      "Concurrency",
+      "Simulation",
+      "File I/O"
+    ],
+    category: "Systems",
+    featured: false,
+    overview: {
+      description: "Local desktop simulation with configurable targets, current values, environmental/actuator rates, and sampling intervals for three environmental subsystems.",
+      purpose: "Explore object-oriented control modeling, event-driven desktop interfaces, concurrent simulation loops, and local result persistence."
+    },
+    role: {
+      built: [
+        "Swing configuration forms, event handlers, and a live results view.",
+        "Temperature, humidity, and soil-moisture controllers with heating, cooling, humidifier, and sprinkler domain objects.",
+        "Text-file run logging, named saved histories, a saved-path index, and previous-result viewing."
+      ],
+      owned: [
+        "Application composition, controller/domain logic, GUI integration, and local persistence using standard Java APIs.",
+        "Numeric-input parsing and JavaDoc-style source documentation."
+      ]
+    },
+    technicalHighlights: {
+      architecture: [
+        "Ten Java source files separate startup, view/persistence, orchestration, subsystem controllers, and actuators.",
+        "Three Runnable controllers update environmental state independently; a coordinator loop presents results."
+      ],
+      algorithms: [
+        "Target/deadband decisions activate or deactivate simulated actuators.",
+        "Configurable sampling and minute/hour rate inputs drive environmental updates."
+      ],
+      failureHandling: [
+        "Numeric parsing and selected file operations handle errors.",
+        "Worker shutdown and shared-state synchronization have documented gaps; thread-safe execution is not established."
+      ]
+    },
+    techStack: [
+      "Java",
+      "Swing",
+      "AWT",
+      "Runnable / Thread",
+      "Java file I/O"
+    ],
+    results: {
+      achievements: [
+        "Implemented three simulated environmental subsystems with live status and file-based history.",
+        "Separated UI events, control loops, and actuator state into dedicated classes."
+      ],
+      learnings: [
+        "Independent simulation loops require explicit coordination of lifecycle, state visibility, and display updates."
+      ],
+      tradeoffs: [
+        "This is a software simulation; physical sensors, greenhouse operation, and measured control performance are not established.",
+        "Development dates, JDK version, and runtime test results are not supplied in the supporting analysis."
+      ]
+    }
+  },
+
+  {
+    slug: "kiddoflix",
+    title: "KiddoFlix — Parental-Control Interface Prototype",
+    summary: "React interface prototype for parent/child profiles, catalog discovery, favorites, and parental-control settings, using MUI and browser-local persistence.",
+    tags: [
+      "React",
+      "JavaScript",
+      "MUI",
+      "React Router",
+      "localStorage",
+      "UI Prototyping"
+    ],
+    category: "Frontend",
+    featured: false,
+    overview: {
+      description: "Browser-based design concept with separate parent and child screens, a fixed show catalog, search, show details, profile personalization, and parental-control interactions.",
+      purpose: "Explore entertainment discovery and parent-facing controls through an interactive frontend prototype."
+    },
+    role: {
+      built: [
+        "Nested React routes and parent/child layouts with MUI forms, cards, dialogs, and notifications.",
+        "Catalog browsing, title/category search, favorites, profile-image previews, and keyboard interaction logic.",
+        "Browser storage utilities for favorites, title restrictions, time-limit values, locks, and parent profile details."
+      ],
+      owned: [
+        "Screen composition, route configuration, interaction handlers, and browser-storage integration.",
+        "Prototype account-management dialogs and controls around the browser video element."
+      ]
+    },
+    technicalHighlights: {
+      architecture: [
+        "Client-only React application with static catalog fixtures and localStorage persistence.",
+        "Shared components and nested layouts organize profile selection, discovery, and parent settings."
+      ],
+      algorithms: [
+        "Profile-keyed JSON storage suppresses duplicate favorites and restrictions.",
+        "Custom focus state handles selected arrow-key, activation, and player interactions.",
+        "Time controls convert hours/minutes into stored limits; actual usage accounting is not implemented."
+      ],
+      failureHandling: [
+        "Forms implement selected format/confirmation checks and storage helpers log exceptions.",
+        "Restriction filtering and lock checks are incomplete across entry points and do not establish access-control enforcement."
+      ]
+    },
+    techStack: [
+      "JavaScript / JSX",
+      "React",
+      "React Router",
+      "MUI",
+      "CSS",
+      "localStorage",
+      "FileReader",
+      "HTML video"
+    ],
+    results: {
+      achievements: [
+        "Implemented parent/child discovery interfaces and browser-persisted personalization/settings.",
+        "Composed reusable dialogs, profile controls, keyboard interactions, and custom video controls."
+      ],
+      learnings: [
+        "Persisted settings, prototype feedback, and enforced account behavior have different implementation requirements."
+      ],
+      tradeoffs: [
+        "No backend or real authentication/account service exists; account mutations and history include simulated behaviors.",
+        "The referenced sample video is absent. Development dates, hosting, and successful build/browser playback are unverified."
+      ]
+    }
   },
 ];
 

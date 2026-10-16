@@ -30,7 +30,7 @@ export default function ProjectsPage() {
                 <h1 className="text-4xl font-bold mb-4 text-foreground">Projects</h1>
                 <p className="text-muted-foreground mb-8">
                     A collection of systems and applications I've built, focusing on distributed systems,
-                    machine learning, and low-level programming.
+                    machine learning, low-level programming, and application development.
                 </p>
 
                 {/* Category Filter */}
