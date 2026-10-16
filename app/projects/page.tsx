@@ -5,18 +5,15 @@ import Nav from '@/app/components/Nav'
 import ProjectCard from '@/app/components/ProjectCard'
 import { projects, type ProjectCategory } from '@/data/projects'
 
-// const categories: ProjectCategory[] = ['Distributed', 'ML', 'Embedded', 'Full-Stack']
-
-
-const allCategory: ProjectCategory | 'All' = 'All'
+type CategoryFilter = ProjectCategory | 'All'
 
 export default function ProjectsPage() {
-    const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | 'All'>(allCategory)
+    const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('All')
 
     const categories = useMemo(
-        () => Array.from(new Set(projects.map(p => p.category))) as ProjectCategory[],
+        () => Array.from(new Set(projects.map(p => p.category))),
         []
-)
+    )
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -29,7 +26,7 @@ export default function ProjectsPage() {
             <div className="max-w-6xl mx-auto px-6 py-12">
                 <h1 className="text-4xl font-bold mb-4 text-foreground">Projects</h1>
                 <p className="text-muted-foreground mb-8">
-                    A collection of systems and applications I've built, focusing on distributed systems,
+                    A collection of systems and applications I&apos;ve built, focusing on distributed systems,
                     machine learning, low-level programming, and application development.
                 </p>
 

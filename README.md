@@ -17,7 +17,7 @@ The goal of this site is not to be flashy, but to clearly explain what I built, 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 18.18+
 - npm or yarn
 
 ### Installation
@@ -39,6 +39,24 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```bash
 npm run build
 ```
+
+### Validation
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+Application code and Tailwind configuration use TypeScript. Strict checking includes
+array access, unused declarations, and consistent filename casing. ESLint checks
+the application, data, and tooling configs, rejects explicit `any`, and enforces
+type-only imports.
+
+`next.config.js` and `postcss.config.js` remain JavaScript for compatibility with
+the existing Next.js 14 and PostCSS loaders. TypeScript and the React/Node type
+definitions are installed as development dependencies. Next.js generates
+`next-env.d.ts` and route types in `.next/types` during development or a build.
 
 ### Production
 

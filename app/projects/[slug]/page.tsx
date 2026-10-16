@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/app/components/Nav'
@@ -6,14 +8,30 @@ import { projects, getProjectBySlug, getProjectNavigation } from '@/data/project
 export const dynamic = "force-static"
 export const revalidate = false
 
-export function generateStaticParams() {
+interface ProjectPageParams {
+    slug: string
+}
+
+interface ProjectPageProps {
+    params: ProjectPageParams
+}
+
+interface SectionHeaderProps {
+    children: ReactNode
+}
+
+interface BulletListProps {
+    items: readonly string[]
+}
+
+export function generateStaticParams(): ProjectPageParams[] {
     return projects.map((project) => ({
         slug: project.slug,
     }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params
+export function generateMetadata({ params }: ProjectPageProps): Metadata {
+    const { slug } = params
     const project = getProjectBySlug(slug)
 
     if (!project) {
@@ -33,19 +51,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 }
 
-function SectionHeader({ children }: { children: React.ReactNode }) {
+function SectionHeader({ children }: SectionHeaderProps) {
     return (
         <h2 className="text-2xl font-semibold mb-4 text-foreground">{children}</h2>
     )
 }
 
-function SubSectionHeader({ children }: { children: React.ReactNode }) {
+function SubSectionHeader({ children }: SectionHeaderProps) {
     return (
         <h3 className="text-lg font-medium mb-2 text-foreground">{children}</h3>
     )
 }
 
-function BulletList({ items }: { items: string[] }) {
+function BulletList({ items }: BulletListProps) {
     return (
         <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
             {items.map((item, idx) => (
@@ -55,8 +73,8 @@ function BulletList({ items }: { items: string[] }) {
     )
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params
+export default function ProjectPage({ params }: ProjectPageProps) {
+    const { slug } = params
     const project = getProjectBySlug(slug)
 
     if (!project) {

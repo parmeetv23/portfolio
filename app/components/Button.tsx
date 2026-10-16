@@ -1,14 +1,24 @@
 import Link from 'next/link'
-import type { ReactNode } from 'react'
+import type { MouseEventHandler, ReactNode } from 'react'
 
-interface ButtonProps {
-    href?: string
-    onClick?: () => void
+interface BaseButtonProps {
     children: ReactNode
     variant?: 'primary' | 'secondary'
-    external?: boolean
     className?: string
 }
+
+type ButtonProps = BaseButtonProps & (
+    | {
+        href: string
+        external?: boolean
+        onClick?: never
+    }
+    | {
+        href?: never
+        external?: never
+        onClick?: MouseEventHandler<HTMLButtonElement>
+    }
+)
 
 export default function Button({
     href,

@@ -712,7 +712,7 @@ export function getProjectNavigation(slug: string): {
     return { prev: null, next: null };
   }
   return {
-    prev: index > 0 ? projects[index - 1] : null,
-    next: index < projects.length - 1 ? projects[index + 1] : null,
+    prev: index > 0 ? projects[index - 1] ?? null : null,
+    next: index < projects.length - 1 ? projects[index + 1] ?? null : null,
   };
 }

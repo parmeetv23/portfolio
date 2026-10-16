@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --dir app --dir data --file tailwind.config.ts --file next.config.js --file postcss.config.js --max-warnings 0",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -17,6 +18,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
@@ -25,4 +28,3 @@
     "typescript": "^5"
   }
 }
-
