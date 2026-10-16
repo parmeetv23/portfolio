@@ -1,0 +1,12 @@
+### Result
+{
+  "project": "compiler",
+  "focus": "Close the layer−",
+  "expanded": "true",
+  "detailVisible": true,
+  "focusOutline": "solid"
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({project:document.querySelector("input[name=project-study]:checked")?.value, focus:document.activeElement?.textContent, expanded:document.querySelector("button[aria-controls=project-mechanism]")?.getAttribute("aria-expanded"), detailVisible:!document.getElementById("project-mechanism")?.hidden, focusOutline:getComputedStyle(document.activeElement).outlineStyle})');
+```

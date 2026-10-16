@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "viewportHeight": 1000,
+    "documentHeight": 4452,
+    "footerTop": 498.4140625,
+    "footerBottom": 1000.1640625,
+    "allFooterLinksVisible": true,
+    "currentNavigation": "Contact",
+    "canvas": "rgb(241, 243, 237)"
+  },
+  {
+    "width": 768,
+    "viewportHeight": 1024,
+    "documentHeight": 4560,
+    "footerTop": 580,
+    "footerBottom": 1023.796875,
+    "allFooterLinksVisible": true,
+    "currentNavigation": "Contact",
+    "canvas": "rgb(241, 243, 237)"
+  },
+  {
+    "width": 390,
+    "viewportHeight": 844,
+    "documentHeight": 5912,
+    "footerTop": 285.0078125,
+    "footerBottom": 843.765625,
+    "allFooterLinksVisible": true,
+    "currentNavigation": "Contact",
+    "canvas": "rgb(241, 243, 237)"
+  }
+]

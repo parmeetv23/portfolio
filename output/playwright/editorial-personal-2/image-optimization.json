@@ -1,0 +1,35 @@
+{
+  "source": "public/images/ChatGPT Image Oct 16, 2026, 02_35_49 PM.jpg",
+  "originalBytes": 313148,
+  "originalDimensions": [
+    1440,
+    1080
+  ],
+  "processing": "Resize and encode only; uncropped, no color filter, metadata omitted. Original untouched.",
+  "variants": [
+    {
+      "file": "public/images/editorial-personal-2/mountain-valley-480.webp",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 20614
+    },
+    {
+      "file": "public/images/editorial-personal-2/mountain-valley-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 79996
+    },
+    {
+      "file": "public/images/editorial-personal-2/mountain-valley-960.jpg",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 99359
+    }
+  ]
+}

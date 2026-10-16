@@ -1,0 +1,9 @@
+{
+  "passed": 35,
+  "errors": [],
+  "warnings": [],
+  "failedResponses": [],
+  "successfulLocalDestinations": 13,
+  "environment": "Local headed Chrome via the installed Playwright CLI",
+  "source": "Observed successful browser-review.js output; summary transcribed from the tool result."
+}

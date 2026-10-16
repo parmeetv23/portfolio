@@ -39,3 +39,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local browser automation sessions (also covers archived session folders)
+.playwright-cli/
+cli-session-records/
+
+# Keep curated design reports, review scripts, results, and final comparisons.
+# Other generated output stays local; application source and assets are unaffected.
+/output/**
+!/output/playwright/
+!/output/playwright/*/
+!/output/playwright/*/*.md
+!/output/playwright/*/*.js
+!/output/playwright/*/*.json
+!/output/playwright/*/*.png
+!/output/playwright/design-exploration/keyboard-check.txt
+!/output/playwright/design-exploration/reduced-motion-check.txt
+!/output/playwright/design-exploration/responsive-check.txt
+
+# Temporary baselines, superseded passes, and redundant viewport captures
+/output/**/baseline-hashes.json
+/output/**/*first*.png
+/output/playwright/editorial-v3/mobile.png
+/output/playwright/editorial-v3/tablet.png
+/output/playwright/portfolio-verification/projects-*-full.png
+/output/playwright/portfolio-verification/experience-*-full.png

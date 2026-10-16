@@ -1,0 +1,86 @@
+[
+  {
+    "width": 320,
+    "pageWidth": 305,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 285,
+    "mainWidth": 305,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 390,
+    "pageWidth": 375,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 355,
+    "mainWidth": 375,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 600,
+    "pageWidth": 585,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 565,
+    "mainWidth": 585,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 768,
+    "pageWidth": 753,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 358.3359375,
+    "mainWidth": 753,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 1024,
+    "pageWidth": 1009,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 461.5390625,
+    "mainWidth": 1009,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 1440,
+    "pageWidth": 1425,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 603.078125,
+    "mainWidth": 1425,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  },
+  {
+    "width": 1920,
+    "pageWidth": 1905,
+    "overflow": false,
+    "mainCount": 1,
+    "h1Count": 1,
+    "h1Lines": 2,
+    "h1Right": 841.828125,
+    "mainWidth": 1905,
+    "outside": [],
+    "robots": "noindex, nofollow"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "viewport": 1000,
+  "scrollY": 3617,
+  "pageHeight": 4617,
+  "footer": {
+    "top": 567.8125,
+    "bottom": 1000.203125,
+    "height": 432.390625,
+    "overflow": "visible"
+  },
+  "bottomRow": {
+    "top": 905.203125,
+    "bottom": 1000.203125
+  },
+  "footerAtDocumentEnd": true,
+  "allBottomLinksVisible": true,
+  "bottomPadding": "25px"
+}

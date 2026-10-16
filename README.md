@@ -34,6 +34,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+The ongoing visual exploration lives on `portfolio-redesign`, with `main` kept as
+the stable production branch. See the [redesign workspace guide](docs/PORTFOLIO-REDESIGN.md)
+for prototype routes, comparison reports, and the policy for versioning artifacts.
+
 ### Build
 
 ```bash

@@ -1,0 +1,44 @@
+/* The personal note is the only composition change to the V3 foundation. */
+.editorial-personal .v3-work { padding-bottom: 0; }
+
+.personal-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: center;
+  gap: 72px;
+  margin-top: 72px;
+  border-top: 1px solid var(--v3-rule);
+  padding-block: 48px 72px;
+}
+
+.personal-note h2 {
+  font-family: var(--lab-serif), Georgia, serif;
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+
+.personal-note-copy p {
+  max-width: 36ch;
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--v3-muted);
+}
+
+.personal-note-photo { width: 100%; }
+.personal-note-photo picture { display: block; }
+.personal-note-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; }
+
+@media (max-width: 800px) {
+  .personal-note { grid-template-columns: minmax(0, 1fr) 260px; gap: 40px; margin-top: 64px; padding-block: 40px 64px; }
+  .personal-note h2 { font-size: 34px; }
+  .personal-note-copy p { font-size: 17px; }
+}
+
+@media (max-width: 600px) {
+  .personal-note { grid-template-columns: 1fr; gap: 25px; margin-top: 48px; padding-block: 34px 52px; }
+  .personal-note h2 { font-size: 34px; }
+  .personal-note-copy p { max-width: 33ch; font-size: 16px; margin-top: 14px; }
+  .personal-note-photo { width: min(100%, 280px); justify-self: end; }
+}

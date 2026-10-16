@@ -1,0 +1,302 @@
+{
+  "checks": [
+    {
+      "name": "Professional text is identical to V3",
+      "pass": true
+    },
+    {
+      "name": "Professional layout matches V3 within one pixel",
+      "pass": true
+    },
+    {
+      "name": "One personal note follows Projects and precedes Contact",
+      "pass": true
+    },
+    {
+      "name": "Personal copy includes the supplied interests",
+      "pass": true
+    },
+    {
+      "name": "Personal image is lazy loaded with explicit dimensions",
+      "pass": true
+    },
+    {
+      "name": "Original photographs are not referenced by this page",
+      "pass": true
+    },
+    {
+      "name": "Skip link remains first in keyboard order",
+      "pass": true
+    },
+    {
+      "name": "Skip link focuses main content",
+      "pass": true
+    },
+    {
+      "name": "Reused application selector remains functional",
+      "pass": true
+    },
+    {
+      "name": "Reused radio selection remains keyboard accessible",
+      "pass": true
+    },
+    {
+      "name": "Reused compiler interaction remains functional",
+      "pass": true
+    },
+    {
+      "name": "No horizontal page overflow at 320px",
+      "pass": true
+    },
+    {
+      "name": "Photo loads without cropping at 320px",
+      "pass": true
+    },
+    {
+      "name": "One main and one h1 at 320px",
+      "pass": true
+    },
+    {
+      "name": "No horizontal page overflow at 390px",
+      "pass": true
+    },
+    {
+      "name": "Photo loads without cropping at 390px",
+      "pass": true
+    },
+    {
+      "name": "One main and one h1 at 390px",
+      "pass": true
+    },
+    {
+      "name": "No horizontal page overflow at 768px",
+      "pass": true
+    },
+    {
+      "name": "Photo loads without cropping at 768px",
+      "pass": true
+    },
+    {
+      "name": "One main and one h1 at 768px",
+      "pass": true
+    },
+    {
+      "name": "No horizontal page overflow at 1440px",
+      "pass": true
+    },
+    {
+      "name": "Photo loads without cropping at 1440px",
+      "pass": true
+    },
+    {
+      "name": "One main and one h1 at 1440px",
+      "pass": true
+    },
+    {
+      "name": "Contact navigation still reaches the complete footer",
+      "pass": true
+    },
+    {
+      "name": "Photo has no added animation under reduced motion",
+      "pass": true
+    },
+    {
+      "name": "Inherited reduced-motion handling remains active",
+      "pass": true
+    },
+    {
+      "name": "desktop full-page capture has settled height",
+      "pass": true
+    },
+    {
+      "name": "desktop footer links remain visible",
+      "pass": true
+    },
+    {
+      "name": "mobile full-page capture has settled height",
+      "pass": true
+    },
+    {
+      "name": "mobile footer links remain visible",
+      "pass": true
+    },
+    {
+      "name": "All optimized image assets return HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "Personal content and image work without JavaScript",
+      "pass": true
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "clientWidth": 305,
+      "pageWidth": 305,
+      "noteHeight": 441.34375,
+      "imageWidth": 265,
+      "imageHeight": 198.75,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp",
+      "naturalWidth": 280,
+      "alt": "A rocky mountain reflected in a lake, with snow on its slopes and low cloud along the shoreline.",
+      "mainCount": 1,
+      "h1Count": 1,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "width": 390,
+      "clientWidth": 375,
+      "pageWidth": 375,
+      "noteHeight": 426.1953125,
+      "imageWidth": 280,
+      "imageHeight": 210,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp",
+      "naturalWidth": 280,
+      "alt": "A rocky mountain reflected in a lake, with snow on its slopes and low cloud along the shoreline.",
+      "mainCount": 1,
+      "h1Count": 1,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "width": 768,
+      "clientWidth": 753,
+      "pageWidth": 753,
+      "noteHeight": 300,
+      "imageWidth": 260,
+      "imageHeight": 195,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp",
+      "naturalWidth": 260,
+      "alt": "A rocky mountain reflected in a lake, with snow on its slopes and low cloud along the shoreline.",
+      "mainCount": 1,
+      "h1Count": 1,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "width": 1440,
+      "clientWidth": 1425,
+      "pageWidth": 1425,
+      "noteHeight": 361,
+      "imageWidth": 320,
+      "imageHeight": 240,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp",
+      "naturalWidth": 320,
+      "alt": "A rocky mountain reflected in a lake, with snow on its slopes and low cloud along the shoreline.",
+      "mainCount": 1,
+      "h1Count": 1,
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "images": [
+    {
+      "width": 320,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp"
+    },
+    {
+      "width": 390,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp"
+    },
+    {
+      "width": 768,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp"
+    },
+    {
+      "width": 1440,
+      "currentSrc": "http://127.0.0.1:3000/images/editorial-personal/alpine-lake-480.webp"
+    }
+  ],
+  "footerResults": [
+    {
+      "width": 1440,
+      "linksVisible": true,
+      "bottom": 1000.1640625
+    },
+    {
+      "width": 390,
+      "linksVisible": true,
+      "bottom": 843.9609375
+    }
+  ],
+  "assetResponses": [
+    {
+      "path": "/images/editorial-personal/alpine-lake-480.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/images/editorial-personal/alpine-lake-960.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "path": "/images/editorial-personal/alpine-lake-960.jpg",
+      "status": 200,
+      "contentType": "image/jpeg"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "failedResponses": [],
+  "professionalComparison": {
+    "v3": {
+      ".v3-hero": {
+        "x": 56,
+        "y": 81,
+        "width": 1313,
+        "height": 432.8984375,
+        "text": "ParmeetVirdiI build full-stackweb applications.My work spans React interfaces, Python and Django services, and the data integrations that connect them.Currently a software developer at Snap Remedy.Professional experience ↓"
+      },
+      ".v3-experience": {
+        "x": 56,
+        "y": 581.4921875,
+        "width": 1313,
+        "height": 1337.1796875,
+        "text": "Professional experienceFull experience ↗Apr. 2026 – PresentSoftware Developer / InternSnap RemedyA decision-support application, from ERP data to React dashboards.I work across the application: Django APIs, rules-based SKU scoring, React interfaces, and ETL pipelines for Spire ERP data.The data work includes synchronization, pricing normalization, and validated CSV imports. I progressed from intern to developer in July 2026.React / Django / Python / SQLMore about my work ↗Explore the Snap Remedy applicationOverviewInterfacesServicesDataData integrationDjango servicesReact interfacesA full-stack decision-support applicationReact dashboards connect to Django APIs, rules-based SKU scoring, and imported Spire ERP data.Conceptual application study, not a product screenshot.PRO-Formance IntermodalJan. 2026 – Apr. 2026Software InternSole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.View role ↗PhillysSep. 2025 – Nov. 2025Web DeveloperRebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.View role ↗"
+      },
+      ".v3-project-grid": {
+        "x": 56,
+        "y": 2135.0234375,
+        "width": 1313,
+        "height": 1483.328125,
+        "text": "IRC-HATDistributed chat systemServer discoveryChat serverPeer serverTCP connections / peer forwarding / local historyDiscovery, forwarding, local history.Trace a message↗Conceptual architecture study, not a runtime capture.Distributed systems / Java NIOA chat system across processes.I implemented non-blocking networking, capacity-aware discovery, peer forwarding, and indexed message history in a Java course project.Selected recovery paths are implemented; complete failover is not established.Read project ↗Real-occlusion evaluationmAP@0.50Clean trainingOcclusion-aware trainingYOLOv8n0.4710.345EfficientDet-D00.0980.11200.20.40.6Recorded mAP at 0.50 on real-occlusion imagesDetectorClean trainingOcclusion-aware trainingYOLOv8n0.4710.345EfficientDet-D00.0980.112Redrawn from recorded project results. 74 real-occlusion images; no new evaluation performed.Computer vision / PyTorchPet detection under occlusion.I compared clean training with synthetic household-object occlusions. Transfer to real occlusions was mixed across the two detectors.A small evaluation set; repeated-seed studies and statistical significance are not established.Read study ↗Language implementationJ-- to MIPS compilerA Python compiler built for CPSC 411. Explore the stages of the implementation.Parse+J--ANTLR4 grammars recognize the language. AST-shaping rules prepare it for semantic analysis.Resolve−ASTFour passes handle declarations, scope and references, types, and structural validation.Generate+MIPSStorage annotations inform stack layout, calls, control flow, and buffered assembly output.Conceptual pipeline. Full execution remains unverified because external course support was unavailable during source review.Read project"
+      },
+      ".v3-project-strip": {
+        "x": 56,
+        "y": 3673.3515625,
+        "width": 1313,
+        "height": 172.59375,
+        "text": "More projectsBrowse →Bare-metal controller C / GPIO / UARTEvolutionary search Python / scikit-learnGreenhouse simulation Java / SwingKiddoFlix React / MUI"
+      }
+    },
+    "personal": {
+      ".v3-hero": {
+        "x": 56,
+        "y": 81,
+        "width": 1313,
+        "height": 432.8984375,
+        "text": "ParmeetVirdiI build full-stackweb applications.My work spans React interfaces, Python and Django services, and the data integrations that connect them.Currently a software developer at Snap Remedy.Professional experience ↓"
+      },
+      ".v3-experience": {
+        "x": 56,
+        "y": 581.4921875,
+        "width": 1313,
+        "height": 1337.1796875,
+        "text": "Professional experienceFull experience ↗Apr. 2026 – PresentSoftware Developer / InternSnap RemedyA decision-support application, from ERP data to React dashboards.I work across the application: Django APIs, rules-based SKU scoring, React interfaces, and ETL pipelines for Spire ERP data.The data work includes synchronization, pricing normalization, and validated CSV imports. I progressed from intern to developer in July 2026.React / Django / Python / SQLMore about my work ↗Explore the Snap Remedy applicationOverviewInterfacesServicesDataData integrationDjango servicesReact interfacesA full-stack decision-support applicationReact dashboards connect to Django APIs, rules-based SKU scoring, and imported Spire ERP data.Conceptual application study, not a product screenshot.PRO-Formance IntermodalJan. 2026 – Apr. 2026Software InternSole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.View role ↗PhillysSep. 2025 – Nov. 2025Web DeveloperRebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.View role ↗"
+      },
+      ".v3-project-grid": {
+        "x": 56,
+        "y": 2135.0234375,
+        "width": 1313,
+        "height": 1483.328125,
+        "text": "IRC-HATDistributed chat systemServer discoveryChat serverPeer serverTCP connections / peer forwarding / local historyDiscovery, forwarding, local history.Trace a message↗Conceptual architecture study, not a runtime capture.Distributed systems / Java NIOA chat system across processes.I implemented non-blocking networking, capacity-aware discovery, peer forwarding, and indexed message history in a Java course project.Selected recovery paths are implemented; complete failover is not established.Read project ↗Real-occlusion evaluationmAP@0.50Clean trainingOcclusion-aware trainingYOLOv8n0.4710.345EfficientDet-D00.0980.11200.20.40.6Recorded mAP at 0.50 on real-occlusion imagesDetectorClean trainingOcclusion-aware trainingYOLOv8n0.4710.345EfficientDet-D00.0980.112Redrawn from recorded project results. 74 real-occlusion images; no new evaluation performed.Computer vision / PyTorchPet detection under occlusion.I compared clean training with synthetic household-object occlusions. Transfer to real occlusions was mixed across the two detectors.A small evaluation set; repeated-seed studies and statistical significance are not established.Read study ↗Language implementationJ-- to MIPS compilerA Python compiler built for CPSC 411. Explore the stages of the implementation.Parse+J--ANTLR4 grammars recognize the language. AST-shaping rules prepare it for semantic analysis.Resolve−ASTFour passes handle declarations, scope and references, types, and structural validation.Generate+MIPSStorage annotations inform stack layout, calls, control flow, and buffered assembly output.Conceptual pipeline. Full execution remains unverified because external course support was unavailable during source review.Read project"
+      },
+      ".v3-project-strip": {
+        "x": 56,
+        "y": 3673.3515625,
+        "width": 1313,
+        "height": 172.59375,
+        "text": "More projectsBrowse →Bare-metal controller C / GPIO / UARTEvolutionary search Python / scikit-learnGreenhouse simulation Java / SwingKiddoFlix React / MUI"
+      }
+    }
+  }
+}

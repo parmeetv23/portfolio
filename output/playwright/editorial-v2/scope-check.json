@@ -1,0 +1,11 @@
+{
+  "baseline_files": 41,
+  "changed_existing_files": [],
+  "production_and_existing_prototypes_unchanged": true,
+  "shared_dependency_changes": [
+    "gsap",
+    "@gsap/react",
+    "@fontsource-variable/outfit"
+  ],
+  "new_ui_scope": "app/design-lab/editorial-v2"
+}

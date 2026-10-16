@@ -1,0 +1,14 @@
+{
+  "existingPublicFilesAndDataUnchanged": true,
+  "checkedPaths": [
+    "app/page.tsx",
+    "app/projects",
+    "app/experience",
+    "app/components",
+    "app/globals.css",
+    "app/layout.tsx",
+    "data",
+    "package.json",
+    "package-lock.json"
+  ]
+}
