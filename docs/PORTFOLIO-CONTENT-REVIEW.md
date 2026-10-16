@@ -10,7 +10,9 @@ Reviewed against `professional-reference/` on October 16, 2026. This update pres
 | PRO-Formance Intermodal | Software Intern, Jan.–Apr. 2026; Calgary, AB | [Canonical record](professional-reference/experience/pro-formance-intermodal.md) |
 | Phillys | Web Developer, contract, Sep.–Nov. 2025; Calgary, AB | [Canonical record](professional-reference/experience/phillys.md) |
 
-Snap Remedy contributions appear once beneath both roles because the record does not allocate work to each role period. No location or specific employment arrangement is inferred. Technologies are taken from each employer's record, rather than the general skills list.
+Snap Remedy is presented as one continuous engagement, labeled “Software Developer / Intern” for Apr. 2026–Present on both the home and Experience pages. The shared summary records the July 2026 transition, and contributions appear once for the entire engagement because the work spans both roles. The source-specific title dates remain in the table above. No location or specific employment arrangement is inferred. Technologies are taken from each employer's record, rather than the general skills list.
+
+Experience wording uses established technical terms where the implementation supports them. Snap Remedy's extract/map/normalize/upsert workflow is described as **ETL (extract, transform, load)**, with resumable batch processing, relational data modeling, JSON APIs, LLM API integration, transactional imports, and automated Django testing. PRO-Formance emphasizes full-stack development, workflow automation, operational analytics, root-cause analysis, and account provisioning. Phillys emphasizes responsive web development, deployment, and production support. The home page's technical stack reflects these contexts and removes older vector-timestamp, broad RBAC, and unsupported Maven/JUnit/Pytest workflow wording. The imported source records remain unchanged.
 
 ## Projects added
 
@@ -58,7 +60,7 @@ Missing values are omitted from public cards or explicitly qualified in project 
 - Passed `git diff --check`.
 - Passed strict TypeScript compiler-API checks for `data/projects.ts` and `data/experiences.ts` with zero diagnostics.
 - Passed syntax checks for every changed TypeScript/TSX file using the installed TypeScript compiler.
-- Passed direct data checks: nine unique projects; category membership/filter helpers; all slug lookups; previous/next links and invalid-slug handling; unchanged four-project featured order; three employers/four roles; navigation targets and matching route files.
+- Passed direct data checks: nine unique projects; category membership/filter helpers; all slug lookups; previous/next links and invalid-slug handling; unchanged four-project featured order; three employers; navigation targets and matching route files. Snap Remedy's two source titles are now displayed as one combined role, with the July transition retained in its shared summary.
 - Reviewed responsive classes: the shared navigation wraps and stacks on small screens, experience role/date rows stack below `sm`, technology badges wrap, and project previous/next links stack on mobile. Existing page widths, spacing, colors, type scale, cards, and project grid are reused.
 - **Incomplete environment checks:** `npm run lint`, `./node_modules/.bin/tsc --noEmit --incremental false`, and `npm run build` were attempted but stalled during installed-dependency reads without application diagnostics, then were interrupted. Retrying lint outside the sandbox also stalled. A compiler-API application check likewise stalled reading Next declaration files. A simple read of the installed TypeScript CLI file stalled as well, while the compiler library and repository source reads worked. No dependency files were modified or reinstalled.
 - No repository ESLint configuration is present. A direct ESLint API attempt using `next/core-web-vitals` also stalled while loading the installed ESLint package.

@@ -191,15 +191,14 @@ export default function Home() {
               </h3>
               <ul className="space-y-1 text-sm leading-relaxed">
                 <li>
-                  Event-driven backend systems using Java NIO and non-blocking
-                  I/O
+                  Python/Django backends and event-driven Java NIO networking
                 </li>
                 <li>
-                  Replication, failure detection, recovery, and reconnect
-                  semantics
+                  Data synchronization, checkpoint recovery, retries, and peer
+                  replication
                 </li>
                 <li>
-                  Concurrency control, message ordering (vector timestamps), and
+                  Concurrent message processing, TCP/JSON protocols, and
                   deduplication
                 </li>
               </ul>
@@ -212,13 +211,15 @@ export default function Home() {
               </h3>
               <ul className="space-y-1 text-sm leading-relaxed">
                 <li>
-                  RESTful APIs, service-to-service communication, and protocol
-                  design
+                  ETL pipelines, Spire ERP integration, and data validation
                 </li>
                 <li>
-                  Authentication and session handling (JWT, cookies, RBAC)
+                  JSON APIs, rules-based scoring, and LLM integration through Groq
                 </li>
-                <li>Relational data modeling and querying with MySQL</li>
+                <li>
+                  Relational data modeling with Django ORM, SQLite, SQL, and MySQL
+                </li>
+                <li>JWT cookie authentication and account-level authorization</li>
               </ul>
             </div>
 
@@ -248,15 +249,16 @@ export default function Home() {
               </h3>
               <ul className="space-y-1 text-sm leading-relaxed">
                 <li>
-                  Docker and Docker Compose for reproducible local and
-                  multi-service setups
+                  Docker, Docker Compose, and Nginx configuration for
+                  multi-service applications
                 </li>
                 <li>
-                  Build and test workflows with Gradle/Maven and JUnit/Pytest
+                  Automated Django testing, mocked integrations, and
+                  data-validation checks
                 </li>
                 <li>
-                  Linux-based development, scripting, and Git-based
-                  collaboration
+                  Git, Gradle, and Make for version control and project build
+                  configuration
                 </li>
               </ul>
             </div>
