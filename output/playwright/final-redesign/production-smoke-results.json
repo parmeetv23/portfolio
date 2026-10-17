@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "name": "Production routes render successfully",
+      "pass": true
+    },
+    {
+      "name": "Caption contrast and affected accessibility regressions resolved",
+      "pass": true
+    },
+    {
+      "name": "PDF preview collapses",
+      "pass": true
+    },
+    {
+      "name": "PDF preview stays collapsed through loading feedback",
+      "pass": true
+    },
+    {
+      "name": "PDF preview reopens",
+      "pass": true
+    },
+    {
+      "name": "Current PDF downloads with correct filename",
+      "pass": true
+    },
+    {
+      "name": "Production serves the current supplied PDF bytes",
+      "pass": true,
+      "detail": {
+        "bytes": 103261,
+        "sha256": "069e6d3217a1c5fb9dda9d79c40aa61b17a25ecf839aa09361c834de1bc61da6"
+      }
+    },
+    {
+      "name": "Open PDF launches the document",
+      "pass": true
+    },
+    {
+      "name": "Production navigation: Home",
+      "pass": true
+    },
+    {
+      "name": "Production navigation: Experience",
+      "pass": true
+    },
+    {
+      "name": "Production navigation: Projects",
+      "pass": true
+    },
+    {
+      "name": "Production navigation: Resume",
+      "pass": true
+    },
+    {
+      "name": "Production 404 and prototype guard: /missing-page",
+      "pass": true,
+      "detail": {
+        "status": 404,
+        "mains": 1,
+        "footers": 1
+      }
+    },
+    {
+      "name": "Production 404 and prototype guard: /projects/missing-project",
+      "pass": true,
+      "detail": {
+        "status": 404,
+        "mains": 1,
+        "footers": 1
+      }
+    },
+    {
+      "name": "Production 404 and prototype guard: /design-lab/editorial-personal-2",
+      "pass": false,
+      "detail": {
+        "status": 200,
+        "mains": 1,
+        "footers": 1
+      }
+    }
+  ],
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "heading": "ParmeetVirdi",
+      "mainCount": 1
+    },
+    {
+      "route": "/experience",
+      "status": 200,
+      "heading": "Experience",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects",
+      "status": 200,
+      "heading": "Projects",
+      "mainCount": 1
+    },
+    {
+      "route": "/resume",
+      "status": 200,
+      "heading": "R\u00e9sum\u00e9",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "heading": "IRC-HAT \u2014 Distributed IRC-Style Chat System",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/occluded-pet-detection",
+      "status": 200,
+      "heading": "Occluded Pet Detection in Domestic Environments",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "status": 200,
+      "heading": "Genetic Algorithm Hyperparameter Tuning Framework",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "status": 200,
+      "heading": "Gengar \u2014 Soccer Scheduling Search Prototype",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/raspberry-pi-bare-metal",
+      "status": 200,
+      "heading": "Bare-Metal Raspberry Pi SNES Controller Integration",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/fullstack-restaurant-system",
+      "status": 200,
+      "heading": "Full-Stack Restaurant Management System",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "status": 200,
+      "heading": "J-- to MIPS Compiler",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/climate-control-simulation",
+      "status": 200,
+      "heading": "Climate Control Simulation",
+      "mainCount": 1
+    },
+    {
+      "route": "/projects/kiddoflix",
+      "status": 200,
+      "heading": "KiddoFlix \u2014 Parental-Control Interface Prototype",
+      "mainCount": 1
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/resume",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/resume",
+      "violations": []
+    }
+  ],
+  "errors": []
+}

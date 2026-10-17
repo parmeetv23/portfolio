@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "route": "/design-lab",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/editorial",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/experimental",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/editorial-v2",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/editorial-v3",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/editorial-personal",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "route": "/design-lab/editorial-personal-2",
+      "status": 404,
+      "pass": true
+    }
+  ],
+  "view": {
+    "heading": "Page not found.",
+    "mains": 1,
+    "footers": 1,
+    "prototypeCount": 0
+  },
+  "publicRoutes": [
+    {
+      "route": "/",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "route": "/experience",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "route": "/projects",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "route": "/resume",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

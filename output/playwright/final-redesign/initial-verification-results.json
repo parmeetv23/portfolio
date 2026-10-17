@@ -1,0 +1,983 @@
+{
+  "checks": [
+    {
+      "name": "All nine projects present",
+      "pass": true
+    },
+    {
+      "name": "Filter Distributed",
+      "pass": true
+    },
+    {
+      "name": "Filter ML",
+      "pass": true
+    },
+    {
+      "name": "Filter Embedded",
+      "pass": true
+    },
+    {
+      "name": "Filter Full-Stack",
+      "pass": true
+    },
+    {
+      "name": "Filter Systems",
+      "pass": true
+    },
+    {
+      "name": "Filter Frontend",
+      "pass": true
+    },
+    {
+      "name": "Filter All",
+      "pass": true
+    },
+    {
+      "name": "Keyboard filtering",
+      "pass": true
+    },
+    {
+      "name": "Skip link receives first keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Skip link targets main content",
+      "pass": true
+    },
+    {
+      "name": "Application layer selector",
+      "pass": true
+    },
+    {
+      "name": "Native radio arrow-key navigation",
+      "pass": true
+    },
+    {
+      "name": "Compiler disclosure",
+      "pass": true
+    },
+    {
+      "name": "Message trace responds",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion removes travel and smooth scrolling",
+      "pass": true,
+      "detail": {
+        "animation": "none",
+        "opacity": "0",
+        "scroll": "auto"
+      }
+    },
+    {
+      "name": "Primary navigation Experience",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Projects",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Resume",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Home",
+      "pass": true
+    },
+    {
+      "name": "Experience anchor navigation",
+      "pass": true
+    },
+    {
+      "name": "Resume download filename",
+      "pass": true
+    },
+    {
+      "name": "Resume served as PDF",
+      "pass": true
+    },
+    {
+      "name": "Open PDF opens document",
+      "pass": true
+    },
+    {
+      "name": "PDF preview can be collapsed",
+      "pass": true
+    },
+    {
+      "name": "PDF preview can be reopened",
+      "pass": false
+    },
+    {
+      "name": "Mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "Escape closes menu and restores focus",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation closes after route change",
+      "pass": true
+    },
+    {
+      "name": "Responsive pages have one main and heading, no overflow, broken images, or clipped footer links",
+      "pass": true
+    },
+    {
+      "name": "Automated accessibility checks",
+      "pass": false
+    },
+    {
+      "name": "All project content available without JavaScript",
+      "pass": true
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "route": "/",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/experience",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/resume",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/distributed-chat-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/occluded-pet-detection",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/fullstack-restaurant-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/climate-control-simulation",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 320,
+      "route": "/projects/kiddoflix",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/experience",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/resume",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/distributed-chat-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/occluded-pet-detection",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/fullstack-restaurant-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/climate-control-simulation",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 390,
+      "route": "/projects/kiddoflix",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/experience",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/resume",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/distributed-chat-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/occluded-pet-detection",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/fullstack-restaurant-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/climate-control-simulation",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 820,
+      "route": "/projects/kiddoflix",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/experience",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/resume",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/distributed-chat-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/occluded-pet-detection",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/fullstack-restaurant-system",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/climate-control-simulation",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    },
+    {
+      "width": 1440,
+      "route": "/projects/kiddoflix",
+      "overflow": false,
+      "footerVisible": true,
+      "brokenImages": 0,
+      "h1": 1,
+      "main": 1
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "route": "/",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".v3-compiler-intro > div > .v3-discipline"
+            ],
+            [
+              ".v3-compiler-foot > p"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "article:nth-child(3) > .art-ml.project-art > figcaption"
+            ],
+            [
+              "article:nth-child(4) > .art-ml.project-art > figcaption"
+            ],
+            [
+              ".art-embedded > figcaption"
+            ],
+            [
+              ".art-full-stack > figcaption"
+            ],
+            [
+              ".art-compiler > figcaption"
+            ],
+            [
+              ".art-systems > figcaption"
+            ],
+            [
+              ".art-frontend > figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/experience",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/resume",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".pdf-status"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/distributed-chat-system",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects/occluded-pet-detection",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/fullstack-restaurant-system",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/climate-control-simulation",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/kiddoflix",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".v3-compiler-intro > div > .v3-discipline"
+            ],
+            [
+              ".v3-compiler-foot > p"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "article:nth-child(3) > .art-ml.project-art > figcaption"
+            ],
+            [
+              "article:nth-child(4) > .art-ml.project-art > figcaption"
+            ],
+            [
+              ".art-embedded > figcaption"
+            ],
+            [
+              ".art-full-stack > figcaption"
+            ],
+            [
+              ".art-compiler > figcaption"
+            ],
+            [
+              ".art-systems > figcaption"
+            ],
+            [
+              ".art-frontend > figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/experience",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/resume",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".pdf-status"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/distributed-chat-system",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects/occluded-pet-detection",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects/genetic-algorithm-hyperparameter-finder",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/ai-scheduling-hard-constraints",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/raspberry-pi-bare-metal",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/fullstack-restaurant-system",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/j-minus-minus-mips-compiler",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/climate-control-simulation",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/kiddoflix",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failedResponses": []
+}
