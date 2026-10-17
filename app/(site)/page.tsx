@@ -1,0 +1,201 @@
+import DetectionResults from "@/app/components/editorial/DetectionResults";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { experiences } from "@/data/experiences";
+import {
+  ApplicationFigure,
+  CompilerStudy,
+  NetworkFigure,
+  ProjectStrip,
+} from "@/app/components/editorial/Interactions";
+import PersonalNote from "@/app/components/editorial/PersonalNote";
+
+export const metadata: Metadata = {
+  title: "Software developer",
+  description:
+    "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+  openGraph: {
+    title: "Parmeet Virdi | Software developer",
+    description:
+      "Full-stack applications, backend systems, and applied machine learning.",
+    images: [{ url: "/icon.png", alt: "Parmeet Virdi" }],
+  },
+};
+
+export default function EditorialPersonalSecondPhoto() {
+  return (
+    <>
+      <main id="main-content" className="v3-main" tabIndex={-1}>
+        <section
+          id="v3-overview"
+          className="v3-hero v3-wrap"
+          aria-labelledby="v3-title"
+        >
+          <h1 id="v3-title">
+            Parmeet
+            <br />
+            Virdi
+          </h1>
+          <div className="v3-hero-intro">
+            <p className="v3-introduction">
+              I build full-stack
+              <br />
+              web applications.
+            </p>
+            <p className="v3-hero-context">
+              My work spans backend systems, distributed computing, React
+              interfaces, and data integration. My projects explore scalable
+              services and applied machine learning.
+            </p>
+            <p className="v3-hero-current">
+              Currently a software developer at Snap Remedy.
+            </p>
+            <a href="#v3-experience" className="v3-work-link">
+              Professional experience <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </section>
+        <div className="v3-opening-foot v3-wrap">
+          <span>
+            Backend systems, data integration &amp; frontend development{" "}
+          </span>
+          <span>Based in Calgary, Alberta</span>
+        </div>
+
+        <section
+          id="v3-experience"
+          className="v3-experience v3-wrap"
+          aria-labelledby="v3-experience-title"
+        >
+          <div className="v3-section-heading">
+            <h2 id="v3-experience-title">Professional experience</h2>
+            <Link href="/experience">
+              Full experience <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+          <article className="v3-current-feature">
+            <div className="v3-current-copy">
+              <div className="v3-current-meta">
+                <span>{experiences[0]!.roles[0]!.dates}</span>
+                <span>Software Developer / Intern</span>
+              </div>
+              <h3>
+                <Link href="/experience#snap-remedy">Snap Remedy</Link>
+              </h3>
+              <p className="v3-current-lead">
+                A decision-support application, from ERP data to React
+                dashboards.
+              </p>
+              <p>
+                I build Django APIs, ETL pipelines, rules-based SKU scoring, and
+                React interfaces, integrating LLM-generated explanations into
+                analytical workflows.
+              </p>
+              <p className="v3-current-context">
+                My work includes data synchronization, transactional processing,
+                validated CSV imports, and automated backend testing. Promoted
+                from intern to developer in July 2026.
+              </p>
+              <p className="v3-current-stack">Python / Django / React / SQL</p>
+              <Link className="v3-current-link" href="/experience#snap-remedy">
+                More about my work <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+            <ApplicationFigure />
+          </article>
+          <div className="v3-previous-roles">
+            {experiences.slice(1).map((experience) => (
+              <article className="v3-past-job" key={experience.id}>
+                <div className="v3-job-top">
+                  <h3>
+                    <Link href={`/experience#${experience.id}`}>
+                      {experience.company}
+                    </Link>
+                  </h3>
+                  <span>{experience.roles[0]!.dates}</span>
+                </div>
+                <p className="v3-job-role">{experience.roles[0]!.title}</p>
+                <p>{experience.summary}</p>
+                <Link
+                  className="v3-role-link"
+                  href={`/experience#${experience.id}`}
+                >
+                  View role <span aria-hidden="true">↗</span>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="v3-work"
+          className="v3-work v3-wrap"
+          aria-labelledby="v3-work-title"
+        >
+          <div className="v3-section-heading">
+            <h2 id="v3-work-title">Selected projects</h2>
+            <Link href="/projects">
+              View all projects <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+          <div className="v3-project-grid">
+            <article className="v3-chat-project">
+              <NetworkFigure />
+              <div className="v3-project-description">
+                <p className="v3-discipline">Distributed systems / Java NIO</p>
+                <h3>
+                  <Link href="/projects/distributed-chat-system">
+                    A chat system across processes.
+                  </Link>
+                </h3>
+                <p>
+                  I implemented non-blocking networking, capacity-aware
+                  discovery, peer forwarding, and indexed message history in a
+                  Java project.
+                </p>
+                <div className="v3-project-bottom">
+                  <p>
+                    Selected recovery paths are implemented; complete failover
+                    is not established.
+                  </p>
+                  <Link href="/projects/distributed-chat-system">
+                    Read project <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </div>
+            </article>
+            <article className="v3-pet-project">
+              <DetectionResults />
+              <div className="v3-project-description">
+                <p className="v3-discipline">Computer vision / PyTorch</p>
+                <h3>
+                  <Link href="/projects/occluded-pet-detection">
+                    Pet detection under occlusion.
+                  </Link>
+                </h3>
+                <p>
+                  I compared clean training with synthetic household-object
+                  occlusions. Transfer to real occlusions was mixed across the
+                  two detectors.
+                </p>
+                <div className="v3-project-bottom">
+                  <p>
+                    A small evaluation set; repeated-seed studies and
+                    statistical significance are not established.
+                  </p>
+                  <Link href="/projects/occluded-pet-detection">
+                    Read study <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </div>
+            </article>
+            <CompilerStudy />
+          </div>
+          <ProjectStrip />
+        </section>
+
+        <PersonalNote />
+      </main>
+    </>
+  );
+}

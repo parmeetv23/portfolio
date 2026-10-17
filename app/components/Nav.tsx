@@ -1,33 +1,22 @@
-import Link from 'next/link'
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useRef, useState } from 'react';
 
+const pages = [{ href: '/', label: 'Home' }, { href: '/experience', label: 'Experience' }, { href: '/projects', label: 'Projects' }, { href: '/resume', label: 'Resume' }];
 export default function Nav() {
-    return (
-        <nav className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-            <div className="max-w-6xl mx-auto px-6 py-4">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <Link href="/" className="text-xl font-semibold text-foreground hover:text-accent transition-colors">
-                        Parmeet Virdi
-                    </Link>
-                    <div className="flex flex-wrap gap-x-6 gap-y-2">
-                        <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
-                            Home
-                        </Link>
-                        <Link href="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                            Projects
-                        </Link>
-                        <Link href="/experience" className="text-muted-foreground hover:text-foreground transition-colors">
-                            Experience
-                        </Link>
-                        <Link href="/resume" className="text-muted-foreground hover:text-foreground transition-colors">
-                            Resume
-                        </Link>
-                        <Link href="/#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                            Contact
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    )
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  return <header className="v3-navigation site-navigation" onKeyDown={event => { if (event.key === 'Escape' && open) { setOpen(false); toggle.current?.focus(); } }}>
+    <div className="v3-header v3-wrap">
+      <Link href="/" className="v3-monogram" aria-label="Parmeet Virdi — Home" onClick={() => setOpen(false)}>pv<span aria-hidden="true">.</span></Link>
+      <p className="v3-header-role">Software developer<span>Calgary, Alberta</span></p>
+      <button ref={toggle} className="menu-toggle" type="button" aria-expanded={open} aria-controls="site-menu" onClick={() => setOpen(!open)}>{open ? 'Close' : 'Menu'} <span aria-hidden="true">{open ? '−' : '+'}</span></button>
+      <nav id="site-menu" className={open ? 'is-open' : ''} aria-label="Primary navigation">
+        {pages.map(({ href, label }) => <Link key={href} href={href} aria-current={(href === '/' ? pathname === '/' : pathname.startsWith(href)) ? 'page' : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
+        <a href="#contact" onClick={() => setOpen(false)}>Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>;
 }
-

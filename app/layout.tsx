@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+
+export const viewport: Viewport = { themeColor: '#f1f3ed' };
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -11,8 +13,10 @@ export const metadata: Metadata = {
     template: "%s | Parmeet Virdi",
   },
   description:
-    "Portfolio of Parmeet Virdi - Backend engineer specializing in distributed systems, fault tolerance, and applied machine learning.",
+    "Portfolio of Parmeet Virdi - Software developer with full-stack experience in web applications, backend systems, data integration, distributed systems, and applied machine learning.",
   keywords: [
+    "software development",
+    "full-stack development",
     "backend engineering",
     "distributed systems",
     "machine learning",
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Parmeet Virdi",
     title: "Parmeet Virdi | Portfolio",
     description:
-      "Portfolio of Parmeet Virdi - Backend engineer specializing in distributed systems, fault tolerance, and applied machine learning.",
+      "Portfolio of Parmeet Virdi - Software developer with full-stack experience in web applications, backend systems, data integration, distributed systems, and applied machine learning.",
   },
   robots: {
     index: true,

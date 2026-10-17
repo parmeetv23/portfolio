@@ -1,0 +1,1 @@
+Newsreader is promoted unchanged from the approved design-lab font assets. See NEWSREADER-OFL.txt for its license. Outfit is self-hosted from the existing @fontsource-variable/outfit dependency; its license remains in that package.
