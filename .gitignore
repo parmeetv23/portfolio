@@ -64,3 +64,7 @@ cli-session-records/
 /output/playwright/editorial-v3/tablet.png
 /output/playwright/portfolio-verification/projects-*-full.png
 /output/playwright/portfolio-verification/experience-*-full.png
+
+# Isolated local review builds
+/.next-redesign/
+/.next-production/
