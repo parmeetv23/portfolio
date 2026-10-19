@@ -1,0 +1,69 @@
+/* Snap Remedy uses the public editorial tokens and reading rhythm. */
+.experience-contributions section + section { margin-top: 30px; }
+.experience-contributions h3 { font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 10px; }
+.experience-contributions p, .experience-supporting p { font-size: 18px; line-height: 1.8; max-width: var(--measure); }
+.experience-supporting { margin-top: 30px; color: var(--v3-muted); }
+.experience-case-link { margin-block: 25px; }
+.snap-introduction { display: grid; grid-template-columns: 7fr 4fr; gap: 100px; border-block: 1px solid var(--v3-rule); padding-block: 42px; }
+.snap-introduction h2, .snap-section-heading h2 { font-family: var(--lab-serif), Georgia, serif; font-size: 38px; line-height: 1.12; letter-spacing: -.035em; }
+.snap-introduction h2 { margin-bottom: 22px; }
+.snap-introduction > div p, .snap-case-body p { font-size: 18px; line-height: 1.8; max-width: var(--measure); }
+.snap-introduction > div p + p, .snap-case-body p + p { margin-top: 20px; }
+.snap-engagement > p { font-size: 14px; color: var(--v3-muted); }
+.snap-engagement .technology-list { margin-top: 28px; }
+.snap-architecture-section { padding-top: 65px; }
+.snap-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 30px; }
+.snap-section-heading > p { font-size: 15px; line-height: 1.6; color: var(--v3-muted); max-width: 35ch; }
+.snap-case-return { border-top: 1px solid var(--v3-rule); padding-block: 28px 75px; }
+.snap-architecture { --snap-surface: #e4e9de; padding: 30px; background: var(--snap-surface); color: var(--v3-ink); min-width: 0; }
+.snap-architecture-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-bottom: 25px; border-bottom: 1px solid #aab8a2; }
+.snap-architecture-heading > p { font-size: 16px; line-height: 1.5; }
+.snap-architecture-heading > span { color: var(--v3-muted); font-size: 12px; }
+.snap-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; padding: 35px 0; margin: 0; gap: 28px; }
+.snap-flow > li { position: relative; min-width: 0; }
+.snap-flow > li + li::before { content: '→'; position: absolute; left: -24px; top: 22px; font-size: 20px; color: var(--v3-muted); }
+.snap-flow .snap-stage-mark { width: 80px; height: 64px; margin-bottom: 23px; }
+.snap-stage-title { font-family: var(--lab-serif), Georgia, serif; font-size: 27px; line-height: 1.15; letter-spacing: -.025em; margin-bottom: 14px; }
+.snap-stage-copy { font-size: 14px; line-height: 1.6; color: var(--v3-muted); }
+.snap-stage-copy span { display: block; }
+.snap-stage-copy span + span { margin-top: 6px; }
+.snap-side-flows { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-block: 28px; border-block: 1px solid #aab8a2; }
+.snap-side-title { font-size: 17px; font-weight: 500; margin-bottom: 12px; }
+.snap-side-flows .snap-side-route { font-size: 15px; line-height: 1.7; color: var(--v3-ink); }
+.snap-side-route span { padding-inline: 4px; }
+.snap-side-flows p:last-child { color: var(--v3-muted); font-size: 13px; line-height: 1.65; margin-top: 12px; }
+.snap-architecture figcaption { color: var(--v3-muted); font-size: 12px; line-height: 1.7; margin-top: 20px; max-width: 94ch; }
+.snap-architecture-compact { --snap-surface: #d6ded0; align-self: center; padding: 28px; }
+.snap-architecture-compact .snap-architecture-heading { display: block; }
+.snap-architecture-compact .snap-architecture-heading > p { font-family: var(--lab-serif), Georgia, serif; font-size: 32px; letter-spacing: -.025em; margin-bottom: 8px; }
+.snap-architecture-compact .snap-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-block: 35px 28px; gap: 30px; }
+.snap-architecture-compact .snap-stage-title { font-size: 27px; }
+.snap-architecture-compact .snap-stage-copy { font-size: 14px; }
+@media (max-width: 1000px) {
+  .snap-introduction { gap: 40px; grid-template-columns: 1fr; }
+  .snap-engagement .role-progression { margin-top: 18px; }
+  .snap-section-heading { align-items: start; flex-direction: column; gap: 18px; }
+  .snap-section-heading > p { max-width: 60ch; }
+  .snap-architecture:not(.snap-architecture-compact) .snap-flow { grid-template-columns: 1fr; gap: 34px; }
+  .snap-architecture:not(.snap-architecture-compact) .snap-flow > li { display: grid; grid-template-columns: 70px 1fr; column-gap: 24px; align-items: start; }
+  .snap-architecture:not(.snap-architecture-compact) .snap-stage-mark { grid-row: span 2; width: 65px; height: 52px; margin-bottom: 0; }
+  .snap-architecture:not(.snap-architecture-compact) .snap-stage-title { margin-bottom: 8px; }
+  .snap-architecture:not(.snap-architecture-compact) .snap-flow > li + li::before { content: '↓'; left: 26px; top: -31px; }
+  .snap-architecture-heading { flex-wrap: wrap; gap: 10px; }
+}
+@media (max-width: 600px) {
+  .experience-contributions h3 { font-size: 19px; }
+  .experience-contributions p, .experience-supporting p, .snap-introduction > div p, .snap-case-body p { font-size: 16px; }
+  .snap-introduction { padding-block: 30px; gap: 30px; }
+  .snap-introduction h2, .snap-section-heading h2 { font-size: 34px; }
+  .snap-architecture-section { padding-top: 40px; }
+  .snap-architecture { padding: 22px; }
+  .snap-architecture-heading { padding-bottom: 20px; }
+  .snap-side-flows { grid-template-columns: 1fr; gap: 25px; }
+  .snap-side-flows > div + div { border-top: 1px solid #aab8a2; padding-top: 25px; }
+  .snap-architecture-compact .snap-flow { grid-template-columns: 1fr; gap: 34px; }
+  .snap-architecture-compact .snap-flow > li { display: grid; grid-template-columns: 65px 1fr; column-gap: 20px; }
+  .snap-architecture-compact .snap-stage-mark { grid-row: span 2; width: 60px; height: 48px; margin: 0; }
+  .snap-architecture-compact .snap-stage-title { margin-bottom: 8px; }
+  .snap-architecture-compact .snap-flow > li + li::before { content: '↓'; left: 23px; top: -31px; }
+}

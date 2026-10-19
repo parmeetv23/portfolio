@@ -1,0 +1,734 @@
+{
+  "checks": [
+    {
+      "name": "narrow /: page and layout",
+      "pass": true
+    },
+    {
+      "name": "narrow /: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "narrow /: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "narrow /: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience: page and layout",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience: contract progression",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience/snap-remedy: page and layout",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience/snap-remedy: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "narrow /experience/snap-remedy: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience/snap-remedy: contract progression",
+      "pass": true
+    },
+    {
+      "name": "narrow /experience/snap-remedy: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "mobile /: page and layout",
+      "pass": true
+    },
+    {
+      "name": "mobile /: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "mobile /: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "mobile /: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience: page and layout",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience: contract progression",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience/snap-remedy: page and layout",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience/snap-remedy: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "mobile /experience/snap-remedy: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience/snap-remedy: contract progression",
+      "pass": true
+    },
+    {
+      "name": "mobile /experience/snap-remedy: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "tablet /: page and layout",
+      "pass": true
+    },
+    {
+      "name": "tablet /: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "horizontal"
+      }
+    },
+    {
+      "name": "tablet /: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "tablet /: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience: page and layout",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience: contract progression",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience/snap-remedy: page and layout",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience/snap-remedy: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "vertical"
+      }
+    },
+    {
+      "name": "tablet /experience/snap-remedy: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience/snap-remedy: contract progression",
+      "pass": true
+    },
+    {
+      "name": "tablet /experience/snap-remedy: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "desktop /: page and layout",
+      "pass": true
+    },
+    {
+      "name": "desktop /: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "horizontal"
+      }
+    },
+    {
+      "name": "desktop /: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "desktop /: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience: page and layout",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience: contract progression",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience/snap-remedy: page and layout",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience/snap-remedy: diagram direction and labels",
+      "pass": true,
+      "detail": {
+        "direction": "horizontal"
+      }
+    },
+    {
+      "name": "desktop /experience/snap-remedy: generalized public content",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience/snap-remedy: contract progression",
+      "pass": true
+    },
+    {
+      "name": "desktop /experience/snap-remedy: no private-document links",
+      "pass": true
+    },
+    {
+      "name": "Automated accessibility checks",
+      "pass": true
+    },
+    {
+      "name": "Content renders without JavaScript: /",
+      "pass": true
+    },
+    {
+      "name": "Content renders without JavaScript: /experience",
+      "pass": true
+    },
+    {
+      "name": "Content renders without JavaScript: /experience/snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "All public routes return 200",
+      "pass": true,
+      "detail": [
+        {
+          "route": "/",
+          "status": 200
+        },
+        {
+          "route": "/experience",
+          "status": 200
+        },
+        {
+          "route": "/experience/snap-remedy",
+          "status": 200
+        },
+        {
+          "route": "/projects",
+          "status": 200
+        },
+        {
+          "route": "/resume",
+          "status": 200
+        },
+        {
+          "route": "/projects/distributed-chat-system",
+          "status": 200
+        },
+        {
+          "route": "/projects/occluded-pet-detection",
+          "status": 200
+        },
+        {
+          "route": "/projects/genetic-algorithm-hyperparameter-finder",
+          "status": 200
+        },
+        {
+          "route": "/projects/ai-scheduling-hard-constraints",
+          "status": 200
+        },
+        {
+          "route": "/projects/raspberry-pi-bare-metal",
+          "status": 200
+        },
+        {
+          "route": "/projects/fullstack-restaurant-system",
+          "status": 200
+        },
+        {
+          "route": "/projects/j-minus-minus-mips-compiler",
+          "status": 200
+        },
+        {
+          "route": "/projects/climate-control-simulation",
+          "status": 200
+        },
+        {
+          "route": "/projects/kiddoflix",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "Production prototype guard",
+      "pass": true
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "layouts": [
+    {
+      "device": "narrow",
+      "route": "/",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 305,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Home",
+      "stages": [
+        {
+          "x": 42,
+          "y": 1703.421875,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Data sources"
+        },
+        {
+          "x": 42,
+          "y": 1821.265625,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Django backend"
+        },
+        {
+          "x": 42,
+          "y": 1992.5546875,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "React frontend"
+        }
+      ]
+    },
+    {
+      "device": "narrow",
+      "route": "/experience",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 305,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": []
+    },
+    {
+      "device": "narrow",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 305,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": [
+        {
+          "x": 42,
+          "y": 1697.2421875,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Source data"
+        },
+        {
+          "x": 42,
+          "y": 1821.0859375,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Ingestion"
+        },
+        {
+          "x": 42,
+          "y": 1989.7265625,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Relational storage"
+        },
+        {
+          "x": 42,
+          "y": 2167.015625,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "Scoring and APIs"
+        },
+        {
+          "x": 42,
+          "y": 2344.3046875,
+          "width": 221,
+          "scrollWidth": 221,
+          "title": "React interface"
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "route": "/",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 375,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Home",
+      "stages": [
+        {
+          "x": 42,
+          "y": 1562.671875,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Data sources"
+        },
+        {
+          "x": 42,
+          "y": 1658.1171875,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Django backend"
+        },
+        {
+          "x": 42,
+          "y": 1775.9609375,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "React frontend"
+        }
+      ]
+    },
+    {
+      "device": "mobile",
+      "route": "/experience",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 375,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": []
+    },
+    {
+      "device": "mobile",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 375,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": [
+        {
+          "x": 42,
+          "y": 1495.2109375,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Source data"
+        },
+        {
+          "x": 42,
+          "y": 1619.0546875,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Ingestion"
+        },
+        {
+          "x": 42,
+          "y": 1742.8984375,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Relational storage"
+        },
+        {
+          "x": 42,
+          "y": 1866.7421875,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "Scoring and APIs"
+        },
+        {
+          "x": 42,
+          "y": 1990.5859375,
+          "width": 291,
+          "scrollWidth": 291,
+          "title": "React interface"
+        }
+      ]
+    },
+    {
+      "device": "tablet",
+      "route": "/",
+      "status": 200,
+      "width": 820,
+      "scrollWidth": 805,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Home",
+      "stages": [
+        {
+          "x": 60,
+          "y": 1224.671875,
+          "width": 208.328125,
+          "scrollWidth": 208,
+          "title": "Data sources"
+        },
+        {
+          "x": 298.328125,
+          "y": 1224.671875,
+          "width": 208.3359375,
+          "scrollWidth": 208,
+          "title": "Django backend"
+        },
+        {
+          "x": 536.6640625,
+          "y": 1224.671875,
+          "width": 208.328125,
+          "scrollWidth": 208,
+          "title": "React frontend"
+        }
+      ]
+    },
+    {
+      "device": "tablet",
+      "route": "/experience",
+      "status": 200,
+      "width": 820,
+      "scrollWidth": 805,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": []
+    },
+    {
+      "device": "tablet",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "width": 820,
+      "scrollWidth": 805,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": [
+        {
+          "x": 62,
+          "y": 1274.6640625,
+          "width": 681,
+          "scrollWidth": 681,
+          "title": "Source data"
+        },
+        {
+          "x": 62,
+          "y": 1398.5078125,
+          "width": 681,
+          "scrollWidth": 681,
+          "title": "Ingestion"
+        },
+        {
+          "x": 62,
+          "y": 1522.3515625,
+          "width": 681,
+          "scrollWidth": 681,
+          "title": "Relational storage"
+        },
+        {
+          "x": 62,
+          "y": 1646.1953125,
+          "width": 681,
+          "scrollWidth": 681,
+          "title": "Scoring and APIs"
+        },
+        {
+          "x": 62,
+          "y": 1770.0390625,
+          "width": 681,
+          "scrollWidth": 681,
+          "title": "React interface"
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "route": "/",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Home",
+      "stages": [
+        {
+          "x": 669,
+          "y": 1083.21875,
+          "width": 204,
+          "scrollWidth": 204,
+          "title": "Data sources"
+        },
+        {
+          "x": 903,
+          "y": 1083.21875,
+          "width": 204,
+          "scrollWidth": 204,
+          "title": "Django backend"
+        },
+        {
+          "x": 1137,
+          "y": 1083.21875,
+          "width": 204,
+          "scrollWidth": 204,
+          "title": "React frontend"
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "route": "/experience",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": []
+    },
+    {
+      "device": "desktop",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "mainCount": 1,
+      "h1Count": 1,
+      "brokenImages": [],
+      "activeNavigation": "Experience",
+      "stages": [
+        {
+          "x": 86,
+          "y": 1155.8671875,
+          "width": 228.1953125,
+          "scrollWidth": 228,
+          "title": "Source data"
+        },
+        {
+          "x": 342.1953125,
+          "y": 1155.8671875,
+          "width": 228.203125,
+          "scrollWidth": 228,
+          "title": "Ingestion"
+        },
+        {
+          "x": 598.3984375,
+          "y": 1155.8671875,
+          "width": 228.1953125,
+          "scrollWidth": 228,
+          "title": "Relational storage"
+        },
+        {
+          "x": 854.59375,
+          "y": 1155.8671875,
+          "width": 228.203125,
+          "scrollWidth": 228,
+          "title": "Scoring and APIs"
+        },
+        {
+          "x": 1110.796875,
+          "y": 1155.8671875,
+          "width": 228.1953125,
+          "scrollWidth": 228,
+          "title": "React interface"
+        }
+      ]
+    }
+  ],
+  "accessibility": [
+    {
+      "device": "mobile",
+      "route": "/",
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "route": "/experience",
+      "violations": []
+    },
+    {
+      "device": "mobile",
+      "route": "/experience/snap-remedy",
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "route": "/",
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "route": "/experience",
+      "violations": []
+    },
+    {
+      "device": "desktop",
+      "route": "/experience/snap-remedy",
+      "violations": []
+    }
+  ],
+  "errors": []
+}

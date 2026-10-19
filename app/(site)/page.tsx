@@ -3,12 +3,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { experiences } from "@/data/experiences";
 import {
-  ApplicationFigure,
   CompilerStudy,
   NetworkFigure,
   ProjectStrip,
 } from "@/app/components/editorial/Interactions";
 import PersonalNote from "@/app/components/editorial/PersonalNote";
+import SnapRemedyArchitecture from "@/app/components/editorial/SnapRemedyArchitecture";
 
 export const metadata: Metadata = {
   title: "Software developer",
@@ -76,32 +76,30 @@ export default function EditorialPersonalSecondPhoto() {
           <article className="v3-current-feature">
             <div className="v3-current-copy">
               <div className="v3-current-meta">
-                <span>{experiences[0]!.roles[0]!.dates}</span>
-                <span>Software Developer / Intern</span>
+                <span>{experiences[0]!.dates}</span>
+                <span>{experiences[0]!.roles[0]!.title}</span>
               </div>
               <h3>
                 <Link href="/experience#snap-remedy">Snap Remedy</Link>
               </h3>
               <p className="v3-current-lead">
-                A decision-support application, from ERP data to React
-                dashboards.
+                ERP data pipelines and configurable SKU ranking
               </p>
               <p>
-                I build Django APIs, ETL pipelines, rules-based SKU scoring, and
-                React interfaces, integrating LLM-generated explanations into
-                analytical workflows.
+                I developed the Django backend and React frontend, including
+                the relational data model and the interface for configuring
+                comparisons and inspecting results.
               </p>
               <p className="v3-current-context">
-                My work includes data synchronization, transactional processing,
-                validated CSV imports, and automated backend testing. Promoted
-                from intern to developer in July 2026.
+                ETL pipelines map incoming records into local storage, with
+                checkpoints supporting failed-page replay.
               </p>
               <p className="v3-current-stack">Python / Django / React / SQL</p>
               <Link className="v3-current-link" href="/experience#snap-remedy">
                 More about my work <span aria-hidden="true">↗</span>
               </Link>
             </div>
-            <ApplicationFigure />
+            <SnapRemedyArchitecture compact />
           </article>
           <div className="v3-previous-roles">
             {experiences.slice(1).map((experience) => (

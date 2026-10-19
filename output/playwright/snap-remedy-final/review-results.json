@@ -1,0 +1,102 @@
+{
+  "results": [
+    {
+      "device": "desktop",
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 1,
+        "full": 0,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "device": "desktop",
+      "route": "/experience",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 0,
+        "full": 0,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "device": "desktop",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 0,
+        "full": 1,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "device": "mobile",
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 1,
+        "full": 0,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "device": "mobile",
+      "route": "/experience",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 0,
+        "full": 0,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "device": "mobile",
+      "route": "/experience/snap-remedy",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "compact": 0,
+        "full": 1,
+        "compactCaptions": 0,
+        "clipped": false
+      },
+      "copy": true,
+      "caseLink": true,
+      "violations": [],
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

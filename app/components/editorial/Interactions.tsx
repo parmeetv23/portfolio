@@ -2,26 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import ApplicationStudy, { type ApplicationLayer } from "./ApplicationStudy";
 import { NetworkStudy } from "./Diagrams";
-
-const layers: { id: ApplicationLayer; name: string; title: string; copy: string }[] = [
-  { id: "overview", name: "Overview", title: "A full-stack decision-support application", copy: "React dashboards connect to Django APIs, rules-based SKU scoring, and imported Spire ERP data." },
-  { id: "interface", name: "Interfaces", title: "React dashboards", copy: "Interfaces for exploring SKU rankings, filtering results, reviewing pricing, and previewing CSV imports." },
-  { id: "services", name: "Services", title: "Django APIs and application logic", copy: "Relational models, configurable scoring, filtering, and pricing connect the data to the interface." },
-  { id: "data", name: "Data", title: "ETL and data integration", copy: "Spire ERP synchronization, pricing normalization, and validated CSV imports support the application’s data layer." },
-];
-
-export function ApplicationFigure() {
-  const [active, setActive] = useState<ApplicationLayer>("overview");
-  const layer = layers.find(layer => layer.id === active)!;
-  return <figure className="v3-application-figure">
-    <fieldset className="v3-layer-controls"><legend className="v3-sr-only">Explore the Snap Remedy application</legend>{layers.map(layer => <label key={layer.id} className={active === layer.id ? "is-selected" : ""}><input type="radio" name="application-layer" value={layer.id} checked={active === layer.id} onChange={() => setActive(layer.id)}/><span>{layer.name}</span></label>)}</fieldset>
-    <ApplicationStudy active={active}/>
-    <div className="v3-layer-description" aria-live="polite" aria-atomic="true"><p className="v3-layer-title">{layer.title}</p><p>{layer.copy}</p></div>
-    <figcaption>Conceptual application study, not a product screenshot.</figcaption>
-  </figure>;
-}
 
 export function NetworkFigure() {
   const [traceCount, setTraceCount] = useState(0);

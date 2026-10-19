@@ -3,12 +3,16 @@ export interface Experience {
     company: string
     location?: string
     employmentType?: string
+    dates?: string
     roles: {
         title: string
         dates: string
     }[]
     summary: string
     highlights: string[]
+    contributions?: { title: string; description: string }[]
+    supportingWork?: string
+    caseStudy?: string
     technologies: string[]
 }
 
@@ -18,19 +22,30 @@ export const experiences: Experience[] = [
     {
         id: 'snap-remedy',
         company: 'Snap Remedy',
+        dates: 'Apr. 2026 – Present',
         roles: [
-            { title: 'Software Developer / Intern', dates: 'Apr. 2026 – Present' },
+            { title: 'Software Developer', dates: 'Jul. 2026 – Present' },
+            { title: 'Software Developer Intern', dates: 'Apr. 2026 – Jul. 2026' },
         ],
-        summary: 'Built a full-stack decision-support application with Python/Django ETL pipelines for Spire ERP data, rules-based SKU ranking, and React dashboards. Progressed from intern to developer in July 2026.',
-        highlights: [
-            'Built ETL (extract, transform, load) pipelines for nine Spire ERP datasets, mapping API payloads into relational models and normalizing pricing records.',
-            'Implemented resumable batch processing with persistent checkpoints, bounded retries, chunked database transactions, and stable-key upserts to support replay after failures.',
-            'Developed relational data models, Django ORM aggregations, and JSON APIs for configurable SKU scoring, filtering, and pricing, with React interfaces for exploring results.',
-            'Integrated the Groq LLM API for structured explanations with context-based caching, and FRED APIs for commodity data displayed through Chart.js.',
-            'Implemented CSV data validation, preview, and transactional imports, with automated Django tests for synchronization, scoring, APIs, caching, and rollback behavior.',
-            'Wrote API documentation and recovery guides covering scoring rules, synchronization failures, and technical handoffs.',
+        summary: 'Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.',
+        highlights: [],
+        contributions: [
+            {
+                title: 'Relational modeling and ERP integration',
+                description: 'Designed relational models and ETL adapters for nine ERP datasets. Mapping external records into consistent local structures made the data available for querying and analysis without calling the ERP for each ranking request.',
+            },
+            {
+                title: 'Resumable synchronization',
+                description: 'Built checkpointed synchronization with bounded retries and chunk-level transactions. Stable-key upserts let an interrupted page be replayed while retaining earlier committed work; status and recovery APIs make progress and failures inspectable.',
+            },
+            {
+                title: 'Scoring, APIs, and the interface',
+                description: 'Implemented configurable weighted scoring and Django JSON APIs, with normalization, filtering, and explicit missing-data handling. Built React controls and result views so users can configure a comparison and inspect the rankings.',
+            },
         ],
-        technologies: ['Python', 'Django', 'React', 'JavaScript', 'SQLite', 'Spire ERP', 'Groq', 'FRED', 'Chart.js'],
+        supportingWork: 'Supporting work included validated CSV imports, cached LLM explanations of existing rankings, and a separate external-data viewer. I wrote backend tests and documentation for the scoring and synchronization workflows.',
+        caseStudy: '/experience/snap-remedy',
+        technologies: ['Python', 'Django', 'SQL', 'React', 'JavaScript'],
     },
     {
         id: 'pro-formance-intermodal',
