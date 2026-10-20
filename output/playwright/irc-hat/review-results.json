@@ -1,0 +1,1155 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "width": 1440,
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+        "ogTitle": "Parmeet Virdi | Software developer"
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.204044117647058,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.",
+        "ogTitle": "Parmeet Virdi | Portfolio"
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.229319852941178,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.229319852941178,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.229319852941178,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: a Java distributed system with custom TCP networking, gossip-based chat replication, replicated server discovery, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system",
+        "ogTitle": "Distributed Chat System | IRC-HAT"
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+        "ogTitle": "Parmeet Virdi | Software developer"
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.",
+        "ogTitle": "Parmeet Virdi | Portfolio"
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.884375,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: a Java distributed system with custom TCP networking, gossip-based chat replication, replicated server discovery, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system",
+        "ogTitle": "Distributed Chat System | IRC-HAT"
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+        "ogTitle": "Parmeet Virdi | Software developer"
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/projects",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.",
+        "ogTitle": "Parmeet Virdi | Portfolio"
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.165625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: a Java distributed system with custom TCP networking, gossip-based chat replication, replicated server discovery, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system",
+        "ogTitle": "Distributed Chat System | IRC-HAT"
+      },
+      "violations": []
+    },
+    {
+      "width": 820,
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.15771484375,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.15771484375,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 17.15771484375,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+        "ogTitle": "Parmeet Virdi | Software developer"
+      },
+      "violations": []
+    },
+    {
+      "width": 820,
+      "route": "/projects",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.7515625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.7515625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.7515625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.",
+        "ogTitle": "Parmeet Virdi | Portfolio"
+      },
+      "violations": []
+    },
+    {
+      "width": 820,
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.022058823529411,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.022058823529411,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 15.022058823529411,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: a Java distributed system with custom TCP networking, gossip-based chat replication, replicated server discovery, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system",
+        "ogTitle": "Distributed Chat System | IRC-HAT"
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.477587890625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.477587890625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.477587890625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration.",
+        "ogTitle": "Parmeet Virdi | Software developer"
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/projects",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.211962890625,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.211962890625,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 25.211962890625,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.",
+        "ogTitle": "Parmeet Virdi | Portfolio"
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/projects/distributed-chat-system",
+      "status": 200,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedCopy": 0
+      },
+      "checks": {
+        "named": true,
+        "legacyHeadingRemoved": true,
+        "conciseCase": true,
+        "tools": true,
+        "caseMetadata": true,
+        "keyboardWorks": true
+      },
+      "flowResults": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.011029411764707,
+          "title": "Discovery returns a server address"
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "client-chat",
+            "chat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.011029411764707,
+          "title": "Messages propagate through peers"
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "pressed": 1,
+          "correctSelection": true,
+          "activePaths": [
+            "registry",
+            "heartbeat"
+          ],
+          "pathsCorrect": true,
+          "outsideLabels": [],
+          "clippedNodeLabels": [],
+          "replyTargetsClient": true,
+          "smallestLabelPx": 12.011029411764707,
+          "title": "Replicas acknowledge registry updates"
+        }
+      ],
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: a Java distributed system with custom TCP networking, gossip-based chat replication, replicated server discovery, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system",
+        "ogTitle": "Distributed Chat System | IRC-HAT"
+      },
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "filterWorks": true,
+  "navigationWorks": true,
+  "ssrWorks": true,
+  "reducedMotionWorks": true
+}

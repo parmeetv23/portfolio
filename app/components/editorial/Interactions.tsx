@@ -2,19 +2,6 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { NetworkStudy } from "./Diagrams";
-
-export function NetworkFigure() {
-  const [traceCount, setTraceCount] = useState(0);
-  const traced = traceCount > 0;
-  const trace = () => setTraceCount(count => count + 1);
-  return <figure className={`v3-network ${traced ? "is-tracing" : ""}`}>
-    <div className="v3-visual-title"><span>IRC-HAT</span><span>Distributed chat system</span></div>
-    <NetworkStudy key={traceCount}/>
-    <div className="v3-network-bottom"><p aria-live="polite">{traced ? "Conceptual route through connected peers." : "Discovery, forwarding, local history."}</p><button type="button" onClick={trace}>{traced ? "Trace again" : "Trace a message"}<span aria-hidden="true">↗</span></button></div>
-    <figcaption>Conceptual architecture study, not a runtime capture.</figcaption>
-  </figure>;
-}
 
 const stages = [
   { title: "Parse", mark: "J--", copy: "ANTLR4 grammars recognize the language. AST-shaping rules prepare it for semantic analysis." },

@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 import { experiences } from "@/data/experiences";
 import {
   CompilerStudy,
-  NetworkFigure,
   ProjectStrip,
 } from "@/app/components/editorial/Interactions";
 import PersonalNote from "@/app/components/editorial/PersonalNote";
 import SnapRemedyArchitecture from "@/app/components/editorial/SnapRemedyArchitecture";
+import ChatArchitecture from "@/app/components/editorial/ChatArchitecture";
 
 export const metadata: Metadata = {
   title: "Software developer",
@@ -138,23 +138,22 @@ export default function EditorialPersonalSecondPhoto() {
           </div>
           <div className="v3-project-grid">
             <article className="v3-chat-project">
-              <NetworkFigure />
+              <ChatArchitecture compact />
               <div className="v3-project-description">
                 <p className="v3-discipline">Distributed systems / Java NIO</p>
                 <h3>
                   <Link href="/projects/distributed-chat-system">
-                    A chat system across processes.
+                    Distributed Chat System
                   </Link>
                 </h3>
                 <p>
-                  I implemented non-blocking networking, capacity-aware
-                  discovery, peer forwarding, and indexed message history in a
-                  Java project.
+                  I built IRC-HAT with custom TCP networking, configurable gossip
+                  replication, and primary-led server discovery
+                  backed by replicated registries.
                 </p>
                 <div className="v3-project-bottom">
                   <p>
-                    Selected recovery paths are implemented; complete failover
-                    is not established.
+                    Java NIO / Replication / Bully leader election
                   </p>
                   <Link href="/projects/distributed-chat-system">
                     Read project <span aria-hidden="true">↗</span>

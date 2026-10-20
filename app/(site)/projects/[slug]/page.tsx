@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { projects, getProjectBySlug, getProjectNavigation } from '@/data/projects';
 import ProjectArtwork from '@/app/components/editorial/ProjectArtwork';
+import DistributedChatCase from '@/app/components/editorial/DistributedChatCase';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -10,6 +11,12 @@ type Props = { params: { slug: string } };
 export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
 export function generateMetadata({ params }: Props): Metadata {
   const project = getProjectBySlug(params.slug);
+  if (project?.slug === 'distributed-chat-system') return {
+    title: 'Distributed Chat System | IRC-HAT',
+    description: project.summary,
+    alternates: { canonical: '/projects/distributed-chat-system' },
+    openGraph: { title: 'Distributed Chat System | IRC-HAT', description: project.summary, url: '/projects/distributed-chat-system', type: 'website' },
+  };
   return project ? { title: project.title, description: project.summary, openGraph: { title: project.title, description: project.summary, type: 'website' } } : { title: 'Project not found' };
 }
 function List({ items }: { items: readonly string[] }) { return <ul className="reading-list">{items.map(item => <li key={item}>{item}</li>)}</ul>; }
@@ -17,6 +24,7 @@ export default function ProjectPage({ params }: Props) {
   const project = getProjectBySlug(params.slug);
   if (!project) notFound();
   const { prev, next } = getProjectNavigation(params.slug);
+  if (project.slug === 'distributed-chat-system') return <DistributedChatCase project={project} previous={prev} next={next}/>;
   const links = project.links ? Object.entries(project.links).filter(([,url]) => url) : [];
   const linkNames: Record<string,string> = {repo:'Repository',demo:'Demo',paper:'Paper',report:'Report'};
   return <main id="main-content" tabIndex={-1} className="v3-wrap">

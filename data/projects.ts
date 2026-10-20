@@ -42,70 +42,65 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "distributed-chat-system",
-    title: "IRC-HAT — Distributed IRC-Style Chat System",
-    summary: "Java NIO terminal chat system with capacity-aware server discovery, peer forwarding, file-backed message history, and addressing-replica coordination.",
+    title: "Distributed Chat System",
+    summary: "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
     tags: [
       "Distributed Systems",
       "Java NIO",
       "TCP",
       "Replication",
-      "File Persistence",
-      "Docker"
+      "Leader Election"
     ],
     category: "Distributed",
     featured: true,
     overview: {
-      description: "Course-project chat application with client, chat-server, and addressing-server processes communicating through custom newline-delimited JSON over TCP. Clients discover a server, register a display name, exchange messages, and request recent history.",
-      purpose: "Explore non-blocking networking, replicated registries, concurrent message handling, and local persistence in a multi-process system."
+      description: "IRC-HAT separates peer-to-peer chat traffic from server discovery and coordination. Chat servers store and propagate messages; the addressing primary assigns clients to available servers and replicates membership records to addressing replicas.",
+      purpose: "I implemented the TCP protocols, non-blocking connection handling, registry replication, and indexed message persistence across three process types."
     },
     role: {
       built: [
-        "Selector-based networking with per-connection framing and queued chat output that retains partially written buffers.",
-        "Typed chat/control messages, registration and discovery handlers, replica acknowledgment tracking, and retry watchdogs.",
-        "Shared-room broadcast, cyclic successor peer forwarding, duplicate-ID tracking, and indexed file-backed history."
+        "Java NIO selector loops, newline-delimited JSON framing, per-connection buffers, and queued partial writes for chat traffic.",
+        "Replicated addressing registries with correlated acknowledgments, deferred registration replies, retries, and periodic refresh.",
+        "Gossip-based peer forwarding, duplicate-ID tracking, and indexed file-backed chat history."
       ],
       owned: [
-        "Application protocol and connection-state handling across the client, chat server, and addressing-server integration.",
-        "Message persistence, history lookup, reconnect/requeue paths, manual diagnostic harnesses, and technical documentation."
+        "Application networking and distributed coordination across the client, chat server, addressing server, and shared protocol module.",
+        "Peer heartbeat handling, Bully leader election, reconnection paths, and reproducible Docker/Compose builds and networking."
       ]
     },
     technicalHighlights: {
       architecture: [
-        "Three process types and a shared library, organized as four included Gradle modules.",
-        "Chat-server selector loops cooperate with eight message workers; terminal clients use four workers.",
-        "Append-only JSON-line logs use byte-offset metadata, SHA-256 hashes, and timestamp indexes."
+        "Chat messages travel directly between clients and chat servers, then propagate among peers independently of addressing.",
+        "The primary addressing server assigns process IDs and distributes membership records to chat servers and replicas.",
+        "Selector-based I/O and worker dispatch separate socket readiness from message processing."
       ],
       algorithms: [
-        "Capacity-aware discovery selects an active non-full advertised server.",
-        "Live messages forward to one successor peer in cyclic PID order.",
-        "Addressing replicas implement tracked registration ACKs, periodic registry refresh, and Bully-style election logic."
+        "Capacity-aware assignment returns the first active, non-full server record and increments its advertised client count.",
+        "Configurable gossip fan-out selects up to n available peers in cyclic PID order; unique message IDs identify repeats.",
+        "Correlated replica acknowledgments coordinate tracked registrations; count broadcasts and replica refresh requests use separate paths.",
+        "Bully leader election challenges higher-PID addressing processes and announces a new primary for reconnection and registry synchronization."
       ],
       failureHandling: [
-        "Queued partial writes, selected EOF cleanup/reconnect paths, and retry watchdogs handle specific transport failures.",
-        "Primary adoption and full-log transfer have documented defects; election and reconnect mechanisms do not establish complete or lossless failover."
+        "Peer PING/PONG heartbeats support liveness checks and removal of unresponsive chat peers.",
+        "Clients re-query addressing and re-register after a closed connection; initial registration requests history. Clients and chat servers discover the elected primary and reconnect; joining servers request peer logs."
       ]
     },
     techStack: [
-      "Java",
-      "Java NIO",
-      "TCP / JSON",
-      "Jackson",
-      "JLine",
-      "Gradle",
-      "Docker / Docker Compose"
+      "Java", "Java NIO", "TCP", "JSON", "Jackson", "org.json",
+      "JLine", "Gradle", "Docker", "Docker Compose"
     ],
     results: {
       achievements: [
-        "Implemented custom networking, protocol handling, peer forwarding, and indexed local message persistence.",
-        "Added client pending-send display, recent-history retrieval, and manual networking diagnostics."
+        "Implemented three cooperating process types with custom networking, replicated registries, and peer message propagation.",
+        "Built append-only chat logs with byte-offset and timestamp indexes, SHA-256 duplicate detection, and history retrieval."
       ],
       learnings: [
-        "Non-blocking I/O requires explicit handling of framing, partial writes, and connection lifecycle.",
-        "Registry acknowledgments and sender echoes provide different guarantees; neither proves recipient delivery."
+        "Peer propagation keeps live chat independent of registry synchronization; registration uses explicit acknowledgment coordination.",
+        "Multiplexed I/O requires persistent framing state and explicit handling of partially written buffers."
       ],
       tradeoffs: [
-        "History uses wall-clock timestamps and receipt order; vector-clock ordering is not implemented.",
-        "Current build, container execution, stress-test scale, and automated test passes are unverified."
+        "Larger gossip fan-out adds propagation paths and network traffic; smaller values spread messages through more hops.",
+        "File-backed history keeps storage local; rewriting its metadata index adds work to each append."
       ]
     }
   },

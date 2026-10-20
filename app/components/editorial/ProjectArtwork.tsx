@@ -1,10 +1,10 @@
 import type { Project } from '@/data/projects';
-import { NetworkFigure } from './Interactions';
+import ChatArchitecture from './ChatArchitecture';
 import DetectionResults from './DetectionResults';
 
 // Conceptual diagrams describe documented structures, never fabricated product UI.
 export default function ProjectArtwork({ project }: { project: Project }) {
-  if (project.slug === 'distributed-chat-system') return <NetworkFigure/>;
+  if (project.slug === 'distributed-chat-system') return <ChatArchitecture compact/>;
   if (project.slug === 'occluded-pet-detection') return <DetectionResults/>;
   const compiler = project.slug === 'j-minus-minus-mips-compiler';
   const embedded = project.category === 'Embedded';

@@ -1,0 +1,4605 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.204044117647058,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "width": 1440,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.229319852941178,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system"
+      },
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "width": 390,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.884375,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system"
+      },
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "width": 320,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.165625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system"
+      },
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 820,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 17.15771484375,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects",
+      "width": 820,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.7515625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "width": 820,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 15.022058823529411,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system"
+      },
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.477587890625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Software developer | Parmeet Virdi",
+        "description": "Parmeet Virdi, software developer. Full-stack applications, React interfaces, backend services, and data integration."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects",
+      "width": 1024,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 25.211962890625,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Projects | Parmeet Virdi",
+        "description": "Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications."
+      },
+      "violations": []
+    },
+    {
+      "route": "/projects/distributed-chat-system",
+      "width": 1024,
+      "status": 200,
+      "states": [
+        {
+          "label": "Discovery",
+          "flow": "discovery",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "discovery",
+            "client-chat"
+          ],
+          "connections": [
+            {
+              "selector": "[data-message=\"lookup\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-message=\"host-reply\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"client-chat\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Find a host, then register with it",
+          "pressedCount": 1,
+          "selectedControl": "Discovery",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "1",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "no second target at fan-out 1",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Messages",
+          "flow": "messages",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "chat-send",
+            "chat-echo",
+            "chat-forward",
+            "origin-second-peer"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"chat-send\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-echo\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(1)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(2)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(3)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"chat-forward\"] path:nth-child(4)",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"origin-second-peer\"]",
+              "correct": true
+            },
+            {
+              "selector": "chat server labels",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Broadcast locally, then propagate",
+          "pressedCount": 1,
+          "selectedControl": "Messages",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Coordination",
+          "flow": "coordination",
+          "fanout": "2",
+          "stage": null,
+          "activePaths": [
+            "registry-update",
+            "registry-ack",
+            "registry-refresh",
+            "server-registration"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"registry-update\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-ack\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"registry-refresh\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"server-registration\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Track registration replies by event ID",
+          "pressedCount": 1,
+          "selectedControl": "Coordination",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "lost",
+          "activePaths": [],
+          "connections": [],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Remove the failed primary",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "election",
+          "activePaths": [
+            "election-challenge",
+            "bully-reply"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"election-challenge\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"bully-reply\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Challenge the higher PID",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        },
+        {
+          "label": "Failure & election",
+          "flow": "failure",
+          "fanout": "2",
+          "stage": "leader",
+          "activePaths": [
+            "leader-announcement",
+            "replica-register",
+            "replica-records",
+            "reconnect-primary"
+          ],
+          "connections": [
+            {
+              "selector": "[data-path=\"leader-announcement\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-register\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"replica-records\"]",
+              "correct": true
+            },
+            {
+              "selector": "[data-path=\"reconnect-primary\"]",
+              "correct": true
+            }
+          ],
+          "rolesCorrect": true,
+          "outside": [],
+          "clippedNodeText": [],
+          "collisions": [],
+          "minimumTextPx": 12.011029411764707,
+          "title": "Announce leadership and reconnect",
+          "pressedCount": 1,
+          "selectedControl": "Failure & election",
+          "diagramTitle": "Distributed Chat System",
+          "violations": []
+        }
+      ],
+      "keyboardWorks": true,
+      "sequenceKeyboardWorks": true,
+      "fanoutKeyboardWorks": true,
+      "layout": {
+        "overflow": false,
+        "h1Count": 1,
+        "duplicateIds": [],
+        "brokenAnchors": [],
+        "clippedUI": 0
+      },
+      "copyChecks": {
+        "projectName": true,
+        "initialHistory": true,
+        "trackedScope": true,
+        "storageRoles": true,
+        "recovery": true,
+        "dockerRole": true,
+        "gossip": true,
+        "tools": true,
+        "metadata": true
+      },
+      "metadata": {
+        "title": "Distributed Chat System | IRC-HAT | Parmeet Virdi",
+        "description": "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+        "canonical": "https://parmeetvirdi.com/projects/distributed-chat-system"
+      },
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "filterWorks": true,
+  "navigationWorks": true,
+  "reducedMotionWorks": true,
+  "ssrWorks": true
+}
