@@ -38,8 +38,10 @@ export default function EditorialPersonalSecondPhoto() {
           </h1>
           <div className="v3-hero-intro">
             <p className="v3-introduction">
-              I design and build backend systems, distributed architectures, and{' '}
-              <span style={{ whiteSpace: 'nowrap' }}>full-stack</span> applications.
+              <span className="hero-line">I design and build</span>{' '}
+              <span className="hero-line">backend systems,</span>{' '}
+              <span className="hero-line">distributed architectures,</span>{' '}
+              <span className="hero-line">and <span style={{ whiteSpace: 'nowrap' }}>full-stack</span> applications.</span>
             </p>
             <p className="v3-hero-context">
               My work spans backend systems, distributed computing, React

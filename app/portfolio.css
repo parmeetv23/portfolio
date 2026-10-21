@@ -19,7 +19,17 @@
 .portfolio .v3-layer-description .v3-layer-title { font-size: 20px; color: var(--v3-paper); }
 .portfolio .v3-project-strip { margin-top: 54px; }
 .portfolio .v3-skip { display: none; }
-.portfolio .v3-introduction { text-wrap: balance; }
+.portfolio .v3-introduction { text-wrap: balance; line-height: 1.25; }
+@media (min-width: 1001px) {
+  .portfolio .v3-hero { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .portfolio .v3-hero-intro { width: 100%; max-width: 448px; }
+  .portfolio .v3-introduction > .hero-line { display: block; }
+}
+@media (max-width: 740px) {
+  .portfolio .v3-hero { grid-template-columns: 1fr; gap: 27px; padding-block: 36px 38px; }
+  .portfolio .v3-hero h1 { font-size: clamp(78px,25vw,150px); }
+  .portfolio .v3-hero-intro { justify-self: start; max-width: 36ch; padding: 0; }
+}
 .portfolio .v3-hero-current a { white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .portfolio .v3-hero-current a:hover { color: var(--v3-ink); text-decoration-thickness: 2px; }
 /* Keep the personal note's text and photograph together at wide viewports. */

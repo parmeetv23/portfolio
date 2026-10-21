@@ -1,0 +1,2228 @@
+{
+  "checks": [
+    {
+      "name": "Hero layout 1920",
+      "pass": true,
+      "detail": {
+        "width": 1920,
+        "fontSize": "39px",
+        "lineHeight": "48.75px",
+        "introWidth": 560,
+        "headline": {
+          "x": 1056.5,
+          "y": 163,
+          "w": 560,
+          "h": 195
+        },
+        "hero": {
+          "x": 288.5,
+          "y": 83,
+          "w": 1328,
+          "h": 594.4765625
+        },
+        "name": {
+          "x": 278.9375,
+          "y": 232.3359375,
+          "w": 640,
+          "h": 295.796875
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 1056.5,
+            "y": 163,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 1056.5,
+            "y": 211.75,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 1056.5,
+            "y": 260.5,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 1056.5,
+            "y": 309.25,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1920",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1920",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1920",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1920",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "fontSize": "39px",
+        "lineHeight": "48.75px",
+        "introWidth": 560,
+        "headline": {
+          "x": 809,
+          "y": 163,
+          "w": 560,
+          "h": 195
+        },
+        "hero": {
+          "x": 56,
+          "y": 83,
+          "w": 1313,
+          "h": 594.4765625
+        },
+        "name": {
+          "x": 46.7578125,
+          "y": 237.3125,
+          "w": 633.7421875,
+          "h": 285.84375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 809,
+            "y": 163,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 809,
+            "y": 211.75,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 809,
+            "y": 260.5,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 809,
+            "y": 309.25,
+            "w": 560,
+            "h": 48.75,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1440",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1440",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1440",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1440",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1280",
+      "pass": true,
+      "detail": {
+        "width": 1280,
+        "fontSize": "34.7875px",
+        "lineHeight": "43.4844px",
+        "introWidth": 545,
+        "headline": {
+          "x": 664.5,
+          "y": 163,
+          "w": 544.5,
+          "h": 173.9375
+        },
+        "hero": {
+          "x": 56,
+          "y": 83,
+          "w": 1153,
+          "h": 573.4140625
+        },
+        "name": {
+          "x": 47.796875,
+          "y": 242.828125,
+          "w": 552.703125,
+          "h": 253.75
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 664.5,
+            "y": 163,
+            "w": 544.5,
+            "h": 43.484375,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 664.5,
+            "y": 206.484375,
+            "w": 544.5,
+            "h": 43.484375,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 664.5,
+            "y": 249.96875,
+            "w": 544.5,
+            "h": 43.484375,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 664.5,
+            "y": 293.453125,
+            "w": 544.5,
+            "h": 43.484375,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1280",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1280",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1280",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1280",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1100",
+      "pass": true,
+      "detail": {
+        "width": 1100,
+        "fontSize": "29.8375px",
+        "lineHeight": "37.2969px",
+        "introWidth": 491,
+        "headline": {
+          "x": 562.5,
+          "y": 163,
+          "w": 490.5,
+          "h": 149.15625
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 1021,
+          "h": 548.6328125
+        },
+        "name": {
+          "x": 25.140625,
+          "y": 251.2578125,
+          "w": 497.359375,
+          "h": 212.109375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 562.5,
+            "y": 163,
+            "w": 490.5,
+            "h": 37.2890625,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 562.5,
+            "y": 200.2890625,
+            "w": 490.5,
+            "h": 37.2890625,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 562.5,
+            "y": 237.578125,
+            "w": 490.5,
+            "h": 37.2890625,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 562.5,
+            "y": 274.8671875,
+            "w": 490.5,
+            "h": 37.2890625,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1100",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1100",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1100",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1100",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1024",
+      "pass": true,
+      "detail": {
+        "width": 1024,
+        "fontSize": "28px",
+        "lineHeight": "35px",
+        "introWidth": 453,
+        "headline": {
+          "x": 524.5,
+          "y": 163,
+          "w": 452.5,
+          "h": 140
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 945,
+          "h": 539.4765625
+        },
+        "name": {
+          "x": 25.625,
+          "y": 254.109375,
+          "w": 458.875,
+          "h": 197.25
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 524.5,
+            "y": 163,
+            "w": 452.5,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 524.5,
+            "y": 198,
+            "w": 452.5,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 524.5,
+            "y": 233,
+            "w": 452.5,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 524.5,
+            "y": 268,
+            "w": 452.5,
+            "h": 35,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1024",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1024",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1024",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1024",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1001",
+      "pass": true,
+      "detail": {
+        "width": 1001,
+        "fontSize": "28px",
+        "lineHeight": "35px",
+        "introWidth": 441,
+        "headline": {
+          "x": 513,
+          "y": 163,
+          "w": 441,
+          "h": 140
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 922,
+          "h": 539.4765625
+        },
+        "name": {
+          "x": 25.765625,
+          "y": 256.359375,
+          "w": 447.234375,
+          "h": 192.75
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 513,
+            "y": 163,
+            "w": 441,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "backend systems,",
+            "x": 513,
+            "y": 198,
+            "w": 441,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 513,
+            "y": 233,
+            "w": 441,
+            "h": 35,
+            "display": "block"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 513,
+            "y": 268,
+            "w": 441,
+            "h": 35,
+            "display": "block"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1001",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1001",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Four desktop lines 1001",
+      "pass": true
+    },
+    {
+      "name": "Separated desktop columns 1001",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1000",
+      "pass": true,
+      "detail": {
+        "width": 1000,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 435,
+        "headline": {
+          "x": 518.359375,
+          "y": 148,
+          "w": 434.640625,
+          "h": 108.75
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 921,
+          "h": 463.4921875
+        },
+        "name": {
+          "x": 25.5,
+          "y": 214.2734375,
+          "w": 462.859375,
+          "h": 200.9375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 518.359375,
+            "y": 147.5,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 518.359375,
+            "y": 147.5,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 622.671875,
+            "y": 183.75,
+            "w": 288.1796875,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 518.359375,
+            "y": 220,
+            "w": 310.4609375,
+            "h": 36.5,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 1000",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 1000",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 1000",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 768",
+      "pass": true,
+      "detail": {
+        "width": 768,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 321,
+        "headline": {
+          "x": 399.53125,
+          "y": 148,
+          "w": 321.4609375,
+          "h": 145
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 689,
+          "h": 499.7421875
+        },
+        "name": {
+          "x": 27.03125,
+          "y": 256.0625,
+          "w": 342.5,
+          "h": 153.609375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 399.53125,
+            "y": 147.5,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 399.53125,
+            "y": 183.75,
+            "w": 205.0703125,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 399.53125,
+            "y": 220,
+            "w": 288.1796875,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 399.53125,
+            "y": 256.25,
+            "w": 310.4609375,
+            "h": 36.5,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 768",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 768",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 768",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 741",
+      "pass": true,
+      "detail": {
+        "width": 741,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 308,
+        "headline": {
+          "x": 385.703125,
+          "y": 148,
+          "w": 308.296875,
+          "h": 145
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 662,
+          "h": 526.140625
+        },
+        "name": {
+          "x": 27.2109375,
+          "y": 272.0234375,
+          "w": 328.4921875,
+          "h": 148.09375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 385.703125,
+            "y": 147.5,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 385.703125,
+            "y": 147.5,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 385.703125,
+            "y": 183.75,
+            "w": 228.9609375,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 385.703125,
+            "y": 220,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 741",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 741",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 741",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 740",
+      "pass": true,
+      "detail": {
+        "width": 740,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 378,
+        "headline": {
+          "x": 32,
+          "y": 401,
+          "w": 377.8515625,
+          "h": 145
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 661,
+          "h": 735.7421875
+        },
+        "name": {
+          "x": 23.75,
+          "y": 119,
+          "w": 640,
+          "h": 255
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 32,
+            "y": 400.5,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 32,
+            "y": 400.5,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 32,
+            "y": 436.75,
+            "w": 228.9609375,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 32,
+            "y": 473,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 740",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 740",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 740",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 601",
+      "pass": true,
+      "detail": {
+        "width": 601,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 378,
+        "headline": {
+          "x": 32,
+          "y": 395.046875,
+          "w": 377.8515625,
+          "h": 145
+        },
+        "hero": {
+          "x": 32,
+          "y": 83,
+          "w": 522,
+          "h": 729.7890625
+        },
+        "name": {
+          "x": 23.9453125,
+          "y": 119,
+          "w": 530.0546875,
+          "h": 249.046875
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 32,
+            "y": 394.546875,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 32,
+            "y": 394.546875,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 32,
+            "y": 430.796875,
+            "w": 228.9609375,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 32,
+            "y": 467.046875,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 601",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 601",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 601",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 600",
+      "pass": true,
+      "detail": {
+        "width": 600,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 378,
+        "headline": {
+          "x": 20,
+          "y": 380.625,
+          "w": 377.8515625,
+          "h": 145
+        },
+        "hero": {
+          "x": 20,
+          "y": 69,
+          "w": 545,
+          "h": 716.9140625
+        },
+        "name": {
+          "x": 11.9609375,
+          "y": 105,
+          "w": 553.0390625,
+          "h": 248.625
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 20,
+            "y": 380.125,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 20,
+            "y": 380.125,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 20,
+            "y": 416.375,
+            "w": 228.9609375,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 20,
+            "y": 452.625,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 600",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 600",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 600",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 335,
+        "headline": {
+          "x": 20,
+          "y": 291.375,
+          "w": 335,
+          "h": 145
+        },
+        "hero": {
+          "x": 20,
+          "y": 69,
+          "w": 335,
+          "h": 627.6640625
+        },
+        "name": {
+          "x": 14.84375,
+          "y": 105,
+          "w": 340.15625,
+          "h": 159.375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 20,
+            "y": 290.875,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 20,
+            "y": 290.875,
+            "w": 302.7578125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 20,
+            "y": 327.125,
+            "w": 228.9609375,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 20,
+            "y": 363.375,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 390",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 390",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 390",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "fontSize": "29px",
+        "lineHeight": "36.25px",
+        "introWidth": 265,
+        "headline": {
+          "x": 20,
+          "y": 264.59375,
+          "w": 265,
+          "h": 181.25
+        },
+        "hero": {
+          "x": 20,
+          "y": 69,
+          "w": 265,
+          "h": 685.2265625
+        },
+        "name": {
+          "x": 15.7109375,
+          "y": 105,
+          "w": 269.2890625,
+          "h": 132.59375
+        },
+        "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+        "lines": [
+          {
+            "text": "I design and build",
+            "x": 20,
+            "y": 264.09375,
+            "w": 197.265625,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "backend systems,",
+            "x": 20,
+            "y": 300.34375,
+            "w": 205.0703125,
+            "h": 36.5,
+            "display": "inline"
+          },
+          {
+            "text": "distributed architectures,",
+            "x": 20,
+            "y": 336.59375,
+            "w": 158.8203125,
+            "h": 72.75,
+            "display": "inline"
+          },
+          {
+            "text": "and full-stack applications.",
+            "x": 20,
+            "y": 372.84375,
+            "w": 260.0078125,
+            "h": 72.75,
+            "display": "inline"
+          }
+        ],
+        "overflow": false,
+        "clipped": [],
+        "cls": 0
+      }
+    },
+    {
+      "name": "Exact statement 320",
+      "pass": true
+    },
+    {
+      "name": "No material load shifts 320",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "Natural responsive wrapping 320",
+      "pass": true
+    },
+    {
+      "name": "Landscape overflow",
+      "pass": true
+    },
+    {
+      "name": "Case-study link keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Case-study navigation",
+      "pass": true
+    },
+    {
+      "name": "Professional-experience smooth scroll",
+      "pass": true
+    },
+    {
+      "name": "Navigation hover animation retained",
+      "pass": true
+    },
+    {
+      "name": "Project-strip scrolling",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion anchor",
+      "pass": true
+    },
+    {
+      "name": "Mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile Escape and focus",
+      "pass": true
+    },
+    {
+      "name": "Mobile primary navigation",
+      "pass": true
+    },
+    {
+      "name": "Accessibility",
+      "pass": true,
+      "detail": [
+        {
+          "width": 1920,
+          "violations": []
+        },
+        {
+          "width": 1440,
+          "violations": []
+        },
+        {
+          "width": 1280,
+          "violations": []
+        },
+        {
+          "width": 1100,
+          "violations": []
+        },
+        {
+          "width": 1024,
+          "violations": []
+        },
+        {
+          "width": 1001,
+          "violations": []
+        },
+        {
+          "width": 1000,
+          "violations": []
+        },
+        {
+          "width": 768,
+          "violations": []
+        },
+        {
+          "width": 741,
+          "violations": []
+        },
+        {
+          "width": 740,
+          "violations": []
+        },
+        {
+          "width": 601,
+          "violations": []
+        },
+        {
+          "width": 600,
+          "violations": []
+        },
+        {
+          "width": 390,
+          "violations": []
+        },
+        {
+          "width": 320,
+          "violations": []
+        }
+      ]
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1920,
+      "fontSize": "39px",
+      "lineHeight": "48.75px",
+      "introWidth": 560,
+      "headline": {
+        "x": 1056.5,
+        "y": 163,
+        "w": 560,
+        "h": 195
+      },
+      "hero": {
+        "x": 288.5,
+        "y": 83,
+        "w": 1328,
+        "h": 594.4765625
+      },
+      "name": {
+        "x": 278.9375,
+        "y": 232.3359375,
+        "w": 640,
+        "h": 295.796875
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 1056.5,
+          "y": 163,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 1056.5,
+          "y": 211.75,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 1056.5,
+          "y": 260.5,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 1056.5,
+          "y": 309.25,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1440,
+      "fontSize": "39px",
+      "lineHeight": "48.75px",
+      "introWidth": 560,
+      "headline": {
+        "x": 809,
+        "y": 163,
+        "w": 560,
+        "h": 195
+      },
+      "hero": {
+        "x": 56,
+        "y": 83,
+        "w": 1313,
+        "h": 594.4765625
+      },
+      "name": {
+        "x": 46.7578125,
+        "y": 237.3125,
+        "w": 633.7421875,
+        "h": 285.84375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 809,
+          "y": 163,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 809,
+          "y": 211.75,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 809,
+          "y": 260.5,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 809,
+          "y": 309.25,
+          "w": 560,
+          "h": 48.75,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1280,
+      "fontSize": "34.7875px",
+      "lineHeight": "43.4844px",
+      "introWidth": 545,
+      "headline": {
+        "x": 664.5,
+        "y": 163,
+        "w": 544.5,
+        "h": 173.9375
+      },
+      "hero": {
+        "x": 56,
+        "y": 83,
+        "w": 1153,
+        "h": 573.4140625
+      },
+      "name": {
+        "x": 47.796875,
+        "y": 242.828125,
+        "w": 552.703125,
+        "h": 253.75
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 664.5,
+          "y": 163,
+          "w": 544.5,
+          "h": 43.484375,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 664.5,
+          "y": 206.484375,
+          "w": 544.5,
+          "h": 43.484375,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 664.5,
+          "y": 249.96875,
+          "w": 544.5,
+          "h": 43.484375,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 664.5,
+          "y": 293.453125,
+          "w": 544.5,
+          "h": 43.484375,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1100,
+      "fontSize": "29.8375px",
+      "lineHeight": "37.2969px",
+      "introWidth": 491,
+      "headline": {
+        "x": 562.5,
+        "y": 163,
+        "w": 490.5,
+        "h": 149.15625
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 1021,
+        "h": 548.6328125
+      },
+      "name": {
+        "x": 25.140625,
+        "y": 251.2578125,
+        "w": 497.359375,
+        "h": 212.109375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 562.5,
+          "y": 163,
+          "w": 490.5,
+          "h": 37.2890625,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 562.5,
+          "y": 200.2890625,
+          "w": 490.5,
+          "h": 37.2890625,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 562.5,
+          "y": 237.578125,
+          "w": 490.5,
+          "h": 37.2890625,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 562.5,
+          "y": 274.8671875,
+          "w": 490.5,
+          "h": 37.2890625,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1024,
+      "fontSize": "28px",
+      "lineHeight": "35px",
+      "introWidth": 453,
+      "headline": {
+        "x": 524.5,
+        "y": 163,
+        "w": 452.5,
+        "h": 140
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 945,
+        "h": 539.4765625
+      },
+      "name": {
+        "x": 25.625,
+        "y": 254.109375,
+        "w": 458.875,
+        "h": 197.25
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 524.5,
+          "y": 163,
+          "w": 452.5,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 524.5,
+          "y": 198,
+          "w": 452.5,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 524.5,
+          "y": 233,
+          "w": 452.5,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 524.5,
+          "y": 268,
+          "w": 452.5,
+          "h": 35,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1001,
+      "fontSize": "28px",
+      "lineHeight": "35px",
+      "introWidth": 441,
+      "headline": {
+        "x": 513,
+        "y": 163,
+        "w": 441,
+        "h": 140
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 922,
+        "h": 539.4765625
+      },
+      "name": {
+        "x": 25.765625,
+        "y": 256.359375,
+        "w": 447.234375,
+        "h": 192.75
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 513,
+          "y": 163,
+          "w": 441,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "backend systems,",
+          "x": 513,
+          "y": 198,
+          "w": 441,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 513,
+          "y": 233,
+          "w": 441,
+          "h": 35,
+          "display": "block"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 513,
+          "y": 268,
+          "w": 441,
+          "h": 35,
+          "display": "block"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 1000,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 435,
+      "headline": {
+        "x": 518.359375,
+        "y": 148,
+        "w": 434.640625,
+        "h": 108.75
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 921,
+        "h": 463.4921875
+      },
+      "name": {
+        "x": 25.5,
+        "y": 214.2734375,
+        "w": 462.859375,
+        "h": 200.9375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 518.359375,
+          "y": 147.5,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 518.359375,
+          "y": 147.5,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 622.671875,
+          "y": 183.75,
+          "w": 288.1796875,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 518.359375,
+          "y": 220,
+          "w": 310.4609375,
+          "h": 36.5,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 768,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 321,
+      "headline": {
+        "x": 399.53125,
+        "y": 148,
+        "w": 321.4609375,
+        "h": 145
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 689,
+        "h": 499.7421875
+      },
+      "name": {
+        "x": 27.03125,
+        "y": 256.0625,
+        "w": 342.5,
+        "h": 153.609375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 399.53125,
+          "y": 147.5,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 399.53125,
+          "y": 183.75,
+          "w": 205.0703125,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 399.53125,
+          "y": 220,
+          "w": 288.1796875,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 399.53125,
+          "y": 256.25,
+          "w": 310.4609375,
+          "h": 36.5,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 741,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 308,
+      "headline": {
+        "x": 385.703125,
+        "y": 148,
+        "w": 308.296875,
+        "h": 145
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 662,
+        "h": 526.140625
+      },
+      "name": {
+        "x": 27.2109375,
+        "y": 272.0234375,
+        "w": 328.4921875,
+        "h": 148.09375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 385.703125,
+          "y": 147.5,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 385.703125,
+          "y": 147.5,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 385.703125,
+          "y": 183.75,
+          "w": 228.9609375,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 385.703125,
+          "y": 220,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 740,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 378,
+      "headline": {
+        "x": 32,
+        "y": 401,
+        "w": 377.8515625,
+        "h": 145
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 661,
+        "h": 735.7421875
+      },
+      "name": {
+        "x": 23.75,
+        "y": 119,
+        "w": 640,
+        "h": 255
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 32,
+          "y": 400.5,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 32,
+          "y": 400.5,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 32,
+          "y": 436.75,
+          "w": 228.9609375,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 32,
+          "y": 473,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 601,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 378,
+      "headline": {
+        "x": 32,
+        "y": 395.046875,
+        "w": 377.8515625,
+        "h": 145
+      },
+      "hero": {
+        "x": 32,
+        "y": 83,
+        "w": 522,
+        "h": 729.7890625
+      },
+      "name": {
+        "x": 23.9453125,
+        "y": 119,
+        "w": 530.0546875,
+        "h": 249.046875
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 32,
+          "y": 394.546875,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 32,
+          "y": 394.546875,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 32,
+          "y": 430.796875,
+          "w": 228.9609375,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 32,
+          "y": 467.046875,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 600,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 378,
+      "headline": {
+        "x": 20,
+        "y": 380.625,
+        "w": 377.8515625,
+        "h": 145
+      },
+      "hero": {
+        "x": 20,
+        "y": 69,
+        "w": 545,
+        "h": 716.9140625
+      },
+      "name": {
+        "x": 11.9609375,
+        "y": 105,
+        "w": 553.0390625,
+        "h": 248.625
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 20,
+          "y": 380.125,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 20,
+          "y": 380.125,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 20,
+          "y": 416.375,
+          "w": 228.9609375,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 20,
+          "y": 452.625,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 390,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 335,
+      "headline": {
+        "x": 20,
+        "y": 291.375,
+        "w": 335,
+        "h": 145
+      },
+      "hero": {
+        "x": 20,
+        "y": 69,
+        "w": 335,
+        "h": 627.6640625
+      },
+      "name": {
+        "x": 14.84375,
+        "y": 105,
+        "w": 340.15625,
+        "h": 159.375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 20,
+          "y": 290.875,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 20,
+          "y": 290.875,
+          "w": 302.7578125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 20,
+          "y": 327.125,
+          "w": 228.9609375,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 20,
+          "y": 363.375,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    },
+    {
+      "width": 320,
+      "fontSize": "29px",
+      "lineHeight": "36.25px",
+      "introWidth": 265,
+      "headline": {
+        "x": 20,
+        "y": 264.59375,
+        "w": 265,
+        "h": 181.25
+      },
+      "hero": {
+        "x": 20,
+        "y": 69,
+        "w": 265,
+        "h": 685.2265625
+      },
+      "name": {
+        "x": 15.7109375,
+        "y": 105,
+        "w": 269.2890625,
+        "h": 132.59375
+      },
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications.",
+      "lines": [
+        {
+          "text": "I design and build",
+          "x": 20,
+          "y": 264.09375,
+          "w": 197.265625,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "backend systems,",
+          "x": 20,
+          "y": 300.34375,
+          "w": 205.0703125,
+          "h": 36.5,
+          "display": "inline"
+        },
+        {
+          "text": "distributed architectures,",
+          "x": 20,
+          "y": 336.59375,
+          "w": 158.8203125,
+          "h": 72.75,
+          "display": "inline"
+        },
+        {
+          "text": "and full-stack applications.",
+          "x": 20,
+          "y": 372.84375,
+          "w": 260.0078125,
+          "h": 72.75,
+          "display": "inline"
+        }
+      ],
+      "overflow": false,
+      "clipped": [],
+      "cls": 0
+    }
+  ],
+  "audits": [
+    {
+      "width": 1920,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "width": 1100,
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "violations": []
+    },
+    {
+      "width": 1001,
+      "violations": []
+    },
+    {
+      "width": 1000,
+      "violations": []
+    },
+    {
+      "width": 768,
+      "violations": []
+    },
+    {
+      "width": 741,
+      "violations": []
+    },
+    {
+      "width": 740,
+      "violations": []
+    },
+    {
+      "width": 601,
+      "violations": []
+    },
+    {
+      "width": 600,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "baselineComparison": [
+    {
+      "width": 1920,
+      "beforeFont": "39px",
+      "afterFont": "39px",
+      "beforeWidth": 470,
+      "afterWidth": 560
+    },
+    {
+      "width": 1440,
+      "beforeFont": "39px",
+      "afterFont": "39px",
+      "beforeWidth": 470,
+      "afterWidth": 560
+    },
+    {
+      "width": 1280,
+      "beforeFont": "34.7875px",
+      "afterFont": "34.7875px",
+      "beforeWidth": 470,
+      "afterWidth": 545
+    },
+    {
+      "width": 1024,
+      "beforeFont": "28px",
+      "afterFont": "28px",
+      "beforeWidth": 421,
+      "afterWidth": 453
+    },
+    {
+      "width": 1000,
+      "beforeFont": "29px",
+      "afterFont": "29px",
+      "beforeWidth": 435,
+      "afterWidth": 435
+    },
+    {
+      "width": 768,
+      "beforeFont": "29px",
+      "afterFont": "29px",
+      "beforeWidth": 321,
+      "afterWidth": 321
+    },
+    {
+      "width": 390,
+      "beforeFont": "29px",
+      "afterFont": "29px",
+      "beforeWidth": 335,
+      "afterWidth": 335
+    },
+    {
+      "width": 320,
+      "beforeFont": "29px",
+      "afterFont": "29px",
+      "beforeWidth": 265,
+      "afterWidth": 265
+    }
+  ]
+}

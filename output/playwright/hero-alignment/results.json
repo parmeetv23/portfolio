@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "width": 1920,
+      "rightEdgeDifference": 0.0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1440,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1280,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1200,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1100,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1024,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1001,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 1000,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 768,
+      "rightEdgeDifference": -0.0078,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 740,
+      "rightEdgeDifference": -283.1484,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 390,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    },
+    {
+      "width": 320,
+      "rightEdgeDifference": 0,
+      "alignedWhenInTwoColumns": true,
+      "nameUnchanged": true,
+      "heroUnchanged": true,
+      "contentAndVerticalSpacingUnchanged": true,
+      "textWrappingUnchanged": true,
+      "noOverflow": true,
+      "mobilePositionUnchanged": true
+    }
+  ],
+  "audits": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 768,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    }
+  ],
+  "keyboardFocus": true,
+  "destination": "http://127.0.0.1:3000/experience/snap-remedy",
+  "errors": []
+}
