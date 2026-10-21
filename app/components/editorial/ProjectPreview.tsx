@@ -3,9 +3,9 @@ import type { Project } from '@/data/projects';
 import ProjectArtwork from './ProjectArtwork';
 
 // Overview figures shared by the gallery and homepage. Case studies keep full artwork.
-export function ChatPreview() {
+export function ChatPreview({ heading = 'Discover a host. Relay between peers.' }: { heading?: string }) {
   return <figure className="gallery-preview gallery-chat">
-    <p className="gallery-heading">Discover a host. Relay between peers.</p>
+    <p className="gallery-heading">{heading}</p>
     <div className="gallery-discovery"><span>Client lookup</span><span aria-hidden="true">↔</span><strong>Addressing primary</strong></div>
     <div className="gallery-chat-map" role="img" aria-label="Clients connect directly to chat servers. Server A forwards to B, and B forwards to C, illustrating one-peer relay. Addressing handles discovery separately from chat traffic.">
       <div className="gallery-peer-row"><span>Server A</span><i aria-hidden="true">→</i><span>Server B</span><i aria-hidden="true">→</i><span>Server C</span></div>
@@ -60,9 +60,9 @@ function ControllerPreview() {
   </figure>;
 }
 
-export function PetPreview() {
+export function PetPreview({ heading = 'Synthetic occlusion, real evaluation' }: { heading?: string }) {
   return <figure className="gallery-preview gallery-pet">
-    <p className="gallery-heading">Synthetic occlusion, real evaluation</p>
+    <p className="gallery-heading">{heading}</p>
     <div className="gallery-dataset"><div><strong>3,312</strong><span>clean pet images</span></div><span aria-hidden="true">+</span><div><strong>3,000</strong><span>synthetic composites</span></div></div>
     <p className="gallery-training">6,312 training images <span>Whole-pet boxes retained</span></p>
     <p className="gallery-detail">YOLOv8n / EfficientDet-D0</p>
@@ -73,7 +73,7 @@ export function PetPreview() {
 
 function RestaurantPreview() {
   return <figure className="gallery-preview gallery-restaurant">
-    <p className="gallery-heading">Three layers. One editable identity.</p>
+    <p className="gallery-heading">Full-stack reservation management</p>
     <ol className="gallery-app-layers" aria-label="Restaurant application architecture">
       <li><strong>React</strong><span>Axios services</span></li>
       <li><strong>Express</strong><span>Controllers + queries</span></li>
@@ -87,11 +87,11 @@ function RestaurantPreview() {
 
 export default function ProjectPreview({ project }: { project: Project }) {
   switch (project.slug) {
-    case 'distributed-chat-system': return <ChatPreview/>;
+    case 'distributed-chat-system': return <ChatPreview heading="Distributed messaging & server discovery"/>;
     case 'j-minus-minus-mips-compiler': return <CompilerPreview/>;
     case 'genetic-algorithm-hyperparameter-finder': return <EvolutionPreview/>;
     case 'raspberry-pi-bare-metal': return <ControllerPreview/>;
-    case 'occluded-pet-detection': return <PetPreview/>;
+    case 'occluded-pet-detection': return <PetPreview heading="Evaluating object detection under occlusion"/>;
     case 'fullstack-restaurant-system': return <RestaurantPreview/>;
     default: return <ProjectArtwork project={project}/>;
   }

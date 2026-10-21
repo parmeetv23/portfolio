@@ -1,0 +1,446 @@
+{
+  "checks": [
+    {
+      "name": "projects layout 1440",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 1440",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 1440",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 1440",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 1440",
+      "pass": true
+    },
+    {
+      "name": "projects layout 1024",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 1024",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 1024",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 1024",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 1024",
+      "pass": true
+    },
+    {
+      "name": "projects layout 768",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 768",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 768",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 768",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 768",
+      "pass": true
+    },
+    {
+      "name": "projects layout 740",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 740",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 740",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 740",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 740",
+      "pass": true
+    },
+    {
+      "name": "projects layout 640",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 640",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 640",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 640",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 640",
+      "pass": true
+    },
+    {
+      "name": "projects layout 390",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 390",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 390",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 390",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 390",
+      "pass": true
+    },
+    {
+      "name": "projects layout 320",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Only requested listing headings changed 320",
+      "pass": true,
+      "detail": [
+        "Distributed messaging & server discovery",
+        "Evaluating object detection under occlusion",
+        "Source to assembly",
+        "Keep the best. Vary the offspring.",
+        "Time capacity and candidate schedules",
+        "Full-stack reservation management",
+        "Controller signals to game actions",
+        "Temperature control rule",
+        "Browsing, profiles, and parent controls"
+      ]
+    },
+    {
+      "name": "home layout 320",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "name": "Exact homepage introduction 320",
+      "pass": true
+    },
+    {
+      "name": "Shared homepage illustration headings preserved 320",
+      "pass": true
+    },
+    {
+      "name": "Category filter Distributed",
+      "pass": true
+    },
+    {
+      "name": "Category filter ML",
+      "pass": true
+    },
+    {
+      "name": "Category filter Full-Stack",
+      "pass": true
+    },
+    {
+      "name": "Category filter All",
+      "pass": true
+    },
+    {
+      "name": "Architecture deep link and full diagram",
+      "pass": true
+    },
+    {
+      "name": "Homepage case-study link",
+      "pass": true
+    },
+    {
+      "name": "Accessibility",
+      "pass": true,
+      "detail": [
+        {
+          "name": "projects",
+          "width": 1440,
+          "violations": []
+        },
+        {
+          "name": "home",
+          "width": 1440,
+          "violations": []
+        },
+        {
+          "name": "projects",
+          "width": 768,
+          "violations": []
+        },
+        {
+          "name": "home",
+          "width": 768,
+          "violations": []
+        },
+        {
+          "name": "projects",
+          "width": 390,
+          "violations": []
+        },
+        {
+          "name": "home",
+          "width": 390,
+          "violations": []
+        },
+        {
+          "name": "projects",
+          "width": 320,
+          "violations": []
+        },
+        {
+          "name": "home",
+          "width": 320,
+          "violations": []
+        }
+      ]
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "audits": [
+    {
+      "name": "projects",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "name": "projects",
+      "width": 768,
+      "violations": []
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "violations": []
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "name": "projects",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "name": "home",
+      "width": 320,
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "typography": [
+    {
+      "width": 1440,
+      "size": "39px",
+      "lineHeight": "46.41px",
+      "height": 185.625,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 1024,
+      "size": "28px",
+      "lineHeight": "33.32px",
+      "height": 99.9375,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 768,
+      "size": "29px",
+      "lineHeight": "34.51px",
+      "height": 138.03125,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 740,
+      "size": "29px",
+      "lineHeight": "34.51px",
+      "height": 138.03125,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 640,
+      "size": "29px",
+      "lineHeight": "34.51px",
+      "height": 207.046875,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 390,
+      "size": "29px",
+      "lineHeight": "34.51px",
+      "height": 138.03125,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    },
+    {
+      "width": 320,
+      "size": "29px",
+      "lineHeight": "34.51px",
+      "height": 172.5390625,
+      "text": "I design and build backend systems, distributed architectures, and full-stack applications."
+    }
+  ]
+}
