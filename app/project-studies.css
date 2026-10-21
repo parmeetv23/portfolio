@@ -1,0 +1,149 @@
+/* Worked examples within the portfolio's existing editorial system. */
+.project-technical {
+  background: var(--v3-sage);
+  padding: clamp(22px, 2.5vw, 36px);
+  min-width: 0;
+  color: var(--v3-ink);
+  container-type: inline-size;
+}
+.project-technical .technical-heading {
+  font-family: var(--lab-serif), Georgia, serif;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+.project-technical .figure-note { font-size: 13px; line-height: 1.6; margin: -12px 0 20px; color: var(--v3-muted); }
+.project-technical figcaption { border-top: 1px solid #a9b89e; padding-top: 18px; margin-top: 24px; font-size: 14px; line-height: 1.65; color: #3d5143; }
+.project-technical code { font-size: 14px; overflow-wrap: anywhere; }
+.project-technical strong { font-weight: 500; }
+.project-technical small { display: block; font-size: 13px; line-height: 1.6; }
+.technical-flow { list-style: none; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; padding: 0; margin: 0; }
+.technical-flow li { min-width: 0; border-top: 2px solid #69815e; padding-top: 12px; }
+.technical-flow li > span { font-size: 17px; display: block; line-height: 1.4; }
+.technical-flow small { margin-top: 8px; }
+
+/* Tables have an explicit first-column measure; numeric columns stay aligned. */
+.experiment-table { margin-top: 32px; min-width: 0; }
+.experiment-table table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 15px; line-height: 1.55; }
+.experiment-table caption { text-align: left; color: var(--v3-muted); font-size: 14px; line-height: 1.65; padding-bottom: 16px; }
+.experiment-table :is(th,td) { padding: 14px 12px; border-bottom: 1px solid #a9b89e; text-align: right; font-weight: 400; font-variant-numeric: tabular-nums; vertical-align: top; }
+.experiment-table th:first-child { width: 42%; text-align: left; }
+.experiment-table thead { background: var(--v3-sage); }
+.experiment-table thead th { font-weight: 500; }
+.experiment-table tbody td { white-space: nowrap; }
+
+/* Two data sources converge, then detector runs share held-out evaluations. */
+.dataset-sources, .evaluation-splits { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.dataset-sources > div { border-top: 2px solid #69815e; padding-top: 12px; }
+.dataset-sources strong, .dataset-sources span, .evaluation-splits strong, .evaluation-splits span { display: block; }
+.dataset-sources strong { font-size: 17px; }
+.dataset-sources span { font-size: 14px; line-height: 1.6; margin-block: 7px; }
+.dataset-sources small { color: var(--v3-muted); }
+.dataset-merge { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; font-size: 14px; padding: 26px 0 16px; }
+.training-manifest { padding: 18px; background: var(--v3-paper); text-align: center; }
+.training-manifest strong, .training-manifest span { display: block; }
+.training-manifest strong { font-size: 22px; line-height: 1.3; }
+.training-manifest span { font-size: 13px; margin-top: 8px; line-height: 1.6; }
+.detector-branches { display: flex; justify-content: space-around; gap: 16px; border-block: 1px solid #a9b89e; padding: 14px 0; margin-block: 20px; font-size: 15px; }
+.evaluation-splits strong { font-size: 15px; }
+.evaluation-splits span { margin-top: 5px; font-size: 13px; line-height: 1.5; }
+.research-results { margin-top: 32px; }
+.research-results .v3-results { height: auto; min-height: 0; padding: 28px; }
+.research-results .v3-results figcaption { max-width: none; font-size: 14px; }
+.research-artifact { margin-top: 30px !important; }
+.research-artifact img { width: 100%; height: auto; }
+.research-artifact figcaption { font-size: 14px; line-height: 1.7; margin-top: 16px; color: var(--v3-muted); }
+.research-artifact figcaption a { text-decoration: underline; text-underline-offset: 4px; display: inline-flex; min-height: 44px; align-items: center; }
+
+.runtime-boundary { padding: 20px; border: 1px solid #8b9f7c; }
+.runtime-boundary > p { font-size: 15px; line-height: 1.5; margin-bottom: 20px; }
+.runtime-boundary > small { margin-top: 14px; color: var(--v3-muted); }
+.signal-conversion { display: grid; gap: 8px; padding: 16px 0 0; margin-top: 18px; border-top: 1px solid #a9b89e; }
+.signal-conversion > div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.signal-conversion span { font-size: 13px; }
+.signal-conversion code { white-space: nowrap; }
+.serial-transport { display: grid; justify-items: center; gap: 7px; padding: 20px 0; font-size: 13px; line-height: 1.5; text-align: center; }
+.project-technical button { min-height: 44px; padding: 12px; background: transparent; border: 1px solid #7f9474; font-size: 14px; color: var(--v3-ink); touch-action: manipulation; transition: background-color 150ms; }
+.project-technical button:hover { background: var(--v3-paper); }
+.project-technical button[aria-pressed="true"] { background: var(--v3-ink); border-color: var(--v3-ink); color: var(--v3-paper); }
+.temperature-options { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.project-technical .temperature-condition { margin: 24px 0; font-size: 17px; line-height: 1.6; text-align: center; }
+.actuator-states { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin: 24px 0; }
+.actuator-states > div { padding: 16px; border: 1px solid #8b9f7c; }
+.actuator-states dt { font-size: 14px; }
+.actuator-states dd { font-family: var(--lab-serif),Georgia,serif; font-size: 34px; line-height: 1.2; margin: 12px 0 0; }
+.project-technical .temperature-description { font-size: 14px; line-height: 1.6; min-height: 45px; margin: 0; }
+
+/* Prose rules target prose directly, leaving figure typography independent. */
+.refined-case-body .case-section > p { font-size: 18px; line-height: 1.8; max-width: var(--measure); }
+.refined-case-body .case-section > p + p { margin-top: 20px; }
+.refined-case-body .technology-list { margin-bottom: 28px; }
+.refined-project .case-feature > figure { width: 100%; }
+.refined-project .case-feature { align-items: start; }
+.refined-project .case-feature > div { padding-block: 16px; }
+.case-heading h1, .case-section h2 { text-wrap: balance; overflow-wrap: break-word; }
+@container (max-width: 380px) {
+  .runtime-boundary { padding: 16px; }
+  .temperature-options { grid-template-columns: 1fr; }
+  .temperature-options button { text-align: left; }
+  .dataset-sources { gap: 14px; }
+}
+@container (max-width: 280px) {
+  .technical-flow { grid-template-columns: 1fr; gap: 18px; }
+  .dataset-sources, .evaluation-splits { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .project-technical { padding: 24px 20px; }
+  .project-technical .technical-heading { font-size: 26px; }
+  .refined-case-body .case-section > p { font-size: 16px; }
+  .experiment-table :is(th,td) { padding: 14px 8px; font-size: 14px; }
+  .experiment-table th:first-child { width: 38%; }
+  .refined-project .case-feature > div { padding: 0; }
+  .research-results .v3-results { padding: 24px 20px; }
+}
+@media (max-width: 360px) {
+  .refined-project .case-heading h1 { font-size: 40px; }
+}
+@media (min-width: 1001px) {
+  .refined-project .case-feature { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 56px; }
+}
+.research-results .v3-chart-legend { font-size: 13px; }
+.research-results .v3-chart-axis { font-size: 12px; }
+.experiment-table th { overflow-wrap: anywhere; }
+.language-name { white-space: nowrap; }
+.temperature-condition span { white-space: nowrap; }
+/* Source → target instructions → observable output. */
+.compiler-translation { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 20px; }
+.compiler-translation > li { min-width: 0; }
+.project-technical .compiler-step-label { font-size: 14px; font-weight: 500; line-height: 1.5; margin: 0 0 14px; }
+.compiler-translation pre { background: var(--v3-paper); padding: 18px 14px; white-space: pre; margin: 0; line-height: 1.8; }
+.compiler-translation pre code { font-size: 13px; }
+.project-technical .compiler-step-note { font-size: 13px; line-height: 1.65; margin: 14px 0 0; color: var(--v3-muted); }
+.compiler-translation .compiler-output { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #a9b89e; padding-top: 18px; }
+.compiler-output .compiler-step-label { margin: 0; }
+.compiler-output samp { font-size: 30px; }
+@container (max-width: 470px) {
+  .compiler-translation { grid-template-columns: 1fr; }
+}
+@container (min-width: 800px) {
+  .compiler-translation { grid-template-columns: minmax(0,1fr) minmax(0,1.4fr) minmax(0,.7fr); gap: 32px; }
+  .compiler-translation .compiler-output { grid-column: auto; display: block; border-top: 0; border-left: 1px solid #a9b89e; padding: 0 0 0 24px; }
+  .compiler-output samp { display: block; margin-top: 20px; }
+}
+.evolution-legend { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 13px; line-height: 1.6; margin-bottom: 26px; }
+.evolution-legend > span { display: inline-flex; align-items: center; gap: 8px; }
+.evolution-legend i { width: 8px; height: 8px; background: var(--v3-paper); border: 1px solid #536b47; transform: rotate(45deg); }
+.generation-rows { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.generation-label { display: block; font-size: 13px; line-height: 1.5; margin-bottom: 6px; }
+.generation-rows svg { overflow: visible; }
+.refined-project .case-feature:has(> div:only-child) { grid-template-columns: 1fr; }
+.text-led-project .case-feature > div { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 18px 56px; }
+.text-led-project .case-feature h2 { grid-row: span 2; margin: 0; }
+.text-led-project .case-feature p + p { margin: 0; }
+@media (max-width: 600px) {
+  .text-led-project .case-feature > div { display: block; }
+  .text-led-project .case-feature h2 { margin-bottom: 24px; }
+  .text-led-project .case-feature p + p { margin-top: 18px; }
+}

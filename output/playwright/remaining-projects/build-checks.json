@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "final_build_directory": "/tmp/portfolio-final-check",
+  "source_hashes_match": true,
+  "compared_files": 15,
+  "typecheck_exit_code": 0,
+  "lint_exit_code": 0,
+  "build_exit_code": 0,
+  "generated_pages": 26,
+  "diff_check_exit_code": 0,
+  "repository_dependencies_changed": false,
+  "environment_note": "Final-source build used a matching local copy outside cloud-managed Desktop storage after original-directory reads stalled on dataless package files."
+}

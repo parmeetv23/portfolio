@@ -1,14 +1,14 @@
-import DetectionResults from "@/app/components/editorial/DetectionResults";
+import { ChatPreview, CompilerPreview, PetPreview } from "@/app/components/editorial/ProjectPreview";
+import '@/app/projects-gallery.css';
 import Link from "next/link";
 import type { Metadata } from "next";
 import { experiences } from "@/data/experiences";
 import {
-  CompilerStudy,
   ProjectStrip,
 } from "@/app/components/editorial/Interactions";
+import { CompilerStudy } from "@/app/components/editorial/ProjectTechnicalFigure";
 import PersonalNote from "@/app/components/editorial/PersonalNote";
 import SnapRemedyArchitecture from "@/app/components/editorial/SnapRemedyArchitecture";
-import ChatArchitecture from "@/app/components/editorial/ChatArchitecture";
 
 export const metadata: Metadata = {
   title: "Software developer",
@@ -38,9 +38,7 @@ export default function EditorialPersonalSecondPhoto() {
           </h1>
           <div className="v3-hero-intro">
             <p className="v3-introduction">
-              I build full-stack
-              <br />
-              web applications.
+              I build full-stack software and distributed systems.
             </p>
             <p className="v3-hero-context">
               My work spans backend systems, distributed computing, React
@@ -48,7 +46,8 @@ export default function EditorialPersonalSecondPhoto() {
               services and applied machine learning.
             </p>
             <p className="v3-hero-current">
-              Currently a software developer at Snap Remedy.
+              Currently a software developer at{' '}
+              <Link href="/experience/snap-remedy">Snap Remedy</Link>.
             </p>
             <a href="#v3-experience" className="v3-work-link">
               Professional experience <span aria-hidden="true">↓</span>
@@ -138,7 +137,7 @@ export default function EditorialPersonalSecondPhoto() {
           </div>
           <div className="v3-project-grid">
             <article className="v3-chat-project">
-              <ChatArchitecture compact />
+              <ChatPreview />
               <div className="v3-project-description">
                 <p className="v3-discipline">Distributed systems / Java NIO</p>
                 <h3>
@@ -162,23 +161,22 @@ export default function EditorialPersonalSecondPhoto() {
               </div>
             </article>
             <article className="v3-pet-project">
-              <DetectionResults />
+              <PetPreview />
               <div className="v3-project-description">
                 <p className="v3-discipline">Computer vision / PyTorch</p>
                 <h3>
                   <Link href="/projects/occluded-pet-detection">
-                    Pet detection under occlusion.
+                    Pet detection under occlusion
                   </Link>
                 </h3>
                 <p>
-                  I compared clean training with synthetic household-object
-                  occlusions. Transfer to real occlusions was mixed across the
-                  two detectors.
+                  I built a synthetic occlusion pipeline and detector adapters
+                  to test how training on household-object composites transfers
+                  to naturally occluded pets.
                 </p>
                 <div className="v3-project-bottom">
                   <p>
-                    A small evaluation set; repeated-seed studies and
-                    statistical significance are not established.
+                    74 real images / YOLOv8n and EfficientDet-D0
                   </p>
                   <Link href="/projects/occluded-pet-detection">
                     Read study <span aria-hidden="true">↗</span>
@@ -186,7 +184,7 @@ export default function EditorialPersonalSecondPhoto() {
                 </div>
               </div>
             </article>
-            <CompilerStudy />
+            <CompilerStudy><CompilerPreview /></CompilerStudy>
           </div>
           <ProjectStrip />
         </section>

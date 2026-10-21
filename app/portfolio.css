@@ -19,6 +19,21 @@
 .portfolio .v3-layer-description .v3-layer-title { font-size: 20px; color: var(--v3-paper); }
 .portfolio .v3-project-strip { margin-top: 54px; }
 .portfolio .v3-skip { display: none; }
+.portfolio .v3-introduction { text-wrap: balance; }
+.portfolio .v3-hero-current a { white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.portfolio .v3-hero-current a:hover { color: var(--v3-ink); text-decoration-thickness: 2px; }
+/* Keep the personal note's text and photograph together at wide viewports. */
+.portfolio .personal-note { grid-template-columns: minmax(0,420px) minmax(0,1fr); column-gap: 48px; }
+.portfolio .personal-note-copy { max-width: 60ch; }
+.portfolio .personal-note-copy p { max-width: none; }
+.portfolio .personal-note-photos { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; min-width: 0; }
+@media (max-width: 1000px) {
+  .portfolio .personal-note { grid-template-columns: minmax(0,1fr); gap: 24px; }
+}
+@media (max-width: 600px) {
+  .portfolio .personal-note-photos { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .portfolio .personal-note-photo { width: 100%; justify-self: start; }
+}
 .is-tracing .v3-network-packet { animation: message-route 2.4s ease-in-out both; }
 @keyframes message-route { 0% { stroke-dashoffset: 710; opacity: 1; } 95% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
 .page-heading { padding-block: 76px 64px; display: grid; grid-template-columns: 1.1fr 1fr; align-items: end; gap: 60px; }
@@ -92,12 +107,12 @@
 .experience-story:last-child { border: 0; padding-bottom: var(--space-section); }
 .experience-meta { align-self: start; position: sticky; top: 120px; }
 .experience-meta > p { font-size: 14px; color: var(--v3-muted); }
-.experience-meta h2 { font-family: var(--lab-serif),Georgia,serif; font-size: clamp(38px,4vw,58px); letter-spacing: -.04em; line-height: 1.05; margin-block: 23px; }
+.experience-story .experience-meta h2 { font-family: var(--lab-serif),Georgia,serif; font-size: clamp(38px,4vw,58px); letter-spacing: -.04em; line-height: 1.05; margin-block: 23px; }
 .role-progression { border-left: 1px solid #91a186; padding-left: 20px; margin-top: 28px; }
 .role-progression div + div { margin-top: 23px; }
 .role-progression h3 { font-size: 18px; }
 .role-progression p { color: var(--v3-muted); font-size: 13px; margin-top: 4px; }
-.experience-content > p { font-size: 24px; line-height: 1.5; letter-spacing: -.02em; margin-bottom: 30px; }
+.experience-story .experience-content > p { font-size: 24px; line-height: 1.5; letter-spacing: -.02em; margin-bottom: 30px; }
 .experience-content .reading-list { margin-block: 36px; }
 .experience-content .v3-application-svg { max-height: 390px; }
 .experience-content .v3-layer-description { min-height: 120px; }
@@ -166,8 +181,8 @@
   .case-pagination a { font-size: 20px; }
   .experience-index { gap: 0 20px; }
   .experience-index a { font-size: 13px; }
-  .experience-content > p { font-size: 21px; }
-  .experience-meta h2 { font-size: 43px; }
+  .experience-story .experience-content > p { font-size: 21px; }
+  .experience-story .experience-meta h2 { font-size: 43px; }
   .role-progression { flex-direction: column; gap: 22px; }
   .resume-viewer { padding: 15px; }
   .resume-viewer iframe { height: 65vh; min-height: 400px; }

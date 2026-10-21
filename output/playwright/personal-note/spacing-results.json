@@ -1,0 +1,45 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "gap": 48,
+      "aligned": true,
+      "overflow": false,
+      "textClipped": false,
+      "basketballRemoved": true,
+      "imageLoaded": true,
+      "violations": []
+    },
+    {
+      "width": 768,
+      "gap": 32,
+      "aligned": true,
+      "overflow": false,
+      "textClipped": false,
+      "basketballRemoved": true,
+      "imageLoaded": true,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "gap": 24,
+      "aligned": true,
+      "overflow": false,
+      "textClipped": false,
+      "basketballRemoved": true,
+      "imageLoaded": true,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "gap": 24,
+      "aligned": true,
+      "overflow": false,
+      "textClipped": false,
+      "basketballRemoved": true,
+      "imageLoaded": true,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

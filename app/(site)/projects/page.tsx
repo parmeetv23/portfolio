@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ProjectCollection from '@/app/components/ProjectCollection';
+import '@/app/projects-gallery.css';
 export const metadata: Metadata = { title: 'Projects', description: 'Engineering projects across distributed systems, applied machine learning, embedded programming, and full-stack applications.' };
 export default function ProjectsPage() {
   return <main id="main-content" tabIndex={-1} className="v3-wrap">

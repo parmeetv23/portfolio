@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "name": "Hero layout 1440",
+      "pass": true
+    },
+    {
+      "name": "Visible case-study link 1440",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus 1440",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 1024",
+      "pass": true
+    },
+    {
+      "name": "Visible case-study link 1024",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus 1024",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 768",
+      "pass": true
+    },
+    {
+      "name": "Visible case-study link 768",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus 768",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 390",
+      "pass": true
+    },
+    {
+      "name": "Visible case-study link 390",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus 390",
+      "pass": true
+    },
+    {
+      "name": "Hero layout 320",
+      "pass": true
+    },
+    {
+      "name": "Visible case-study link 320",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus 320",
+      "pass": true
+    },
+    {
+      "name": "Keyboard activation opens Snap Remedy case study",
+      "pass": true
+    },
+    {
+      "name": "Click opens Snap Remedy case study",
+      "pass": true
+    },
+    {
+      "name": "Case-study navigation works with reduced motion",
+      "pass": true
+    },
+    {
+      "name": "Accessibility audits pass",
+      "pass": true
+    },
+    {
+      "name": "No browser errors",
+      "pass": true
+    }
+  ],
+  "results": [
+    {
+      "width": 1440,
+      "introduction": "I build full-stack software and distributed systems.",
+      "href": "/experience/snap-remedy",
+      "underline": "underline",
+      "nowrap": "nowrap",
+      "overflow": false,
+      "clipped": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "introduction": "I build full-stack software and distributed systems.",
+      "href": "/experience/snap-remedy",
+      "underline": "underline",
+      "nowrap": "nowrap",
+      "overflow": false,
+      "clipped": [],
+      "violations": []
+    },
+    {
+      "width": 768,
+      "introduction": "I build full-stack software and distributed systems.",
+      "href": "/experience/snap-remedy",
+      "underline": "underline",
+      "nowrap": "nowrap",
+      "overflow": false,
+      "clipped": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "introduction": "I build full-stack software and distributed systems.",
+      "href": "/experience/snap-remedy",
+      "underline": "underline",
+      "nowrap": "nowrap",
+      "overflow": false,
+      "clipped": [],
+      "violations": []
+    },
+    {
+      "width": 320,
+      "introduction": "I build full-stack software and distributed systems.",
+      "href": "/experience/snap-remedy",
+      "underline": "underline",
+      "nowrap": "nowrap",
+      "overflow": false,
+      "clipped": [],
+      "violations": []
+    }
+  ],
+  "errors": []
+}

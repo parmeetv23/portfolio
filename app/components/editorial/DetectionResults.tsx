@@ -29,7 +29,7 @@ export default function DetectionResults() {
         </span>
         <span>
           <i className="v3-augmented-key" />
-          Occlusion-aware training
+          Clean + synthetic training
         </span>
       </div>
       <div className="v3-chart" aria-hidden="true">
@@ -62,7 +62,7 @@ export default function DetectionResults() {
             <tr>
               <th scope="col">Detector</th>
               <th scope="col">Clean training</th>
-              <th scope="col">Occlusion-aware training</th>
+              <th scope="col">Clean + synthetic training</th>
             </tr>
           </thead>
           <tbody>
@@ -77,8 +77,8 @@ export default function DetectionResults() {
         </table>
       </div>
       <figcaption>
-        Redrawn from recorded project results. 74 real-occlusion images; no new
-        evaluation performed.
+        Recorded evaluation on 74 real-occlusion images with 90 pet boxes.
+        Best-checkpoint predictions; higher values indicate better detection quality.
       </figcaption>
     </figure>
   );

@@ -1,0 +1,15 @@
+{
+  "files": [
+    "app/components/editorial/ProjectTechnicalFigure.tsx",
+    "app/components/editorial/ProjectLegacyFigures.tsx",
+    "app/components/editorial/GeneticEvolutionFigure.tsx",
+    "app/components/editorial/Interactions.tsx",
+    "app/components/ProjectFilter.tsx",
+    "app/(site)/projects/[slug]/page.tsx",
+    "app/project-studies.css",
+    "data/projects.ts",
+    "data/project-case-studies.ts",
+    "next.config.js"
+  ],
+  "issues": []
+}

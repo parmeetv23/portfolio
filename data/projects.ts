@@ -1,4 +1,6 @@
-export type ProjectCategory = "Distributed" | "ML" | "Embedded" | "Full-Stack" | "Systems" | "Frontend";
+import { projectCaseStudies, type ProjectCaseStudy } from './project-case-studies';
+
+export type ProjectCategory = "Distributed" | "ML" | "Embedded" | "Full-Stack" | "Systems" | "Frontend" | "Algorithms";
 
 export interface ProjectLinks {
   repo?: string;
@@ -15,6 +17,7 @@ export interface Project {
   category: ProjectCategory;
   featured: boolean;
   links?: ProjectLinks;
+  caseStudy?: ProjectCaseStudy;
   overview: {
     description: string;
     purpose: string;
@@ -39,11 +42,12 @@ export interface Project {
 
 // Sources, publication boundaries, and follow-up questions:
 // docs/PORTFOLIO-CONTENT-REVIEW.md.
+// Owner-selected first five; remaining application and systems projects follow.
 export const projects: Project[] = [
   {
     slug: "distributed-chat-system",
     title: "Distributed Chat System",
-    summary: "IRC-HAT: Java NIO chat with configurable gossip replication, capacity-aware discovery, replicated registries, and Bully leader election.",
+    summary: "Java chat system with custom TCP networking, peer message replication, and a replicated discovery service that elects a new primary after failure.",
     tags: [
       "Distributed Systems",
       "Java NIO",
@@ -107,102 +111,122 @@ export const projects: Project[] = [
 
   {
     slug: "occluded-pet-detection",
-    title: "Occluded Pet Detection in Domestic Environments",
-    summary:
-      "Studied pet detection under partial visibility using synthetic ADE20K household-object occlusions; evaluated YOLOv8n and EfficientDet-D0 on clean and real-occlusion images, with partial DETR integration.",
+    title: "Pet Detection Under Occlusion",
+    summary: "A computer-vision pipeline that generates synthetic obstructions, trains pet detectors, and measures how their results transfer to naturally occluded animals.",
 
-    tags: [
-      "Computer Vision",
-      "Object Detection",
-      "Occlusion Robustness",
-      "YOLOv8",
-      "EfficientDet",
-      "DETR",
-      "PyTorch",
-      "COCO mAP",
-      "Data Augmentation",
-    ],
+    tags: ["Computer Vision", "PyTorch", "Object Detection", "Data Augmentation", "COCO Evaluation"],
 
     category: "ML",
     featured: true,
 
+    caseStudy: projectCaseStudies["occluded-pet-detection"],
     overview: {
-      description:
-        "Object detection study focused on domestic indoor settings where pets are frequently partially visible (occluded by furniture/household objects). Used Oxford-IIIT Pets (7,349 images, 37 breeds) with bounding boxes derived from segmentation masks, and compared clean training vs synthetic occlusion training. Training split: 3,312 images; validation: 368 images; clean test: 3,669 images. Evaluated transfer to a real occluded test set of 74 manually annotated images (personal + open-source), measuring COCO-style metrics.",
-      purpose:
-        "Evaluate whether synthetic occlusion augmentation transfers to real-world indoor occlusions, comparing retained detector results while documenting experiment and training-lineage limitations.",
+      description: "I built an experiment around a practical detection problem: recognizing pets when furniture and other household objects hide part of the animal.",
+      purpose: "My pipeline generates annotated training composites, integrates two detector architectures, and compares clean-image performance with a separately annotated real-occlusion collection.",
     },
 
     role: {
-      built: [
-        "End-to-end training + evaluation pipeline (data prep, training runs, metrics, and qualitative analysis)",
-        "Synthetic occlusion generator: overlay ADE20K segmented indoor objects onto pet images with opacity blending",
-        "Dataset engineering: derive bounding boxes from segmentation masks and unify cat/dog breeds into a single “Pet” class",
-        "Real occluded indoor test set: collection + manual annotation + evaluation scripts",
+      "built": [
+        "Trimap-to-box annotation conversion and ADE20K segmented-object synthesis.",
+        "YOLO run configuration, EfficientDet data adapters, checkpoint diagnostics, and COCO evaluation.",
+        "Two-checkpoint EfficientDet hard-NMS ensemble and recorded clean/real comparisons."
       ],
-      owned: [
-        "Clean versus synthetic-augmentation experiment design and analysis of retained training/evaluation artifacts",
-        "Occlusion synthesis with object filtering, size/placement heuristics, and softened alpha compositing; requested occluder ratios are not measured coverage",
-        "Cross-model evaluation and analysis for YOLOv8n and EfficientDet-D0, alongside partial DETR dataset/training integration",
-        "Reporting: quantitative mAP tables + qualitative examples on real occlusions",
-      ],
+      "owned": [
+        "Data preparation, synthesis, detector integration, and experiment reporting."
+      ]
     },
-
     technicalHighlights: {
-      architecture: [
-        "YOLOv8 trained with pretrained weights (single-stage detector via Ultralytics)",
-        "EfficientDet-D0 with pretrained initialization (EfficientNet backbone + BiFPN multi-scale fusion)",
-        "Partial DETR integration with custom dataset/collation code; completed fine-tuning and evaluation provenance remain unestablished",
-        "No architecture changes applied to isolate the effect of occlusion-aware training",
+      "architecture": [
+        "Clean and combined training paths feed separate detector runs; held-out real images measure transfer.",
+        "One pet class pools cats, dogs, and breeds; synthetic labels retain whole-pet extent."
       ],
-      algorithms: [
-        "COCO-style evaluation on the real occluded set: mAP@0.50 and mAP@[0.50:0.95] (plus precision/recall where applicable)",
-        "Synthetic occlusion augmentation: segmented ADE20K objects with heuristic scaling and placement; actual covered foreground was not measured",
-        "Indoor-object filtering with some leakage due to large category volume (pragmatic filtering)",
-        "Annotation consistency: boxes derived directly from Oxford-IIIT segmentation masks",
-      ],
-      optimization: [
-        "Pretrained initialization to stabilize convergence under limited compute budgets",
-        "Used clean and synthetic-augmented training comparisons to investigate transfer; full EfficientDet schedule provenance remains unresolved",
-        "Selected checkpoints based on validation performance (clean validation set) to avoid test leakage",
-      ],
+      "algorithms": [
+        "Object-mask filtering, area-guided placement, alpha compositing, and coordinate conversion.",
+        "Hard NMS combines two EfficientDet checkpoints at IoU 0.55."
+      ]
     },
-
     techStack: [
-      "Python",
-      "PyTorch",
-      "Ultralytics (YOLOv8)",
-      "EfficientDet",
-      "DETR",
-      "COCO Evaluation Metrics",
-      "Kaggle GPU",
+      "Python", "PyTorch", "Ultralytics YOLOv8n", "EfficientDet-D0", "effdet / timm",
+      "Transformers / DETR", "NumPy", "OpenCV", "Pillow", "pycocotools", "Jupyter", "Matplotlib", "Kaggle GPU"
     ],
 
     results: {
-      achievements: [
-        "Built and evaluated an occlusion-aware training pipeline combining Oxford-IIIT Pets + ADE20K synthetic occlusions",
-        "Created a real occluded indoor test set (74 images) to measure transfer under realistic household occlusions",
-        "YOLOv8 on real occluded set: Clean Training mAP@0.50=0.471, mAP@[0.50:0.95]=0.229; Occlusion-Aware Training mAP@0.50=0.345, mAP@[0.50:0.95]=0.152",
-        "EfficientDet-D0 on real occluded set: Clean Training mAP@0.50=0.098, mAP@[0.50:0.95]=0.036; Occlusion-Aware Training mAP@0.50=0.112, mAP@[0.50:0.95]=0.043",
+      "achievements": [
+        "Prepared 3,000 synthetic examples and a combined 6,312-image training manifest.",
+        "Recorded mixed real-occlusion transfer on 74 images with 90 pet boxes."
       ],
-      learnings: [
-        "Synthetic occlusion augmentation can improve clean/validation metrics but may not transfer to real occlusion geometry/lighting",
-        "YOLOv8 was more robust to partial cues (e.g., faces/ears) even without explicit occlusion-aware training",
-        "EfficientDet improved slightly with occlusion-aware training on the real occluded set, but absolute localization quality remained low",
-        "Completed DETR results and full EfficientDet checkpoint training lineage remain unresolved",
+      "learnings": [
+        "Better clean-test AP did not imply better real-occlusion transfer."
       ],
-      tradeoffs: [
-        "Focused on synthetic-augmentation transfer; repeated-seed studies, severity sweeps, and statistical significance are not established",
-        "Used a small real occluded test set for realism, trading off statistical generalization; recorded metrics were not rerun during the source investigation",
-        "Synthetic occlusions provide controlled coverage but introduce a domain gap vs real household occlusion patterns",
-      ],
+      "tradeoffs": [
+        "Requested occluder area does not measure covered foreground.",
+        "DETR evaluation splits and full training lineage remain unresolved; final comparisons use YOLOv8n and EfficientDet-D0."
+      ]
+    }
+  },
+
+  {
+    slug: "j-minus-minus-mips-compiler",
+    title: "J-- to MIPS Compiler",
+    summary: "A Python compiler that parses J-- programs, resolves names and types, and generates MIPS assembly with a custom stack calling convention.",
+    tags: [
+      "Python",
+      "ANTLR4",
+      "Compilers",
+      "MIPS",
+      "Semantic Analysis"
+    ],
+    category: "Systems",
+    featured: true,
+    caseStudy: projectCaseStudies["j-minus-minus-mips-compiler"],
+    overview: {
+      description: "I built the stages that turn a J-- source program into MIPS assembly: parsing, semantic analysis, storage layout, and code generation.",
+      purpose: "The compiler carries resolved names and types into the backend, where they determine how variables, expressions, and function calls map to registers and stack storage."
     },
+    role: {
+      "built": [
+        "ANTLR grammars, AST shaping, four semantic passes, and MIPS layout/emission.",
+        "Custom stack calling convention, short-circuit control flow, and six generated runtime wrappers."
+      ],
+      "owned": [
+        "Language rules, symbol/type analysis, target layout, emission, and compiler integration."
+      ]
+    },
+    technicalHighlights: {
+      "architecture": [
+        "Shaped AST annotations and declaration bindings feed storage layout and buffered assembly emission.",
+        "ANTLR and cpsc411 supply recognizer/tree infrastructure."
+      ],
+      "algorithms": [
+        "Global collection, scope/reference resolution, type propagation, and structural/literal validation.",
+        "Stack temporaries preserve expression values across calls; labels and a break-target stack encode control flow."
+      ]
+    },
+    techStack: [
+      "Python",
+      "ANTLR4",
+      "MIPS assembly",
+      "Make",
+      "cpsc411 AST support"
+    ],
+    results: {
+      "achievements": [
+        "Implemented source-to-assembly compiler stages and targeted diagnostics."
+      ],
+      "learnings": [
+        "Semantic and storage annotations provide a stable contract between compiler stages."
+      ],
+      "tradeoffs": [
+        "Return presence is supplemented by runtime fallthrough checks.",
+        "The historical review lacked the external AST dependency for an end-to-end execution."
+      ]
+    }
   },
 
   {
     slug: "genetic-algorithm-hyperparameter-finder",
-    title: "Genetic Algorithm Hyperparameter Tuning Framework",
-    summary: "Custom Python evolutionary optimizer for scikit-learn classifier hyperparameters, with cross-validation fitness, tournament selection, crossover, mutation, and logistic-regression compatibility checks.",
+    title: "Genetic Algorithm Hyperparameter Search",
+    summary: "A Python optimizer that evolves classifier settings through cross-validation, selection, crossover, and mutation while handling dependencies between parameters.",
     tags: [
       "Genetic Algorithms",
       "Hyperparameter Tuning",
@@ -212,33 +236,28 @@ export const projects: Project[] = [
     ],
     category: "ML",
     featured: true,
+    caseStudy: projectCaseStudies["genetic-algorithm-hyperparameter-finder"],
     overview: {
-      description: "Research prototype for classifier hyperparameter search, with notebook experiments comparing a custom genetic algorithm against scikit-learn grid, randomized, and halving-grid searches.",
-      purpose: "Explore reusable evolutionary search policies and dependent parameter constraints while examining accuracy and runtime tradeoffs."
+      description: "Exhaustive hyperparameter search grows expensive as options multiply. I implemented an evolutionary optimizer that scores a population of classifier settings and breeds candidates for the next generation.",
+      purpose: "The search preserves its strongest candidate and handles model-specific dependencies, including logistic-regression penalties that restrict which solvers can be used."
     },
     role: {
-      built: [
-        "Dictionary-based candidate generation, cross-validation fitness, tournament selection, uniform crossover, single-parameter mutation, and global-best elitism.",
-        "Logistic-regression specialization that maintains compatible penalty/solver pairs.",
-        "Generation history, estimator refitting, timing orchestration, plots, and a technical comparison report."
+      "built": [
+        "Dictionary-based candidates, cross-validation fitness, tournament selection, uniform crossover, one-field mutation, and global-best elitism.",
+        "Dependent logistic penalty/solver handling, generation history, and final estimator refit."
       ],
-      owned: [
-        "Evolutionary search policy, parameter-space handling, compatibility logic, and experiment orchestration.",
-        "Data preparation and result analysis using third-party estimators, cross-validation, and baseline search implementations."
+      "owned": [
+        "Evolutionary policy, compatibility rules, and classifier experiment integration."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "In-memory data preparation feeds an estimator and parameter space into the GA or library baseline.",
-        "The reusable run(X, y) interface exposes best parameters, score, history, and a refitted model; it is not a complete sklearn search-CV implementation."
+      "architecture": [
+        "Custom run(X, y) interface exposes selected parameters, fitness history, and a refitted estimator.",
+        "scikit-learn supplies learners, cross-validation, metrics, and baseline searches."
       ],
-      algorithms: [
-        "Tournament selection, uniform per-parameter crossover, one-field mutation, and preservation of the global-best elite.",
-        "Logistic solver/penalty constraints are maintained during candidate initialization, crossover, mutation, and evaluation."
-      ],
-      failureHandling: [
-        "Selected invalid configurations and caught logistic evaluation failures receive negative-infinity fitness.",
-        "Candidate generation rejects unsupported domains and mutation handles singleton domains."
+      "algorithms": [
+        "Uniform per-field crossover and single-field mutation; logistic mutations can also change a dependent solver.",
+        "Invalid logistic candidates and selected evaluation failures receive negative-infinity fitness."
       ]
     },
     techStack: [
@@ -251,25 +270,24 @@ export const projects: Project[] = [
       "seaborn"
     ],
     results: {
-      achievements: [
-        "Implemented a configurable evolutionary optimizer and model-specific parameter spaces.",
-        "Recorded classifier comparisons, generation curves, and a technical report."
+      "achievements": [
+        "Implemented a configurable optimizer with model-specific parameter handling.",
+        "Final-report SVC comparison records 0.7416 test accuracy for GA, grid, and randomized search."
       ],
-      learnings: [
-        "Dependent hyperparameters need explicit compatibility policies.",
-        "Search budgets, parallelism, preprocessing, and run provenance affect the validity of runtime and accuracy comparisons."
+      "learnings": [
+        "Parameter dependencies belong in candidate generation and genetic operators."
       ],
-      tradeoffs: [
-        "Saved notebook output and current code have mixed dataset provenance; no clean sequential reproduction is established.",
-        "Budgets and concurrency differ across methods, and preprocessing introduces leakage risk; no general GA speedup is claimed."
+      "tradeoffs": [
+        "Unequal budgets and concurrency prevent a general speedup claim.",
+        "Mixed notebook dataset state is separate from the identified final-report comparison."
       ]
     }
   },
 
   {
     slug: "ai-scheduling-hard-constraints",
-    title: "Gengar — Soccer Scheduling Search Prototype",
-    summary: "Python course-project scheduler combining recursive OR-tree search with genetic crossover and mutation for a simulated soccer field-time allocation problem.",
+    title: "Constraint-Based Soccer Scheduling",
+    summary: "A Python scheduling prototype that combines backtracking and genetic search to assign recurring soccer games and practices under capacity and placement constraints.",
     tags: [
       "Constraint Satisfaction",
       "AI Search",
@@ -278,36 +296,30 @@ export const projects: Project[] = [
       "OR-Tree Search",
       "Python"
     ],
-    category: "ML",
+    category: "Algorithms",
     featured: true,
+    caseStudy: projectCaseStudies["ai-scheduling-hard-constraints"],
     overview: {
-      description: "Command-line research prototype for a fabricated Calgary soccer scheduling scenario. Sectioned text inputs describe recurring games, practices, field-time capacities, restrictions, and preferences.",
-      purpose: "Explore constructive backtracking and population-based search for constrained scheduling. The implementation is incomplete and is not an operational municipal scheduler."
+      description: "The scheduler assigns recurring games and practices while tracking the capacity left in each time interval.",
+      purpose: "I combined incremental backtracking with population search, using the same schedule-construction routine to create initial candidates and complete crossover children. The original project name is Gengar."
     },
     role: {
-      built: [
-        "Scheduling input parsing, half-hour time encoding, mutable capacity state, and assignment/unassignment operations.",
-        "Recursive OR-tree expansion, state copying, randomized ordering, and parent-guided schedule completion.",
-        "Genetic population selection, crossover, mutation, weighted objective wiring, and diagnostic output."
+      "built": [
+        "Sectioned input parsing, half-hour indexing, residual capacity state, and assignment/unassignment helpers.",
+        "Recursive OR-tree construction, parent-guided crossover, population selection, and attempted penalty-guided mutation."
       ],
-      owned: [
-        "Custom scheduling representation and search integration using Python standard-library primitives.",
-        "Constraint checks, active pair/minimum-fill scoring, and debugging scenarios."
+      "owned": [
+        "Custom scheduling representation, constructive search, and genetic integration."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "Single-process CLI with in-memory schedules and recursive search states.",
-        "Capacity rows track game and practice availability independently."
+      "architecture": [
+        "In-memory partial schedules track game and practice capacities independently.",
+        "Construction initializes populations and completes crossover children."
       ],
-      algorithms: [
-        "Constructive OR-tree backtracking initializes candidates and completes crossover children.",
-        "Selection retains low-cost population members; mutation attempts penalty-proportional event reassignment.",
-        "Pair and minimum-fill objective routines are active; preference and section-difference routines remain zero-return placeholders."
-      ],
-      failureHandling: [
-        "Assignment helpers check selected capacity, incompatibility, and placement restrictions.",
-        "Parser, mutation, and constraint-integration defects prevent a claim of complete feasibility or reliable full CLI solves."
+      "algorithms": [
+        "Fixed next-event ordering, state copying, randomized child ordering, and recursive first-complete search.",
+        "Pair/minimum scoring routines are wired; preference and section-difference terms are placeholders."
       ]
     },
     techStack: [
@@ -316,95 +328,23 @@ export const projects: Project[] = [
       "Standard-library collections / copying / random"
     ],
     results: {
-      achievements: [
-        "Implemented a custom hybrid search prototype, scheduling representation, and diagnostic harnesses.",
-        "Integrated constructive search with population selection and parent-guided crossover."
+      "achievements": [
+        "Implemented a hybrid constructive/genetic search prototype with diagnostic scenarios."
       ],
-      learnings: [
-        "Representation consistency and complete objective functions are essential to meaningful schedule evaluation.",
-        "Proposal algorithms and supplied input scale do not establish successful execution or optimality."
+      "learnings": [
+        "Shared event representation must remain consistent across parsing, constraints, scoring, and mutation."
       ],
-      tradeoffs: [
-        "No validated final schedule, successful large solve, measured convergence improvement, or optimality result is established.",
-        "AND-tree search appears in proposal context; the implementation uses OR-tree search."
-      ]
-    }
-  },
-
-  {
-    slug: "raspberry-pi-bare-metal",
-    title: "Bare-Metal Raspberry Pi SNES Controller Integration",
-    summary: "C firmware polls an SNES controller through Raspberry Pi 4 GPIO and sends changed button states over Mini UART to a Python/Pygame slide-puzzle integration.",
-    tags: [
-      "Embedded Systems",
-      "Bare-Metal Programming",
-      "C",
-      "GPIO",
-      "UART",
-      "Python"
-    ],
-    category: "Embedded",
-    featured: false,
-    overview: {
-      description: "Freestanding Raspberry Pi 4 firmware reads a physical SNES controller without an OS. Host-side Python decodes serial button messages and dispatches actions in an existing Pygame slide puzzle.",
-      purpose: "Connect register-level controller input with a desktop application through a small serial protocol."
-    },
-    role: {
-      built: [
-        "SNES latch/clock/data polling through volatile BCM2711 MMIO register access.",
-        "Sixteen active-low samples converted into an active-high bitmask, with UART output on state changes.",
-        "Python/pyserial message parsing, simultaneous-button decoding, and eight game-action mappings."
-      ],
-      owned: [
-        "Project-specific controller polling and serial integration logic.",
-        "Host input dispatch integrated with an existing keyboard/mouse game loop."
-      ]
-    },
-    technicalHighlights: {
-      architecture: [
-        "SNES controller → GPIO polling → hexadecimal Mini UART messages → Python parser → Pygame actions.",
-        "The supplied AArch64 environment provides startup, linker, UART, timer, and cross-compilation support; independent authorship of that scaffolding is unconfirmed."
-      ],
-      algorithms: [
-        "Sixteen-bit controller sampling with latch and clock signaling.",
-        "Changed-state filtering suppresses redundant serial messages.",
-        "Controller and UART paths use polling and busy waits."
-      ],
-      failureHandling: [
-        "Host scripts catch serial-open errors and reject selected malformed hexadecimal messages.",
-        "Movement is checked before invoking existing puzzle behavior."
-      ]
-    },
-    techStack: [
-      "C",
-      "Raspberry Pi 4 / BCM2711",
-      "AArch64 assembly environment",
-      "GPIO",
-      "Mini UART",
-      "Python",
-      "pyserial",
-      "Pygame",
-      "Make"
-    ],
-    results: {
-      achievements: [
-        "Implemented project-specific SNES polling, button decoding, and serial-to-game action dispatch.",
-        "Integrated controller input with an existing 4×4 slide puzzle."
-      ],
-      learnings: [
-        "Register-level I/O and serial integration require explicit timing and data-format decisions."
-      ],
-      tradeoffs: [
-        "Al Sweigart’s third-party puzzle provides board management, animations, reset, and solve behavior.",
-        "Successful hardware demonstrations, QEMU/JTAG use, and measured input latency are unverified; no interrupt implementation is claimed."
+      "tradeoffs": [
+        "Parser, objective, and mutation defects prevent a validated final-schedule claim.",
+        "The implementation uses OR-tree search; proposal AND-tree language is not an implemented alternative."
       ]
     }
   },
 
   {
     slug: "fullstack-restaurant-system",
-    title: "Full-Stack Restaurant Management System",
-    summary: "React, Express, and MySQL restaurant application with customer/account workflows, reservations, menu/location views, and special-event inquiry intake.",
+    title: "Restaurant Reservation System",
+    summary: "A React and Express application for customer accounts, reservation editing, and event inquiries, backed by a relational MySQL database.",
     tags: [
       "Full-Stack Development",
       "React",
@@ -415,36 +355,28 @@ export const projects: Project[] = [
     ],
     category: "Full-Stack",
     featured: false,
+    caseStudy: projectCaseStudies["fullstack-restaurant-system"],
     overview: {
-      description: "Restaurant-oriented web project integrating React screens, an Express API, and direct MySQL queries. Implemented areas include customer records, accounts, menu/location views, reservations, and special-event inquiries.",
-      purpose: "Practice relational modeling and application integration through account and booking workflows, adapting tutorial patterns alongside custom domain logic."
+      description: "I connected customer and employee account screens, reservation editing, and event inquiries to a shared API and relational database.",
+      purpose: "The main engineering work was modeling those relationships and keeping the interface and stored records in agreement, including edits that change a reservation’s identifying fields."
     },
     role: {
-      built: [
-        "React routes, account forms, shared Axios services, authentication context, and booking interfaces.",
-        "Express route/controller/query layers for customer CRUD, account lifecycle, reservations, and inquiries.",
-        "Password hashing, JWT cookie login/logout, and selected account-handler clearance checks.",
-        "Relational schema and Docker/Compose/Nginx configuration."
+      "built": [
+        "React booking/account screens, Axios services, Express controllers, and MySQL query modules.",
+        "Specialized account relationships, composite-key reservation edits, and separate inquiry intake."
       ],
-      owned: [
-        "Application adaptation, UI/API integration, direct SQL queries, and domain schema.",
-        "Reservation editing/deletion and customer/employee account orchestration."
+      "owned": [
+        "Domain schema, application adaptation, and UI/API integration."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "React/Router and shared Axios services communicate with Express routers, controllers, and mysql2 query modules.",
-        "The schema uses account specialization, composite keys, and foreign-key cascades.",
-        "JWTs use an HTTP-only cookie; browser account metadata is separate from server authorization."
+      "architecture": [
+        "React and shared credentialed Axios requests feed Express routers/controllers and direct mysql2 SQL.",
+        "Customer and employee account records specialize a shared ACCOUNT model."
       ],
-      algorithms: [
-        "Selected account handlers allow self-access or employee clearance thresholds.",
-        "Six numeric clearance levels (0–5) are documented; authorization is partial across business APIs.",
-        "Reservations use customer/location/date values to locate composite keys."
-      ],
-      failureHandling: [
-        "Selected callback errors and not-found states map to API responses and frontend feedback.",
-        "Multi-table writes lack transactions, and container wiring has unresolved defects."
+      "algorithms": [
+        "Selected account handlers use self-access or employee clearance thresholds.",
+        "Reservation updates preserve old key values alongside their replacements."
       ]
     },
     techStack: [
@@ -461,91 +393,86 @@ export const projects: Project[] = [
       "Nginx"
     ],
     results: {
-      achievements: [
-        "Integrated customer/account, reservation, and inquiry workflows with a relational data layer.",
-        "Added setup and permission documentation and container configuration."
+      "achievements": [
+        "Integrated account, reservation, menu/location, and inquiry workflows."
       ],
-      learnings: [
-        "Account-level permission checks must be distinguished from authorization across every business API.",
-        "Database date types, transactions, and deployment wiring directly affect workflow correctness."
+      "learnings": [
+        "Related writes need atomicity; date types must preserve the precision expected by the interface."
       ],
-      tradeoffs: [
-        "Orders, rewards, waitlist, and availability are schema-only concepts; inventory and payment workflows are not established.",
-        "Tutorial sources include BezKoder, Lama Dev, and freeCodeCamp. Current runtime success, production deployment, and secure-session guarantees are unverified."
+      "tradeoffs": [
+        "Partial account checks are not comprehensive business-API RBAC.",
+        "DATE/time-of-day and container wiring conflicts remain; broader order/reward/waitlist areas are schema-only."
       ]
     }
   },
 
   {
-    slug: "j-minus-minus-mips-compiler",
-    title: "J-- to MIPS Compiler",
-    summary: "Python compiler for a small imperative language, with ANTLR4 grammars, AST shaping, four semantic passes, and MIPS code generation.",
+    slug: "raspberry-pi-bare-metal",
+    title: "Bare-Metal SNES Controller Interface",
+    summary: "C firmware that reads an SNES controller directly through Raspberry Pi GPIO and sends button states to a desktop game over serial.",
     tags: [
-      "Python",
-      "ANTLR4",
-      "Compilers",
-      "MIPS",
-      "Semantic Analysis"
+      "Embedded Systems",
+      "Bare-Metal Programming",
+      "C",
+      "GPIO",
+      "UART",
+      "Python"
     ],
-    category: "Systems",
+    category: "Embedded",
     featured: false,
+    caseStudy: projectCaseStudies["raspberry-pi-bare-metal"],
     overview: {
-      description: "University of Calgary CPSC 411 term project developed from January to April 2026. A command-line driver reads J-- source, shapes an abstract syntax tree, performs semantic analysis, and emits MIPS assembly.",
-      purpose: "Implement the major stages of a compiler, from language grammar and name resolution to stack layout and target-code emission."
+      description: "I connected an SNES controller to a desktop puzzle through custom Raspberry Pi firmware and a Python serial decoder.",
+      purpose: "The Pi reads the controller’s electrical signals without an operating system. A separate desktop process turns the transmitted button mask into actions in an existing Pygame game."
     },
     role: {
-      built: [
-        "Custom lexer/parser grammars for declarations, functions, expressions, calls, control flow, and returns.",
-        "AST-shaping rules and unary-minus handling for signed integer literals.",
-        "Four semantic passes for declarations, scope/reference resolution, types, and structural validation.",
-        "MIPS layout and emission for globals, stack frames, calls/returns, short-circuit logic, and runtime-error paths."
+      "built": [
+        "Volatile GPIO SNES polling, active-low conversion, and changed-state hexadecimal UART messages.",
+        "Python serial decoding and eight action mappings into an existing Pygame puzzle."
       ],
-      owned: [
-        "Language rules, semantic policies, target layout, code emission, and compiler integration.",
-        "Diagnostics, build selection/fallbacks, and usage documentation, using ANTLR and external course AST support."
+      "owned": [
+        "Controller protocol handling, firmware state filtering, and host integration."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "Source → ANTLR recognizers → configured course AST shaper → four semantic traversals → target layout → buffered MIPS output.",
-        "Resolved declaration references connect semantic analysis to storage layout and code generation."
+      "architecture": [
+        "Freestanding Raspberry Pi 4 firmware sends controller state to a separate desktop Python runtime.",
+        "Supplied AArch64 startup and build support generate the firmware image."
       ],
-      algorithms: [
-        "Scope stacks and type checks validate references, arguments, conditions, returns, and break nesting.",
-        "A custom stack calling convention preserves frame/return registers and expression temporaries.",
-        "Label generation supports short-circuit operators, nested loops, and break targets."
-      ],
-      failureHandling: [
-        "Parser and semantic diagnostics stop selected invalid programs before output.",
-        "Generated paths handle zero divisors and non-void function fallthrough; execution correctness remains unverified."
+      "algorithms": [
+        "Sixteen sampled bits become an active-high pressed-button mask.",
+        "Changed-state filtering suppresses repeated output while inputs remain unchanged."
       ]
     },
     techStack: [
+      "C",
+      "Raspberry Pi 4 / BCM2711",
+      "AArch64 assembly environment",
+      "GPIO",
+      "Mini UART",
       "Python",
-      "ANTLR4",
-      "MIPS assembly",
-      "Make",
-      "cpsc411 AST support"
+      "pyserial",
+      "Pygame",
+      "Make"
     ],
     results: {
-      achievements: [
-        "Implemented compiler stages including four semantic passes and six generated runtime wrappers.",
-        "Connected semantic annotations to custom stack layout and recursive target emission."
+      "achievements": [
+        "Connected custom GPIO polling to serial input dispatch in the host game."
       ],
-      learnings: [
-        "Compiler stages need consistent symbol, type, and storage annotations."
+      "learnings": [
+        "Firmware signaling, transport encoding, and host event dispatch form distinct protocol boundaries."
       ],
-      tradeoffs: [
-        "Missing external cpsc411 support blocked full pipeline execution during the source investigation; simulator and arithmetic execution are unverified.",
-        "ANTLR supplies generated recognizers and the course library supplies AST infrastructure; no optimizer or general register allocator is implemented."
+      "tradeoffs": [
+        "The approximately 30 Hz polling target is configuration, not measured latency.",
+        "Startup/debug support and Al Sweigart’s puzzle retain their separate attribution."
       ]
     }
   },
 
   {
     slug: "climate-control-simulation",
-    title: "Climate Control Simulation",
-    summary: "Java Swing desktop simulation of greenhouse temperature, humidity, and soil moisture, with independent controller loops, live status, and saved run histories.",
+    title: "Greenhouse Climate Simulation",
+    summary: "A Java desktop simulation with independently timed environmental controllers, live equipment states, and saved histories for reviewing each run.",
     tags: [
       "Java",
       "Swing",
@@ -555,33 +482,28 @@ export const projects: Project[] = [
     ],
     category: "Systems",
     featured: false,
+    caseStudy: projectCaseStudies["climate-control-simulation"],
     overview: {
-      description: "Local desktop simulation with configurable targets, current values, environmental/actuator rates, and sampling intervals for three environmental subsystems.",
-      purpose: "Explore object-oriented control modeling, event-driven desktop interfaces, concurrent simulation loops, and local result persistence."
+      description: "I built a desktop application for exploring how a greenhouse responds to changing conditions and equipment settings.",
+      purpose: "Users configure targets and sampling intervals for temperature, humidity, and soil moisture, then inspect the simulated readings and save a history of the run."
     },
     role: {
-      built: [
-        "Swing configuration forms, event handlers, and a live results view.",
-        "Temperature, humidity, and soil-moisture controllers with heating, cooling, humidifier, and sprinkler domain objects.",
-        "Text-file run logging, named saved histories, a saved-path index, and previous-result viewing."
+      "built": [
+        "Swing configuration/live-result views, three controller workers, and four actuator classes.",
+        "Temporary run logs, named saved copies, a path index, and previous-result viewing."
       ],
-      owned: [
-        "Application composition, controller/domain logic, GUI integration, and local persistence using standard Java APIs.",
-        "Numeric-input parsing and JavaDoc-style source documentation."
+      "owned": [
+        "Control logic, worker/UI composition, and local persistence."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "Ten Java source files separate startup, view/persistence, orchestration, subsystem controllers, and actuators.",
-        "Three Runnable controllers update environmental state independently; a coordinator loop presents results."
+      "architecture": [
+        "Independently sampled Runnable controllers feed a separate result-coordination loop.",
+        "Constructor-injected view and actuator objects connect the desktop components."
       ],
-      algorithms: [
-        "Target/deadband decisions activate or deactivate simulated actuators.",
-        "Configurable sampling and minute/hour rate inputs drive environmental updates."
-      ],
-      failureHandling: [
-        "Numeric parsing and selected file operations handle errors.",
-        "Worker shutdown and shared-state synchronization have documented gaps; thread-safe execution is not established."
+      "algorithms": [
+        "Three-unit temperature band selects heating, neutral, or cooling state.",
+        "Humidity and soil-moisture controllers use a humidifier and sprinkler respectively."
       ]
     },
     techStack: [
@@ -592,24 +514,23 @@ export const projects: Project[] = [
       "Java file I/O"
     ],
     results: {
-      achievements: [
-        "Implemented three simulated environmental subsystems with live status and file-based history.",
-        "Separated UI events, control loops, and actuator state into dedicated classes."
+      "achievements": [
+        "Implemented configurable simulated environmental control and saved run histories."
       ],
-      learnings: [
-        "Independent simulation loops require explicit coordination of lifecycle, state visibility, and display updates."
+      "learnings": [
+        "Independent worker timing requires explicit shared-state visibility and lifecycle coordination."
       ],
-      tradeoffs: [
-        "This is a software simulation; physical sensors, greenhouse operation, and measured control performance are not established.",
-        "Development dates, JDK version, and runtime test results are not supplied in the supporting analysis."
+      "tradeoffs": [
+        "The retained implementation has shared-state and interruption-handling gaps.",
+        "Software simulation only; no physical sensor or measured control-performance claim."
       ]
     }
   },
 
   {
-    slug: "kiddoflix",
-    title: "KiddoFlix — Parental-Control Interface Prototype",
-    summary: "React interface prototype for parent/child profiles, catalog discovery, favorites, and parental-control settings, using MUI and browser-local persistence.",
+    slug: "family-streaming-interface",
+    title: "Family Streaming Interface",
+    summary: "A React prototype for family viewing, with separate parent and child interfaces, personalized browsing, and settings saved per profile in the browser.",
     tags: [
       "React",
       "JavaScript",
@@ -620,34 +541,28 @@ export const projects: Project[] = [
     ],
     category: "Frontend",
     featured: false,
+    caseStudy: projectCaseStudies["family-streaming-interface"],
     overview: {
-      description: "Browser-based design concept with separate parent and child screens, a fixed show catalog, search, show details, profile personalization, and parental-control interactions.",
-      purpose: "Explore entertainment discovery and parent-facing controls through an interactive frontend prototype."
+      description: "I built separate browsing and supervision interfaces around a shared set of child profiles.",
+      purpose: "The prototype connects catalog search, show details, player controls, and parent settings. Favorites and restrictions persist per child in the browser; account operations are simulated."
     },
     role: {
-      built: [
-        "Nested React routes and parent/child layouts with MUI forms, cards, dialogs, and notifications.",
-        "Catalog browsing, title/category search, favorites, profile-image previews, and keyboard interaction logic.",
-        "Browser storage utilities for favorites, title restrictions, time-limit values, locks, and parent profile details."
+      "built": [
+        "Nested parent/child routes, catalog discovery, reusable MUI controls, and keyboard/player handlers.",
+        "Profile-keyed favorites/restrictions/settings and browser-wide parent profile persistence."
       ],
-      owned: [
-        "Screen composition, route configuration, interaction handlers, and browser-storage integration.",
-        "Prototype account-management dialogs and controls around the browser video element."
+      "owned": [
+        "Screen composition, navigation state, storage integration, and prototype interaction logic."
       ]
     },
     technicalHighlights: {
-      architecture: [
-        "Client-only React application with static catalog fixtures and localStorage persistence.",
-        "Shared components and nested layouts organize profile selection, discovery, and parent settings."
+      "architecture": [
+        "Client-only React application uses local catalog fixtures and browser persistence.",
+        "Profile parameters and route state carry selected child/show/episode context."
       ],
-      algorithms: [
-        "Profile-keyed JSON storage suppresses duplicate favorites and restrictions.",
-        "Custom focus state handles selected arrow-key, activation, and player interactions.",
-        "Time controls convert hours/minutes into stored limits; actual usage accounting is not implemented."
-      ],
-      failureHandling: [
-        "Forms implement selected format/confirmation checks and storage helpers log exceptions.",
-        "Restriction filtering and lock checks are incomplete across entry points and do not establish access-control enforcement."
+      "algorithms": [
+        "JSON helpers suppress duplicate favorites/restrictions; FileReader provides profile-image previews.",
+        "Logical focus state handles selected keyboard interactions; seeking converts finite video duration to a target time."
       ]
     },
     techStack: [
@@ -661,33 +576,23 @@ export const projects: Project[] = [
       "HTML video"
     ],
     results: {
-      achievements: [
-        "Implemented parent/child discovery interfaces and browser-persisted personalization/settings.",
-        "Composed reusable dialogs, profile controls, keyboard interactions, and custom video controls."
+      "achievements": [
+        "Implemented distinct parent/child interfaces with persisted personalization and reusable controls."
       ],
-      learnings: [
-        "Persisted settings, prototype feedback, and enforced account behavior have different implementation requirements."
+      "learnings": [
+        "Persisted preferences, account mutation, and access enforcement require distinct implementations."
       ],
-      tradeoffs: [
-        "No backend or real authentication/account service exists; account mutations and history include simulated behaviors.",
-        "The referenced sample video is absent. Development dates, hosting, and successful build/browser playback are unverified."
+      "tradeoffs": [
+        "Account dialogs and viewing usage include simulated behavior; no backend account service.",
+        "Restriction checks are partial and the referenced sample video is missing."
       ]
     }
   },
+
 ];
 
 export function getFeaturedProjects(): Project[] {
-  // Return featured projects in the exact order specified
-  const featuredOrder = [
-    "distributed-chat-system",
-    "occluded-pet-detection",
-    "genetic-algorithm-hyperparameter-finder",
-    "ai-scheduling-hard-constraints",
-  ];
-
-  return featuredOrder
-    .map((slug) => projects.find((p) => p.slug === slug))
-    .filter((p): p is Project => p !== undefined && p.featured);
+  return projects.filter(project => project.featured);
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

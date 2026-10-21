@@ -2,6 +2,7 @@
 .experience-contributions section + section { margin-top: 30px; }
 .experience-contributions h3 { font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 10px; }
 .experience-contributions p, .experience-supporting p { font-size: 18px; line-height: 1.8; max-width: var(--measure); }
+.experience-contributions + .technology-list { margin-top: 28px; }
 .experience-supporting { margin-top: 30px; color: var(--v3-muted); }
 .experience-case-link { margin-block: 25px; }
 .snap-introduction { display: grid; grid-template-columns: 7fr 4fr; gap: 100px; border-block: 1px solid var(--v3-rule); padding-block: 42px; }

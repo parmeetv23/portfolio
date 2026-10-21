@@ -53,11 +53,20 @@ export const experiences: Experience[] = [
         location: 'Calgary, AB',
         roles: [{ title: 'Software Intern', dates: 'Jan. 2026 – Apr. 2026' }],
         summary: 'Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.',
-        highlights: [
-            'Integrated spreadsheets and operational data into centralized React dashboards backed by Python APIs and SQL.',
-            'Automated grant application workflows and developed training scheduling and analytics for instructor performance and attendance patterns.',
-            'Performed root-cause analysis and resolved data-integrity and workflow issues across scheduling, records management, and reporting.',
-            'Handled account provisioning and access configuration, and authored onboarding documentation and knowledge-base articles for internal users.',
+        highlights: [],
+        contributions: [
+            {
+                title: 'Full-stack workflow tools',
+                description: 'Built React interfaces backed by Python APIs and SQL. Automated grant application workflows and developed training scheduling tools for internal users.',
+            },
+            {
+                title: 'Data integration and analytics',
+                description: 'Combined spreadsheets and operational data in centralized dashboards, with analytics for instructor performance and attendance patterns.',
+            },
+            {
+                title: 'Troubleshooting and onboarding',
+                description: 'Traced and resolved data-integrity and workflow issues across scheduling, records management, and reporting. Provisioned accounts and configured access to internal tools. Wrote onboarding documentation and knowledge-base articles for staff.',
+            },
         ],
         technologies: ['React', 'SQL', 'Python APIs'],
     },
@@ -68,10 +77,16 @@ export const experiences: Experience[] = [
         employmentType: 'Contract',
         roles: [{ title: 'Web Developer', dates: 'Sep. 2025 – Nov. 2025' }],
         summary: 'Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.',
-        highlights: [
-            'Managed website deployment, domain setup, DNS configuration, SSL certificate installation, and cPanel hosting administration.',
-            'Implemented an email-based contact form workflow that routed inquiries directly to the care team, replacing manual intake.',
-            'Resolved cross-browser compatibility issues, integration failures, and hosting configuration problems; documented technical findings for vendor escalations.',
+        highlights: [],
+        contributions: [
+            {
+                title: 'Contact-form integration',
+                description: 'Connected contact-form inquiries directly to the care team by email, replacing manual intake.',
+            },
+            {
+                title: 'Deployment and production support',
+                description: 'Managed domain setup, DNS, SSL certificate installation, and cPanel hosting administration. Resolved cross-browser issues, broken integrations, and hosting configuration problems after launch, and documented technical findings for vendor escalations.',
+            },
         ],
         technologies: ['PHP', 'JavaScript', 'DNS', 'SSL', 'cPanel'],
     },

@@ -1,0 +1,506 @@
+{
+  "checks": [
+    {
+      "name": "No overflow or text clipping at 1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared contribution typography at 1440",
+      "pass": true
+    },
+    {
+      "name": "Natural section counts at 1440",
+      "pass": true
+    },
+    {
+      "name": "Snap Remedy remains longest entry at 1440",
+      "pass": true
+    },
+    {
+      "name": "Technology labels have breathing room at 1440",
+      "pass": true
+    },
+    {
+      "name": "Summary and employer spacing at 1440",
+      "pass": true
+    },
+    {
+      "name": "No legacy contribution bullet lists at 1440",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1440: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1440: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1440: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1440: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1440: phillys",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1440: phillys",
+      "pass": true
+    },
+    {
+      "name": "No overflow or text clipping at 1024",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared contribution typography at 1024",
+      "pass": true
+    },
+    {
+      "name": "Natural section counts at 1024",
+      "pass": true
+    },
+    {
+      "name": "Snap Remedy remains longest entry at 1024",
+      "pass": true
+    },
+    {
+      "name": "Technology labels have breathing room at 1024",
+      "pass": true
+    },
+    {
+      "name": "Summary and employer spacing at 1024",
+      "pass": true
+    },
+    {
+      "name": "No legacy contribution bullet lists at 1024",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1024: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1024: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1024: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1024: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 1024: phillys",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 1024: phillys",
+      "pass": true
+    },
+    {
+      "name": "No overflow or text clipping at 768",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared contribution typography at 768",
+      "pass": true
+    },
+    {
+      "name": "Natural section counts at 768",
+      "pass": true
+    },
+    {
+      "name": "Snap Remedy remains longest entry at 768",
+      "pass": true
+    },
+    {
+      "name": "Technology labels have breathing room at 768",
+      "pass": true
+    },
+    {
+      "name": "Summary and employer spacing at 768",
+      "pass": true
+    },
+    {
+      "name": "No legacy contribution bullet lists at 768",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 768: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 768: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 768: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 768: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 768: phillys",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 768: phillys",
+      "pass": true
+    },
+    {
+      "name": "No overflow or text clipping at 390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared contribution typography at 390",
+      "pass": true
+    },
+    {
+      "name": "Natural section counts at 390",
+      "pass": true
+    },
+    {
+      "name": "Snap Remedy remains longest entry at 390",
+      "pass": true
+    },
+    {
+      "name": "Technology labels have breathing room at 390",
+      "pass": true
+    },
+    {
+      "name": "Summary and employer spacing at 390",
+      "pass": true
+    },
+    {
+      "name": "No legacy contribution bullet lists at 390",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 390: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 390: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 390: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 390: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 390: phillys",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 390: phillys",
+      "pass": true
+    },
+    {
+      "name": "No overflow or text clipping at 320",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared contribution typography at 320",
+      "pass": true
+    },
+    {
+      "name": "Natural section counts at 320",
+      "pass": true
+    },
+    {
+      "name": "Snap Remedy remains longest entry at 320",
+      "pass": true
+    },
+    {
+      "name": "Technology labels have breathing room at 320",
+      "pass": true
+    },
+    {
+      "name": "Summary and employer spacing at 320",
+      "pass": true
+    },
+    {
+      "name": "No legacy contribution bullet lists at 320",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 320: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 320: snap-remedy",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 320: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 320: pro-formance-intermodal",
+      "pass": true
+    },
+    {
+      "name": "Employer keyboard jump 320: phillys",
+      "pass": true
+    },
+    {
+      "name": "Employer heading clears header 320: phillys",
+      "pass": true
+    },
+    {
+      "name": "Existing Snap Remedy case-study link works",
+      "pass": true
+    },
+    {
+      "name": "R\u00e9sum\u00e9 link works",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Home",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Projects",
+      "pass": true
+    },
+    {
+      "name": "Primary navigation Experience",
+      "pass": true
+    },
+    {
+      "name": "Mobile menu closes and restores keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Employer navigation works with reduced motion",
+      "pass": true
+    },
+    {
+      "name": "Accessibility audits pass",
+      "pass": true
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 3094,
+      "overflow": false,
+      "clipped": [],
+      "entries": [
+        {
+          "id": "snap-remedy",
+          "height": 961,
+          "sections": 3,
+          "summary": "Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.",
+          "techGap": 221,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "height": 703,
+          "sections": 3,
+          "summary": "Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "phillys",
+          "height": 581,
+          "sections": 2,
+          "summary": "Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 3451,
+      "overflow": false,
+      "clipped": [],
+      "entries": [
+        {
+          "id": "snap-remedy",
+          "height": 1127,
+          "sections": 3,
+          "summary": "Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.",
+          "techGap": 254,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "height": 836,
+          "sections": 3,
+          "summary": "Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "phillys",
+          "height": 648,
+          "sections": 2,
+          "summary": "Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 3714,
+      "overflow": false,
+      "clipped": [],
+      "entries": [
+        {
+          "id": "snap-remedy",
+          "height": 1136,
+          "sections": 3,
+          "summary": "Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.",
+          "techGap": 221,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "height": 958,
+          "sections": 3,
+          "summary": "Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        },
+        {
+          "id": "phillys",
+          "height": 851,
+          "sections": 2,
+          "summary": "Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.",
+          "techGap": 28,
+          "headingFont": "20px",
+          "paragraphFont": "18px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 4670,
+      "overflow": false,
+      "clipped": [],
+      "entries": [
+        {
+          "id": "snap-remedy",
+          "height": 1565,
+          "sections": 3,
+          "summary": "Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.",
+          "techGap": 268,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "height": 1199,
+          "sections": 3,
+          "summary": "Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.",
+          "techGap": 28,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        },
+        {
+          "id": "phillys",
+          "height": 936,
+          "sections": 2,
+          "summary": "Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.",
+          "techGap": 28,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 5186,
+      "overflow": false,
+      "clipped": [],
+      "entries": [
+        {
+          "id": "snap-remedy",
+          "height": 1779,
+          "sections": 3,
+          "summary": "Developed an ERP-backed SKU-ranking application with a Django backend, relational data layer, and React frontend.",
+          "techGap": 326,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "height": 1372,
+          "sections": 3,
+          "summary": "Sole developer of a full-stack internal system for workflow automation, training scheduling, grant processing, and operational analytics.",
+          "techGap": 28,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        },
+        {
+          "id": "phillys",
+          "height": 1052,
+          "sections": 2,
+          "summary": "Rebuilt a legacy website with PHP and JavaScript, delivering responsive layouts, web deployment, and post-launch production support.",
+          "techGap": 28,
+          "headingFont": "19px",
+          "paragraphFont": "16px"
+        }
+      ]
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "violations": []
+    },
+    {
+      "width": 768,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

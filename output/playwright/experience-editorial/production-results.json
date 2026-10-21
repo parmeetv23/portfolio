@@ -1,0 +1,89 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "status": 200,
+      "styles": [
+        {
+          "id": "snap-remedy",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "57.6px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "57.6px"
+        },
+        {
+          "id": "phillys",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "57.6px"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "width": 768,
+      "status": 200,
+      "styles": [
+        {
+          "id": "snap-remedy",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "38px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "38px"
+        },
+        {
+          "id": "phillys",
+          "summaryMargin": "30px",
+          "summarySize": "24px",
+          "employerMargin": "23px",
+          "employerSize": "38px"
+        }
+      ],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "styles": [
+        {
+          "id": "snap-remedy",
+          "summaryMargin": "30px",
+          "summarySize": "21px",
+          "employerMargin": "23px",
+          "employerSize": "43px"
+        },
+        {
+          "id": "pro-formance-intermodal",
+          "summaryMargin": "30px",
+          "summarySize": "21px",
+          "employerMargin": "23px",
+          "employerSize": "43px"
+        },
+        {
+          "id": "phillys",
+          "summaryMargin": "30px",
+          "summarySize": "21px",
+          "employerMargin": "23px",
+          "employerSize": "43px"
+        }
+      ],
+      "violations": []
+    }
+  ],
+  "errors": []
+}
