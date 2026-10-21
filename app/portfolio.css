@@ -50,18 +50,23 @@
 .filter-bar button:hover { background: var(--v3-sage); }
 .filter-bar button[aria-pressed="true"] { background: var(--v3-ink); color: var(--v3-paper); }
 .collection-status { color: var(--v3-muted); font-size: 13px; padding-top: 20px; }
-.project-collection { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 70px 40px; padding-block: 35px var(--space-section); }
-.collection-project { grid-column: span 6; min-width: 0; }
-.collection-project:first-child { grid-column: span 7; }
-.collection-project:nth-child(2) { grid-column: span 5; }
-.collection-project:nth-child(3n) { grid-column: span 12; display: grid; grid-template-columns: 5fr 7fr; align-items: center; gap: 50px; padding-block: 36px; border-block: 1px solid var(--v3-rule); }
+.project-collection { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 56px 40px; padding-block: 32px var(--space-section); }
+/* Paired entries share preview and copy tracks, without stretching their prose. */
+.collection-project { grid-column: span 6; grid-row: span 2; display: grid; grid-template-rows: subgrid; row-gap: 24px; min-width: 0; }
+/* Filtering creates new neighbours, so let each result keep its natural height. */
+.project-collection[data-filtered="true"] { align-items: start; }
+.project-collection[data-filtered="true"] .collection-project:not(.collection-restaurant) { grid-row: auto; grid-template-rows: auto auto; }
+.collection-project:is(:nth-child(3n), .collection-restaurant) { grid-column: 1 / -1; grid-row: auto; grid-template-columns: minmax(0,5fr) minmax(0,7fr); grid-template-rows: auto; align-items: start; gap: 40px; padding-block: 32px; border-block: 1px solid var(--v3-rule); }
+.collection-project.collection-restaurant { grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); }
+.collection-restaurant > figure { grid-column: 2; grid-row: 1; }
+.collection-restaurant .collection-copy { grid-column: 1; grid-row: 1; }
 .collection-project h2 { font-family: var(--lab-serif),Georgia,serif; font-size: clamp(30px,3vw,44px); line-height: 1.12; letter-spacing: -.035em; margin-block: 10px 20px; }
 .collection-project h2 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
-.collection-copy { padding-top: 22px; }
+.collection-copy { align-self: start; min-width: 0; }
 .collection-category { font-size: 13px; color: var(--v3-muted); }
 .collection-summary { font-size: 17px; line-height: 1.7; max-width: 62ch; }
 .collection-copy .technology-list { margin-top: 20px; }
-.collection-copy .text-link { margin-top: 22px; }
+.collection-copy .text-link { margin-top: 16px; }
 .project-art { background: var(--v3-sage); padding: 30px; min-width: 0; }
 .project-art figcaption { font-size: 12px; color: var(--v3-muted); margin-top: 18px; }
 .project-art svg { max-height: 265px; }
@@ -128,15 +133,15 @@
   .case-layout { grid-template-columns: 190px minmax(0,1fr); gap: 35px; }
   .experience-story { gap: 45px; }
   .page-heading { gap: 35px; }
-  .project-collection { gap: 50px 28px; }
+  .project-collection { gap: 44px 28px; }
   .case-feature { gap: 35px; }
 }
 @media (max-width: 1000px) {
   .page-heading { padding-block: 55px 45px; }
   .page-heading > p, .page-heading > div > p { font-size: 17px; }
   .project-collection { grid-template-columns: 1fr 1fr; }
-  .collection-project, .collection-project:first-child, .collection-project:nth-child(2) { grid-column: span 1; }
-  .collection-project:nth-child(3n) { grid-column: span 2; gap: 28px; }
+  .collection-project { grid-column: span 1; }
+  .collection-project:is(:nth-child(3n), .collection-restaurant) { grid-column: 1 / -1; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
   .collection-project .v3-network-bottom { flex-wrap: wrap; }
   .collection-project .v3-results { padding-inline: 20px; }
   .case-feature { grid-template-columns: 1fr; }
@@ -149,6 +154,14 @@
   .role-progression { display: flex; gap: 32px; }
   .role-progression div + div { margin-top: 0; }
   .resume-viewer iframe { height: 800px; }
+}
+/* Below this width, side-by-side diagrams lose their useful reading measure. */
+@media (max-width: 740px) {
+  .project-collection { display: block; padding-top: 28px; }
+  .project-collection .collection-project { display: block; border: 0; padding: 0; }
+  .project-collection .collection-project + .collection-project { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--v3-rule); }
+  .collection-project h2 { font-size: 35px; }
+  .collection-copy { padding-top: 22px; }
 }
 @media (max-width: 600px) {
   .site-navigation .v3-header { min-height: 68px; flex-wrap: wrap; gap: 0; }
@@ -163,11 +176,6 @@
   .page-heading h1 { font-size: clamp(56px,15vw,82px); }
   .filter-bar { gap: 3px; padding-block: 14px; }
   .filter-bar button { font-size: 13px; padding-inline: 12px; }
-  .project-collection { display: block; padding-top: 28px; }
-  .collection-project, .collection-project:nth-child(3n) { display: block; border: 0; padding: 0; }
-  .collection-project + .collection-project { margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--v3-rule); }
-  .collection-project h2 { font-size: 35px; }
-  .collection-copy { padding-top: 22px; }
   .project-art { padding: 22px; }
   .case-heading { padding-block: 30px 40px; }
   .case-heading h1 { font-size: 45px; }

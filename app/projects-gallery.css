@@ -55,9 +55,21 @@
 .gallery-key-update > div { background: var(--v3-paper); padding: 12px; }
 .gallery-key-update code, .gallery-key-update div > span { display: block; font-size: 13px; }
 .gallery-key-update div > span { margin-top: 5px; }
-.project-collection .collection-project.collection-restaurant { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); gap: 50px; align-items: center; border-block: 1px solid var(--v3-rule); padding-block: 36px; }
-.collection-restaurant > figure { grid-column: 2; grid-row: 1; }
-.collection-restaurant .collection-copy { grid-column: 1; grid-row: 1; padding: 0; }
+/* Listing-only proportions: paired previews, quiet SVG studies, and interactive rules. */
+.project-collection .collection-project > figure { padding: 28px; display: flex; flex-direction: column; }
+.project-collection .collection-project > figure > figcaption { margin-top: auto; padding-top: 14px; font-size: 13px; line-height: 1.6; }
+.project-collection .collection-project > figure > :has(+ figcaption) { margin-bottom: 20px; }
+.project-collection .gallery-chat-map { flex: 1; display: grid; align-content: center; }
+.project-collection .gallery-signal-path { flex: 1; align-content: space-evenly; }
+.project-collection .gallery-populations svg { max-height: 76px; }
+.project-collection .restored-schedule svg { max-height: 190px; }
+.project-collection .restored-streaming svg { max-height: 170px; }
+.project-collection .temperature-options { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.project-collection .temperature-options button { padding: 10px 6px; font-size: 13px; }
+.project-collection .temperature-condition { margin-block: 20px; }
+.project-collection .actuator-states { margin-block: 20px; gap: 12px; }
+.project-collection .actuator-states > div { padding: 12px; }
+.project-collection .actuator-states dd { margin-top: 8px; font-size: 30px; }
 .v3-compiler-study:has(> .gallery-preview) { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 24px 40px; align-items: start; }
 .v3-compiler-study:has(> .gallery-preview) .v3-compiler-intro { display: block; margin-bottom: 0; }
 .v3-compiler-study:has(> .gallery-preview) .v3-compiler-intro > p { max-width: none; margin-top: 18px; }
@@ -84,14 +96,12 @@
   .gallery-translation > div > span { margin-bottom: 8px; }
 }
 @media (max-width: 1000px) {
-  .project-collection .collection-project.collection-restaurant { gap: 28px; }
   .v3-compiler-study:has(> .gallery-preview) { gap: 24px; }
 }
 @media (max-width: 600px) {
   .gallery-preview { padding: 24px 20px; }
   .gallery-preview .gallery-heading { font-size: 26px; }
-  .project-collection .collection-project.collection-restaurant { display: block; padding-block: 30px 0; border-bottom: 0; }
-  .collection-restaurant .collection-copy { padding-top: 22px; }
+  .project-collection .collection-project > figure { padding: 24px 20px; }
   .v3-compiler-study:has(> .gallery-preview) { display: block; }
   .v3-compiler-study:has(> .gallery-preview) .v3-compiler-intro { margin-bottom: 24px; }
   .v3-compiler-study:has(> .gallery-preview) .v3-compiler-foot { margin-top: 18px; }
