@@ -9,10 +9,11 @@ import DistributedChatCase from '@/app/components/editorial/DistributedChatCase'
 
 export const dynamic = 'force-static';
 export const revalidate = false;
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
-export function generateMetadata({ params }: Props): Metadata {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (project?.slug === 'distributed-chat-system') return {
     title: 'Distributed Chat System | IRC-HAT',
     description: project.summary,
@@ -21,10 +22,11 @@ export function generateMetadata({ params }: Props): Metadata {
   };
   return project ? { title: project.title, description: project.summary, alternates: { canonical: `/projects/${project.slug}` }, openGraph: { title: project.title, description: project.summary, url: `/projects/${project.slug}`, type: 'website' } } : { title: 'Project not found' };
 }
-export default function ProjectPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
-  const { prev, next } = getProjectNavigation(params.slug);
+  const { prev, next } = getProjectNavigation(slug);
   if (project.slug === 'distributed-chat-system') return <DistributedChatCase project={project} previous={prev} next={next}/>;
   const study = project.caseStudy;
   if (!study) notFound();

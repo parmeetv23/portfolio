@@ -2,6 +2,8 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Keep development startup from generating repository policy files.
+  agentRules: false,
   async redirects() {
     return [{ source: '/projects/kiddoflix', destination: '/projects/family-streaming-interface', permanent: true }]
   },

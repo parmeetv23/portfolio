@@ -82,12 +82,12 @@ export function NetworkFigure() {
   const scope = useRef<HTMLElement>(null);
   const [traced, setTraced] = useState(false);
   const { contextSafe } = useGSAP({ scope });
-  const trace = contextSafe(() => {
+  const trace = () => contextSafe(() => {
     setTraced(true);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.killTweensOf(scope.current?.querySelector(".v3-network-packet") ?? []);
     gsap.fromTo(".v3-network-packet", { strokeDashoffset: 710, opacity: 1 }, { strokeDashoffset: 0, duration: 2.4, ease: "power1.inOut", onComplete: () => { gsap.set(".v3-network-packet", { opacity: 0 }); } });
-  });
+  })();
   return <figure ref={scope} className="v3-network">
     <div className="v3-visual-title"><span>IRC-HAT</span><span>Distributed chat system</span></div>
     <NetworkStudy/>

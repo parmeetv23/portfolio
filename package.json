@@ -3,31 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint --dir app --dir data --file tailwind.config.ts --file next.config.js --file postcss.config.js --max-warnings 0",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint app data tailwind.config.ts next.config.js postcss.config.js eslint.config.mjs scripts/quality --max-warnings 0",
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "^5.3.0",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
-    "next": "14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "postcss": "^8",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.2",
+    "postcss": "^8.5.31",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "engines": {
+    "node": ">=22.13.0 <23"
+  },
+  "packageManager": "npm@10.9.4"
 }

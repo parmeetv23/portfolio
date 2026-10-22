@@ -1,5 +1,10 @@
 # Repository quality review
 
+Maintenance update: [dependency and installation remediation](DEPENDENCY-MAINTENANCE.md)
+supersedes the dependency versions, temporary-installation status, and remaining
+security work recorded below. The cleanup and its verification remain historical
+evidence.
+
 Reviewed on `portfolio-redesign`, October 21, 2026. The initial working tree was
 clean. No commit, push, merge, deployment, or change to `main` was performed.
 The current public website is the baseline; public text, project order, layout,
