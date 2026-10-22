@@ -1,6 +1,0 @@
-{
-  "developmentRenders": true,
-  "productionRejects": true,
-  "digest": "NEXT_NOT_FOUND",
-  "method": "Source-level check using actual Next notFound; font/CSS imports stubbed. Not a full production build."
-}

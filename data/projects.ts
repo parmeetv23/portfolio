@@ -591,16 +591,8 @@ export const projects: Project[] = [
 
 ];
 
-export function getFeaturedProjects(): Project[] {
-  return projects.filter(project => project.featured);
-}
-
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
-}
-
-export function getProjectsByCategory(category: ProjectCategory): Project[] {
-  return projects.filter((p) => p.category === category);
 }
 
 export function getProjectNavigation(slug: string): {

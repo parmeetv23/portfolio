@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EditorialPersonalSecondPhoto() {
+export default function HomePage() {
   return (
     <>
       <main id="main-content" className="v3-main" tabIndex={-1}>

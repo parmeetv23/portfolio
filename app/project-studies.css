@@ -14,7 +14,6 @@
   margin: 0 0 24px;
   text-wrap: balance;
 }
-.project-technical .figure-note { font-size: 13px; line-height: 1.6; margin: -12px 0 20px; color: var(--v3-muted); }
 .project-technical figcaption { border-top: 1px solid #a9b89e; padding-top: 18px; margin-top: 24px; font-size: 14px; line-height: 1.65; color: #3d5143; }
 .project-technical code { font-size: 14px; overflow-wrap: anywhere; }
 .project-technical strong { font-weight: 500; }

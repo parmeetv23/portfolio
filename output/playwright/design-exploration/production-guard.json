@@ -1,5 +1,0 @@
-{
-  "method": "Source layout transpiled with TypeScript; actual Next notFound, stubbed font/CSS loading. Not a production build.",
-  "development": "renders",
-  "production": "NEXT_NOT_FOUND"
-}

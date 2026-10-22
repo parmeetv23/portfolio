@@ -1,6 +1,0 @@
-{
-  "developmentRenders": true,
-  "productionRejects": true,
-  "digest": "NEXT_NOT_FOUND",
-  "method": "Source layout transpiled; font and CSS imports stubbed; real Next notFound called. Not a production build."
-}

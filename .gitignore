@@ -13,10 +13,13 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/blob-report/
 
 # next.js
 /.next/
-/.next-dev/
+/.next-*/
 /out/
 
 # production
@@ -24,6 +27,9 @@
 
 # misc
 .DS_Store
+Thumbs.db
+*.swp
+*.swo
 *.pem
 
 # debug
@@ -31,6 +37,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -46,27 +53,11 @@ next-env.d.ts
 .playwright-cli/
 cli-session-records/
 
-# Keep curated design reports, review scripts, results, and final comparisons.
-# Other generated output stays local; application source and assets are unaffected.
+# Preserve source reports and reproducible review scripts in Git.
+# Generated screenshots, results, traces, recordings and raw logs stay local.
+# docs/ remains tracked: design decisions and technical evidence are source records.
 /output/**
 !/output/playwright/
 !/output/playwright/*/
 !/output/playwright/*/*.md
 !/output/playwright/*/*.js
-!/output/playwright/*/*.json
-!/output/playwright/*/*.png
-!/output/playwright/design-exploration/keyboard-check.txt
-!/output/playwright/design-exploration/reduced-motion-check.txt
-!/output/playwright/design-exploration/responsive-check.txt
-
-# Temporary baselines, superseded passes, and redundant viewport captures
-/output/**/baseline-hashes.json
-/output/**/*first*.png
-/output/playwright/editorial-v3/mobile.png
-/output/playwright/editorial-v3/tablet.png
-/output/playwright/portfolio-verification/projects-*-full.png
-/output/playwright/portfolio-verification/experience-*-full.png
-
-# Isolated local review builds
-/.next-redesign/
-/.next-production/

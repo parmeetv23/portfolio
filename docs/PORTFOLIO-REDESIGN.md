@@ -1,5 +1,10 @@
 # Portfolio redesign workspace
 
+Current maintenance note: the artifact policy below records an earlier checkpoint.
+The [repository quality guide](REPOSITORY-QUALITY.md) supersedes it: source reports
+and review scripts stay tracked; generated captures and results stay local. All
+historical local artifacts and professional-reference records are preserved.
+
 ## Public redesign — October 16, 2026
 
 The selected **Editorial Personal 2** direction is now implemented on the public
@@ -67,8 +72,8 @@ motion disables travel, transitions, and smooth scrolling.
 
 `NEXT_DIST_DIR` optionally isolates local build output. Review used separate
 `.next-redesign` and `.next-production` directories to avoid overwriting the
-pre-existing server on port 3000. Both are ignored. Normal `npm run dev` and
-`npm run build` still use `.next`.
+pre-existing server on port 3000. Both are ignored. Current `npm run dev` uses
+`.next-dev`; `npm run build` uses `.next`.
 
 ### Visual iteration and verification
 

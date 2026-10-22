@@ -10,7 +10,7 @@ The goal of this site is not to be flashy, but to clearly explain what I built, 
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Editorial CSS with Tailwind CSS
 - **Hosting**: Vercel
 
 ## Getting Started
@@ -34,9 +34,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The ongoing visual exploration lives on `portfolio-redesign`, with `main` kept as
+The completed editorial design lives on `portfolio-redesign`, with `main` kept as
 the stable production branch. See the [redesign workspace guide](docs/PORTFOLIO-REDESIGN.md)
-for prototype routes, comparison reports, and the policy for versioning artifacts.
+for historical design decisions and local prototype routes, and the
+[repository quality guide](docs/REPOSITORY-QUALITY.md) for current verification
+commands, artifact policy, and remaining maintenance work.
 
 ### Build
 
@@ -61,6 +63,9 @@ type-only imports.
 the existing Next.js 14 and PostCSS loaders. TypeScript and the React/Node type
 definitions are installed as development dependencies. Next.js generates
 `next-env.d.ts` and route types in `.next/types` during development or a build.
+Development output uses `.next-dev`; production builds use `.next`, so building
+does not overwrite a running development server. `NEXT_DIST_DIR` can override
+the output directory for an isolated local preview.
 
 ### Production
 
@@ -73,23 +78,39 @@ npm start
 ```
 portfolio/
 ├── app/
+│   ├── (site)/           # Public pages; route group does not affect URLs
+│   │   ├── page.tsx      # Home
+│   │   ├── experience/   # Professional experience and Snap Remedy case study
+│   │   ├── projects/     # Listing and nine project-detail pages
+│   │   └── resume/       # PDF preview and download
 │   ├── components/       # Reusable components
-│   ├── projects/         # Projects pages
+│   ├── design-lab/       # Historical prototypes; production requests return 404
+│   ├── fonts/            # Local Newsreader font and license
 │   ├── globals.css       # Global styles
 │   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Home page
+│   └── *.css             # Shared and feature-specific editorial styles
 ├── data/
-│   └── projects.ts       # Project data and types
+│   ├── experiences.ts    # Professional experience
+│   ├── project-case-studies.ts
+│   └── projects.ts       # Project data, order, and types
+├── docs/                 # Design decisions and professional-reference evidence
+├── scripts/quality/      # Production browser regression checks
 └── public/               # Static assets
 ```
 
 ## Adding New Projects
 
-Edit `data/projects.ts` and add a new project object following the `Project` interface. The project will automatically appear on the projects page and can be accessed via `/projects/[slug]`.
+Add the project record to `data/projects.ts` and its narrative to
+`data/project-case-studies.ts`, then reference that narrative in the record's
+`caseStudy` field. Array order determines the listing and adjacent-project links.
+The static detail route is generated automatically; add a figure or preview only
+when it helps explain the project. Preserve the supporting evidence in `docs/`.
 
 ## Deployment
 
-This site is configured for deployment on Vercel. Simply connect your GitHub repository to Vercel and it will automatically build and deploy.
+The project can be deployed on Vercel. Resolve the dependency security findings in
+the [quality review](docs/REPOSITORY-QUALITY.md) and repeat production verification
+before deployment. `NEXT_PUBLIC_SITE_URL` may override the canonical site origin.
 
 ## Design Philosophy
 
@@ -100,4 +121,5 @@ This portfolio emphasizes:
 - **Clear communication** of technical concepts
 - **Professional presentation** for engineering roles
 
-The design is minimal, dark-themed, and optimized for fast loading and readability.
+The design uses Newsreader and Outfit typography, evergreen text, a light fog
+background, and sage panels. Both fonts are served locally.
